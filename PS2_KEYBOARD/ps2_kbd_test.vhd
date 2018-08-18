@@ -1,5 +1,8 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
+use IEEE.NUMERIC_STD.ALL;
+use ieee.std_logic_arith.all;
+use IEEE.std_logic_unsigned.all;
 
 entity ps2_kbd_test is
 	port
@@ -82,40 +85,44 @@ architecture struct of ps2_kbd_test is
 	end component;
 	
 	signal CLOCKHZ, resetn 	: std_logic;
-	signal key0 				: std_logic_vector(15 downto 0);
-	signal key1 				: std_logic_vector(15 downto 0);
-	signal key2 				: std_logic_vector(15 downto 0);
+	signal key0 				: std_logic_vector(47 downto 0);
+	signal key_conv			: std_logic_vector(15 downto 0);
+	signal key_seg				: std_logic_vector(15 downto 0);
+	signal stack0				: std_logic_vector(15 downto 0):=x"0000";
 	signal lights, key_on	: std_logic_vector( 2 downto 0);
-	signal pressed			 	: std_logic;
 	signal pwm_OUT			 	: STD_LOGIC;
+	type state_key	is (pressed, released);
+	signal statek, next_statek: state_key;
 begin 
 	resetn <= KEY(0);
-
+	
+	key_seg <= stack0;
+	
 	hexseg0: conv_7seg port map(
-		key2(3 downto 0), pwm_OUT, HEX0
+		key_seg(3 downto 0), pwm_OUT, HEX0
 	);
 	hexseg1: conv_7seg port map(
-		key2(7 downto 4), pwm_OUT, HEX1
+		key_seg(7 downto 4), pwm_OUT, HEX1
 	);
 	hexseg2: conv_7seg port map(
-		key2(11 downto 8), pwm_OUT, HEX2
+		key_seg(11 downto 8), pwm_OUT, HEX2
 	);
 	hexseg3: conv_7seg port map(
-		key2(15 downto 12), pwm_OUT, HEX3
+		key_seg(15 downto 12), pwm_OUT, HEX3
 	);
 
 	kbd_ctrl : kbdex_ctrl generic map(24000) port map(
-		PS2_DAT, PS2_CLK, CLOCK_24(0), KEY(1), resetn, lights(1) & lights(2) & lights(0),
-		key_on, key_code(15 downto 0) => key0
+		PS2_DAT, PS2_CLK, CLOCK_24(0), KEY(1), resetn, lights,
+		key_on, key_code => key0
 	);
 	
 	PWM1: pwm PORT MAP (CLK => CLOCK_50, RST => '0', ENABLE => SW(8), DUTY => SW(7 downto 0), pwm_OUT => pwm_OUT);
 	
-	map1: map_ps2 PORT MAP (key_in=>key0, key_out=>key1);
-	
-	ffd1: FF_tipoD port map(D=>key1, set=>key_on(0), CLK => CLOCK_50, RESET=>resetn, Q2=>key2);
+	map1: map_ps2 PORT MAP (key_in=>key0(15 downto 0), key_out=>key_conv);
 	
 	LEDG(7 downto 5) <= key_on;
+	
+	LEDR(9) <= stack0(15); -- indicador de negativo
 	
 	-- lights <= SW(2 downto 0);
 	
@@ -140,4 +147,43 @@ begin
 			count := count + 1;			
 		end if;
 	end process;	
+	
+	
+	key_fsm: process(CLOCK_50)
+	begin
+		if(CLOCK_50'event and CLOCK_50='1') then
+			statek<=next_statek;
+		end if;
+	end process;
+	
+	next_statek_func: process(key0(15 downto 0), statek)
+	begin
+		case statek is
+		when pressed =>
+			if key0(15 downto 0) /= x"0000" then
+				next_statek<= pressed;
+			else
+				next_statek<= released;
+			end if;
+		when released=>
+			if key0(15 downto 0) /= x"0000" then
+				next_statek<= pressed;
+			end if;
+		end case;
+	end process;
+	
+	PROCESS (CLOCK_50)
+	BEGIN
+		if(CLOCK_50'EVENT AND CLOCK_50 = '1') then
+			if key0(15 downto 0) = x"0066" then
+				stack0 <= (others=>'0');
+			elsif key0(15 downto 0) /= x"0000" THEN
+				if(key_conv <= x"0009") then
+					stack0 <= (stack0(14 downto 0) & '0') + (stack0(12 downto 0) & "000") + key_conv;
+				end if;
+			else
+				stack0 <= stack0;
+			END IF;
+		end if;
+	END PROCESS;
 end struct;

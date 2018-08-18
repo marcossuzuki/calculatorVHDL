@@ -1,6 +1,6 @@
 Analysis & Synthesis report for ps2_kbd_test
-Sat Aug 18 07:52:12 2018
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Sat Aug 18 17:51:35 2018
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
 ---------------------
@@ -24,11 +24,10 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  16. Parameter Settings for User Entity Instance: kbdex_ctrl:kbd_ctrl
  17. Parameter Settings for User Entity Instance: kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl
  18. Parameter Settings for User Entity Instance: PWM:PWM1
- 19. Parameter Settings for User Entity Instance: FF_tipoD:ffd1
- 20. Port Connectivity Checks: "PWM:PWM1"
- 21. Port Connectivity Checks: "kbdex_ctrl:kbd_ctrl"
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
+ 19. Port Connectivity Checks: "PWM:PWM1"
+ 20. Port Connectivity Checks: "kbdex_ctrl:kbd_ctrl"
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -51,24 +50,24 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                         ;
-+------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Aug 18 07:52:12 2018           ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
-; Revision Name                      ; ps2_kbd_test                                    ;
-; Top-level Entity Name              ; ps2_kbd_test                                    ;
-; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 358                                             ;
-;     Total combinational functions  ; 318                                             ;
-;     Dedicated logic registers      ; 149                                             ;
-; Total registers                    ; 149                                             ;
-; Total pins                         ; 67                                              ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
-+------------------------------------+-------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Aug 18 17:51:35 2018      ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; ps2_kbd_test                               ;
+; Top-level Entity Name              ; ps2_kbd_test                               ;
+; Family                             ; Cyclone II                                 ;
+; Total logic elements               ; 415                                        ;
+;     Total combinational functions  ; 375                                        ;
+;     Dedicated logic registers      ; 156                                        ;
+; Total registers                    ; 156                                        ;
+; Total pins                         ; 67                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -167,19 +166,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                               ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                        ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
-; ps2_iobase.vhd                   ; yes             ; User VHDL File  ; /home/marcos/Documents/calculatorVHDL/PS2_KEYBOARD/ps2_iobase.vhd   ;         ;
-; conv_7seg.vhd                    ; yes             ; User VHDL File  ; /home/marcos/Documents/calculatorVHDL/PS2_KEYBOARD/conv_7seg.vhd    ;         ;
-; ps2_kbd_test.vhd                 ; yes             ; User VHDL File  ; /home/marcos/Documents/calculatorVHDL/PS2_KEYBOARD/ps2_kbd_test.vhd ;         ;
-; kbdex_ctrl.vhd                   ; yes             ; User VHDL File  ; /home/marcos/Documents/calculatorVHDL/PS2_KEYBOARD/kbdex_ctrl.vhd   ;         ;
-; ../pwm/pwm.vhd                   ; yes             ; User VHDL File  ; /home/marcos/Documents/calculatorVHDL/pwm/pwm.vhd                   ;         ;
-; map_ps2.vhd                      ; yes             ; User VHDL File  ; /home/marcos/Documents/calculatorVHDL/PS2_KEYBOARD/map_ps2.vhd      ;         ;
-; FF_tipoD.vhd                     ; yes             ; User VHDL File  ; /home/marcos/Documents/calculatorVHDL/PS2_KEYBOARD/FF_tipoD.vhd     ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                          ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
+; ps2_iobase.vhd                   ; yes             ; User VHDL File  ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/ps2_iobase.vhd   ;         ;
+; conv_7seg.vhd                    ; yes             ; User VHDL File  ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/conv_7seg.vhd    ;         ;
+; ps2_kbd_test.vhd                 ; yes             ; User VHDL File  ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/ps2_kbd_test.vhd ;         ;
+; kbdex_ctrl.vhd                   ; yes             ; User VHDL File  ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/kbdex_ctrl.vhd   ;         ;
+; ../pwm/pwm.vhd                   ; yes             ; User VHDL File  ; C:/Users/marco/Downloads/calculatorVHDL/pwm/pwm.vhd                   ;         ;
+; map_ps2.vhd                      ; yes             ; User VHDL File  ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/map_ps2.vhd      ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -187,28 +185,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 358         ;
+; Estimated Total logic elements              ; 415         ;
 ;                                             ;             ;
-; Total combinational functions               ; 318         ;
+; Total combinational functions               ; 375         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 130         ;
-;     -- 3 input functions                    ; 60          ;
-;     -- <=2 input functions                  ; 128         ;
+;     -- 4 input functions                    ; 145         ;
+;     -- 3 input functions                    ; 87          ;
+;     -- <=2 input functions                  ; 143         ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 255         ;
-;     -- arithmetic mode                      ; 63          ;
+;     -- normal mode                          ; 286         ;
+;     -- arithmetic mode                      ; 89          ;
 ;                                             ;             ;
-; Total registers                             ; 149         ;
-;     -- Dedicated logic registers            ; 149         ;
+; Total registers                             ; 156         ;
+;     -- Dedicated logic registers            ; 156         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 67          ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ; Maximum fan-out node                        ; CLOCK_24[0] ;
 ; Maximum fan-out                             ; 108         ;
-; Total fan-out                               ; 1530        ;
-; Average fan-out                             ; 2.87        ;
+; Total fan-out                               ; 1734        ;
+; Average fan-out                             ; 2.90        ;
 +---------------------------------------------+-------------+
 
 
@@ -217,15 +215,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Library Name ;
 +-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
-; |ps2_kbd_test               ; 318 (0)           ; 149 (0)      ; 0           ; 0            ; 0       ; 0         ; 67   ; 0            ; |ps2_kbd_test                                         ; work         ;
-;    |FF_tipoD:ffd1|          ; 6 (6)             ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|FF_tipoD:ffd1                           ; work         ;
-;    |PWM:PWM1|               ; 25 (25)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|PWM:PWM1                                ; work         ;
-;    |conv_7seg:hexseg0|      ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|conv_7seg:hexseg0                       ; work         ;
-;    |conv_7seg:hexseg1|      ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|conv_7seg:hexseg1                       ; work         ;
-;    |conv_7seg:hexseg3|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|conv_7seg:hexseg3                       ; work         ;
-;    |kbdex_ctrl:kbd_ctrl|    ; 231 (92)          ; 131 (57)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl                     ; work         ;
-;       |ps2_iobase:ps2_ctrl| ; 139 (139)         ; 74 (74)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl ; work         ;
-;    |map_ps2:map1|           ; 26 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|map_ps2:map1                            ; work         ;
+; |ps2_kbd_test               ; 375 (42)          ; 156 (16)     ; 0           ; 0            ; 0       ; 0         ; 67   ; 0            ; |ps2_kbd_test                                         ;              ;
+;    |PWM:PWM1|               ; 25 (25)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|PWM:PWM1                                ;              ;
+;    |conv_7seg:hexseg0|      ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|conv_7seg:hexseg0                       ;              ;
+;    |conv_7seg:hexseg1|      ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|conv_7seg:hexseg1                       ;              ;
+;    |conv_7seg:hexseg2|      ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|conv_7seg:hexseg2                       ;              ;
+;    |conv_7seg:hexseg3|      ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|conv_7seg:hexseg3                       ;              ;
+;    |kbdex_ctrl:kbd_ctrl|    ; 230 (91)          ; 131 (57)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl                     ;              ;
+;       |ps2_iobase:ps2_ctrl| ; 139 (139)         ; 74 (74)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl ;              ;
+;    |map_ps2:map1|           ; 22 (22)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|map_ps2:map1                            ;              ;
 +-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -287,38 +285,33 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; kbdex_ctrl:kbd_ctrl|key0code[8..12]                  ; Stuck at GND due to stuck port data_in                         ;
 ; kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|hdata[4]     ; Stuck at GND due to stuck port data_in                         ;
 ; kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|ps2_clk~reg0 ; Stuck at GND due to stuck port data_in                         ;
-; FF_tipoD:ffd1|Q2[9..12]                              ; Merged with FF_tipoD:ffd1|Q2[8]                                ;
 ; kbdex_ctrl:kbd_ctrl|key2code[14,15]                  ; Merged with kbdex_ctrl:kbd_ctrl|key2code[13]                   ;
 ; kbdex_ctrl:kbd_ctrl|key1code[14,15]                  ; Merged with kbdex_ctrl:kbd_ctrl|key1code[13]                   ;
 ; kbdex_ctrl:kbd_ctrl|key0code[14,15]                  ; Merged with kbdex_ctrl:kbd_ctrl|key0code[13]                   ;
-; FF_tipoD:ffd1|Q2[14,15]                              ; Merged with FF_tipoD:ffd1|Q2[13]                               ;
 ; kbdex_ctrl:kbd_ctrl|hdata[5..7]                      ; Merged with kbdex_ctrl:kbd_ctrl|hdata[3]                       ;
 ; kbdex_ctrl:kbd_ctrl|hdata[2]                         ; Merged with kbdex_ctrl:kbd_ctrl|hdata[0]                       ;
 ; kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|hdata[5..7]  ; Merged with kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|hdata[3]   ;
 ; kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|hdata[2]     ; Merged with kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|hdata[0]   ;
-; FF_tipoD:ffd1|Q2[8]                                  ; Stuck at GND due to stuck port data_in                         ;
 ; kbdex_ctrl:kbd_ctrl|laststate[0..2]                  ; Stuck at GND due to stuck port data_in                         ;
 ; kbdex_ctrl:kbd_ctrl|siguplights                      ; Stuck at GND due to stuck port data_in                         ;
 ; kbdex_ctrl:kbd_ctrl|hdata[1]                         ; Stuck at GND due to stuck port data_in                         ;
 ; kbdex_ctrl:kbd_ctrl|hdata[0]                         ; Stuck at VCC due to stuck port data_in                         ;
 ; kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|hdata[1]     ; Stuck at GND due to stuck port data_in                         ;
 ; kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|hdata[0]     ; Merged with kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|sigsending ;
-; Total Number of Removed Registers = 47               ;                                                                ;
+; Total Number of Removed Registers = 40               ;                                                                ;
 +------------------------------------------------------+----------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                    ;
-+---------------------------------+---------------------------+--------------------------------------------------+
-; Register name                   ; Reason for Removal        ; Registers Removed due to This Register           ;
-+---------------------------------+---------------------------+--------------------------------------------------+
-; kbdex_ctrl:kbd_ctrl|hdata[4]    ; Stuck at GND              ; kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|hdata[4] ;
-;                                 ; due to stuck port data_in ;                                                  ;
-; kbdex_ctrl:kbd_ctrl|key0code[8] ; Stuck at GND              ; FF_tipoD:ffd1|Q2[8]                              ;
-;                                 ; due to stuck port data_in ;                                                  ;
-; kbdex_ctrl:kbd_ctrl|hdata[1]    ; Stuck at GND              ; kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|hdata[1] ;
-;                                 ; due to stuck port data_in ;                                                  ;
-+---------------------------------+---------------------------+--------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                 ;
++------------------------------+---------------------------+--------------------------------------------------+
+; Register name                ; Reason for Removal        ; Registers Removed due to This Register           ;
++------------------------------+---------------------------+--------------------------------------------------+
+; kbdex_ctrl:kbd_ctrl|hdata[4] ; Stuck at GND              ; kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|hdata[4] ;
+;                              ; due to stuck port data_in ;                                                  ;
+; kbdex_ctrl:kbd_ctrl|hdata[1] ; Stuck at GND              ; kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|hdata[1] ;
+;                              ; due to stuck port data_in ;                                                  ;
++------------------------------+---------------------------+--------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -326,12 +319,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 149   ;
-; Number of registers using Synchronous Clear  ; 12    ;
+; Total registers                              ; 156   ;
+; Number of registers using Synchronous Clear  ; 23    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 130   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 110   ;
+; Number of registers using Clock Enable       ; 116   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -352,16 +345,15 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
-; 3:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|count[6]  ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |ps2_kbd_test|FF_tipoD:ffd1|Q2[0]                               ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|rcount[6] ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|count[1]  ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|rcount[0] ;
 ; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|fcount[0] ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |ps2_kbd_test|FF_tipoD:ffd1|Q2[7]                               ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|rcount[5] ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |ps2_kbd_test|stack0[10]                                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|rcount[7] ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|fcount[7] ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|state.EXT1                    ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|Selector10                    ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|Selector9                     ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|Selector13                    ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|Selector12                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 
 
@@ -392,16 +384,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+------------------------------+
 ; n              ; 8     ; Signed Integer               ;
 +----------------+-------+------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: FF_tipoD:ffd1 ;
-+----------------+-------+-----------------------------------+
-; Parameter Name ; Value ; Type                              ;
-+----------------+-------+-----------------------------------+
-; n              ; 16    ; Signed Integer                    ;
-+----------------+-------+-----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -437,8 +419,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Aug 18 07:52:10 2018
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Sat Aug 18 17:51:34 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ps2_kbd_test -c ps2_kbd_test
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file ps2_iobase.vhd
@@ -453,21 +435,21 @@ Info (12021): Found 2 design units, including 1 entities, in source file ps2_kbd
 Info (12021): Found 2 design units, including 1 entities, in source file kbdex_ctrl.vhd
     Info (12022): Found design unit 1: kbdex_ctrl-rtl
     Info (12023): Found entity 1: kbdex_ctrl
-Info (12021): Found 2 design units, including 1 entities, in source file /home/marcos/Documents/calculatorVHDL/pwm/pwm.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /users/marco/downloads/calculatorvhdl/pwm/pwm.vhd
     Info (12022): Found design unit 1: PWM-impl
     Info (12023): Found entity 1: PWM
 Info (12021): Found 2 design units, including 1 entities, in source file map_ps2.vhd
     Info (12022): Found design unit 1: map_ps2-structural
     Info (12023): Found entity 1: map_ps2
-Info (12021): Found 2 design units, including 1 entities, in source file FF_tipoD.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file ff_tipod.vhd
     Info (12022): Found design unit 1: FF_tipoD-a
     Info (12023): Found entity 1: FF_tipoD
 Info (12127): Elaborating entity "ps2_kbd_test" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at ps2_kbd_test.vhd(27): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at ps2_kbd_test.vhd(84): object "CLOCKHZ" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at ps2_kbd_test.vhd(88): used implicit default value for signal "lights" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Critical Warning (10920): VHDL Incomplete Partial Association warning at ps2_kbd_test.vhd(107): port or argument "key_code" has 32/48 unassociated elements
-Warning (10873): Using initial value X (don't care) for net "LEDG[4..0]" at ps2_kbd_test.vhd(26)
+Warning (10036): Verilog HDL or VHDL warning at ps2_kbd_test.vhd(87): object "CLOCKHZ" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at ps2_kbd_test.vhd(92): used implicit default value for signal "lights" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10631): VHDL Process Statement warning at ps2_kbd_test.vhd(159): inferring latch(es) for signal or variable "next_statek", which holds its previous value in one or more paths through the process
+Warning (10873): Using initial value X (don't care) for net "LEDG[4..0]" at ps2_kbd_test.vhd(29)
+Warning (10873): Using initial value X (don't care) for net "LEDR[8..0]" at ps2_kbd_test.vhd(30)
 Info (12128): Elaborating entity "conv_7seg" for hierarchy "conv_7seg:hexseg0"
 Warning (10631): VHDL Process Statement warning at conv_7seg.vhd(12): inferring latch(es) for signal or variable "seg", which holds its previous value in one or more paths through the process
 Info (12128): Elaborating entity "kbdex_ctrl" for hierarchy "kbdex_ctrl:kbd_ctrl"
@@ -511,14 +493,12 @@ Info (12128): Elaborating entity "ps2_iobase" for hierarchy "kbdex_ctrl:kbd_ctrl
 Warning (10492): VHDL Process Statement warning at ps2_iobase.vhd(161): signal "sigsending" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "PWM" for hierarchy "PWM:PWM1"
 Info (12128): Elaborating entity "map_ps2" for hierarchy "map_ps2:map1"
-Info (12128): Elaborating entity "FF_tipoD" for hierarchy "FF_tipoD:ffd1"
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
     Warning (13310): Register "kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|ps2_data~en" is converted into an equivalent circuit using register "kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|ps2_data~en_emulated" and latch "kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|ps2_data~1"
     Warning (13310): Register "kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|send_rdy" is converted into an equivalent circuit using register "kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|send_rdy~_emulated" and latch "kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|send_rdy~1"
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC
     Warning (13410): Pin "LEDG[0]" is stuck at GND
     Warning (13410): Pin "LEDG[1]" is stuck at GND
     Warning (13410): Pin "LEDG[2]" is stuck at GND
@@ -533,7 +513,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[6]" is stuck at GND
     Warning (13410): Pin "LEDR[7]" is stuck at GND
     Warning (13410): Pin "LEDR[8]" is stuck at GND
-    Warning (13410): Pin "LEDR[9]" is stuck at GND
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
     Critical Warning (18010): Register kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|fcount[7] will power up to Low
     Critical Warning (18010): Register kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|fcount[5] will power up to Low
@@ -548,15 +527,15 @@ Warning (21074): Design contains 6 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[2]"
     Warning (15610): No output dependent on input pin "KEY[3]"
     Warning (15610): No output dependent on input pin "SW[9]"
-Info (21057): Implemented 430 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 487 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 19 input pins
     Info (21059): Implemented 46 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 363 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 73 warnings
-    Info: Peak virtual memory: 632 megabytes
-    Info: Processing ended: Sat Aug 18 07:52:12 2018
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info (21061): Implemented 420 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 71 warnings
+    Info: Peak virtual memory: 4665 megabytes
+    Info: Processing ended: Sat Aug 18 17:51:35 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 

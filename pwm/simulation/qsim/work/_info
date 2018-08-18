@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\marco\Desktop\simulacao\calculadora\pwm\simulation\qsim
+vPWM
+Z1 !s100 JL1L0gSW?_e5J^4FJm8C?2
+Z2 I3[XDn4UIoFE8>Y2OXI`7O3
+Z3 VB[nDn>h=D_8hPZf@a1_dc0
+Z4 dC:\Users\marco\Desktop\simulacao\calculadora\pwm\simulation\qsim
+Z5 w1533507639
+Z6 8pwm.vo
+Z7 Fpwm.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|pwm.vo|
+Z10 o-work work -O0
+Z11 n@p@w@m
+!i10b 1
+!s85 0
+Z12 !s108 1533507640.218000
+Z13 !s107 pwm.vo|
+!s101 -O0
+vPWM_vlg_check_tst
+!i10b 1
+Z14 !s100 =6I?_MED]On_?i`DgZS8D3
+Z15 IiadReQe^IgS@XU42??8Ao3
+Z16 VWI7n<1Ti7I8^J0hzhhh_@2
+R4
+R5
+Z17 8pwm.vt
+Z18 Fpwm.vt
+L0 63
+R8
+r1
+!s85 0
+31
+Z19 !s108 1533507640.276000
+Z20 !s107 pwm.vt|
+Z21 !s90 -work|work|pwm.vt|
+!s101 -O0
+R10
+Z22 n@p@w@m_vlg_check_tst
+vPWM_vlg_sample_tst
+!i10b 1
+Z23 !s100 PC0kPhP8]9_]o3BE6ZNC?1
+Z24 IMBPkGY^Z8Jici<Mcim]^Q3
+Z25 VVaSmIPc7e<YIBkGo>QoQX2
+R4
+R5
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+Z26 n@p@w@m_vlg_sample_tst
+vPWM_vlg_vec_tst
+!i10b 1
+!s100 QU3^d:H70F5kdKm2N8YP82
+I^[gFgd7O9JYcma3=O`nzL2
+Z27 VnzHc@3k>@999@Lge`;EIN3
+R4
+R5
+R17
+R18
+Z28 L0 158
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+Z29 n@p@w@m_vlg_vec_tst

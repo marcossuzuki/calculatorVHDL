@@ -1,0 +1,34 @@
+1 69
+2 72
+3 7A
+4 6b
+5 73
+6 74
+7 6C
+8 75
+9 7d
+0 70
+, 71
+. 6d
++ 79
+- 7b
+* 7C
+/ E04A
+enter numpad E05A
+left E06b
+right E074
+up E075
+down E072
+ctrl right E014
+alt right E011
+shift right 59
+enter grande 5A
+delete E071
+Backspace 66
+
+
+	WITH key0(15 downto 0) SELECT
+		key_num <= "0000000000000000" WHEN "0000000001110000", --numero 0
+				 "0000000000000001" WHEN "0000000001101001", -- numero 1
+				 "0000000000000010" WHEN "0000000001110010", -- numero 1
+				 key0(15 downto 0) when others;

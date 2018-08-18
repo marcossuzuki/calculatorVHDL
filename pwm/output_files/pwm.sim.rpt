@@ -1,0 +1,345 @@
+Simulator report for pwm
+Sun Aug 05 19:13:54 2018
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 74 nodes     ;
+; Simulation Coverage         ;      77.03 % ;
+; Total Number of Transitions ; 1345         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                         ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                       ; Default Value ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                                    ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                          ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                           ;               ;
+; Vector input source                                                                        ; C:/Users/marco/Desktop/simulacao/calculadora/pwm/Waveform.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                            ; On            ;
+; Check outputs                                                                              ; Off                                                           ; Off           ;
+; Report simulation coverage                                                                 ; On                                                            ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                            ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                            ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                            ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                           ; Off           ;
+; Detect glitches                                                                            ; Off                                                           ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                           ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                           ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                           ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                           ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                            ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                    ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                           ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                           ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                          ; Auto          ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      77.03 % ;
+; Total nodes checked                                 ; 74           ;
+; Total output ports checked                          ; 74           ;
+; Total output ports with complete 1/0-value coverage ; 57           ;
+; Total output ports with no 1/0-value coverage       ; 17           ;
+; Total output ports with no 1-value coverage         ; 17           ;
+; Total output ports with no 0-value coverage         ; 17           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------------+
+; Complete 1/0-Value Coverage                              ;
++-------------------+-------------------+------------------+
+; Node Name         ; Output Port Name  ; Output Port Type ;
++-------------------+-------------------+------------------+
+; |PWM|CONT[0]      ; |PWM|CONT[0]      ; regout           ;
+; |PWM|s_PWM_OUT~0  ; |PWM|s_PWM_OUT~0  ; out              ;
+; |PWM|s_PWM_OUT~1  ; |PWM|s_PWM_OUT~1  ; out              ;
+; |PWM|s_PWM_OUT~2  ; |PWM|s_PWM_OUT~2  ; out              ;
+; |PWM|CONT~0       ; |PWM|CONT~0       ; out              ;
+; |PWM|CONT~1       ; |PWM|CONT~1       ; out              ;
+; |PWM|CONT~2       ; |PWM|CONT~2       ; out              ;
+; |PWM|CONT~3       ; |PWM|CONT~3       ; out              ;
+; |PWM|CONT~4       ; |PWM|CONT~4       ; out              ;
+; |PWM|CONT~5       ; |PWM|CONT~5       ; out              ;
+; |PWM|CONT~6       ; |PWM|CONT~6       ; out              ;
+; |PWM|CONT~7       ; |PWM|CONT~7       ; out              ;
+; |PWM|CONT~8       ; |PWM|CONT~8       ; out              ;
+; |PWM|CONT~9       ; |PWM|CONT~9       ; out              ;
+; |PWM|CONT~10      ; |PWM|CONT~10      ; out              ;
+; |PWM|CONT~11      ; |PWM|CONT~11      ; out              ;
+; |PWM|CONT~12      ; |PWM|CONT~12      ; out              ;
+; |PWM|CONT~13      ; |PWM|CONT~13      ; out              ;
+; |PWM|CONT~14      ; |PWM|CONT~14      ; out              ;
+; |PWM|CONT~15      ; |PWM|CONT~15      ; out              ;
+; |PWM|s_PWM_OUT~3  ; |PWM|s_PWM_OUT~3  ; out              ;
+; |PWM|s_PWM_OUT    ; |PWM|s_PWM_OUT    ; regout           ;
+; |PWM|CONT[3]      ; |PWM|CONT[3]      ; regout           ;
+; |PWM|CONT[2]      ; |PWM|CONT[2]      ; regout           ;
+; |PWM|CONT[1]      ; |PWM|CONT[1]      ; regout           ;
+; |PWM|CLK          ; |PWM|CLK          ; out              ;
+; |PWM|PWM_OUT      ; |PWM|PWM_OUT      ; pin_out          ;
+; |PWM|LessThan0~1  ; |PWM|LessThan0~1  ; out0             ;
+; |PWM|LessThan0~2  ; |PWM|LessThan0~2  ; out0             ;
+; |PWM|LessThan0~4  ; |PWM|LessThan0~4  ; out0             ;
+; |PWM|LessThan0~5  ; |PWM|LessThan0~5  ; out0             ;
+; |PWM|LessThan0~6  ; |PWM|LessThan0~6  ; out0             ;
+; |PWM|LessThan0~8  ; |PWM|LessThan0~8  ; out0             ;
+; |PWM|LessThan0~9  ; |PWM|LessThan0~9  ; out0             ;
+; |PWM|LessThan0~10 ; |PWM|LessThan0~10 ; out0             ;
+; |PWM|LessThan0~12 ; |PWM|LessThan0~12 ; out0             ;
+; |PWM|LessThan0~13 ; |PWM|LessThan0~13 ; out0             ;
+; |PWM|LessThan0~14 ; |PWM|LessThan0~14 ; out0             ;
+; |PWM|LessThan1~0  ; |PWM|LessThan1~0  ; out0             ;
+; |PWM|LessThan1~1  ; |PWM|LessThan1~1  ; out0             ;
+; |PWM|LessThan1~2  ; |PWM|LessThan1~2  ; out0             ;
+; |PWM|LessThan1~3  ; |PWM|LessThan1~3  ; out0             ;
+; |PWM|LessThan1~4  ; |PWM|LessThan1~4  ; out0             ;
+; |PWM|LessThan1~5  ; |PWM|LessThan1~5  ; out0             ;
+; |PWM|LessThan1~6  ; |PWM|LessThan1~6  ; out0             ;
+; |PWM|LessThan1~7  ; |PWM|LessThan1~7  ; out0             ;
+; |PWM|LessThan1~8  ; |PWM|LessThan1~8  ; out0             ;
+; |PWM|LessThan1~9  ; |PWM|LessThan1~9  ; out0             ;
+; |PWM|LessThan1~10 ; |PWM|LessThan1~10 ; out0             ;
+; |PWM|LessThan1~11 ; |PWM|LessThan1~11 ; out0             ;
+; |PWM|LessThan1~12 ; |PWM|LessThan1~12 ; out0             ;
+; |PWM|Add1~0       ; |PWM|Add1~0       ; out0             ;
+; |PWM|Add1~1       ; |PWM|Add1~1       ; out0             ;
+; |PWM|Add1~2       ; |PWM|Add1~2       ; out0             ;
+; |PWM|Add1~3       ; |PWM|Add1~3       ; out0             ;
+; |PWM|Add1~4       ; |PWM|Add1~4       ; out0             ;
+; |PWM|Equal0~0     ; |PWM|Equal0~0     ; out0             ;
++-------------------+-------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------+
+; Missing 1-Value Coverage                                 ;
++-------------------+-------------------+------------------+
+; Node Name         ; Output Port Name  ; Output Port Type ;
++-------------------+-------------------+------------------+
+; |PWM|RST          ; |PWM|RST          ; out              ;
+; |PWM|ENABLE       ; |PWM|ENABLE       ; out              ;
+; |PWM|DUTY[0]      ; |PWM|DUTY[0]      ; out              ;
+; |PWM|DUTY[1]      ; |PWM|DUTY[1]      ; out              ;
+; |PWM|DUTY[2]      ; |PWM|DUTY[2]      ; out              ;
+; |PWM|DUTY[3]      ; |PWM|DUTY[3]      ; out              ;
+; |PWM|LessThan0~0  ; |PWM|LessThan0~0  ; out0             ;
+; |PWM|LessThan0~3  ; |PWM|LessThan0~3  ; out0             ;
+; |PWM|LessThan0~7  ; |PWM|LessThan0~7  ; out0             ;
+; |PWM|LessThan0~11 ; |PWM|LessThan0~11 ; out0             ;
+; |PWM|Add0~0       ; |PWM|Add0~0       ; out0             ;
+; |PWM|Add0~1       ; |PWM|Add0~1       ; out0             ;
+; |PWM|Add0~2       ; |PWM|Add0~2       ; out0             ;
+; |PWM|Add0~3       ; |PWM|Add0~3       ; out0             ;
+; |PWM|Add0~4       ; |PWM|Add0~4       ; out0             ;
+; |PWM|Add0~5       ; |PWM|Add0~5       ; out0             ;
+; |PWM|Add0~6       ; |PWM|Add0~6       ; out0             ;
++-------------------+-------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------+
+; Missing 0-Value Coverage                                 ;
++-------------------+-------------------+------------------+
+; Node Name         ; Output Port Name  ; Output Port Type ;
++-------------------+-------------------+------------------+
+; |PWM|RST          ; |PWM|RST          ; out              ;
+; |PWM|ENABLE       ; |PWM|ENABLE       ; out              ;
+; |PWM|DUTY[0]      ; |PWM|DUTY[0]      ; out              ;
+; |PWM|DUTY[1]      ; |PWM|DUTY[1]      ; out              ;
+; |PWM|DUTY[2]      ; |PWM|DUTY[2]      ; out              ;
+; |PWM|DUTY[3]      ; |PWM|DUTY[3]      ; out              ;
+; |PWM|LessThan0~0  ; |PWM|LessThan0~0  ; out0             ;
+; |PWM|LessThan0~3  ; |PWM|LessThan0~3  ; out0             ;
+; |PWM|LessThan0~7  ; |PWM|LessThan0~7  ; out0             ;
+; |PWM|LessThan0~11 ; |PWM|LessThan0~11 ; out0             ;
+; |PWM|Add0~0       ; |PWM|Add0~0       ; out0             ;
+; |PWM|Add0~1       ; |PWM|Add0~1       ; out0             ;
+; |PWM|Add0~2       ; |PWM|Add0~2       ; out0             ;
+; |PWM|Add0~3       ; |PWM|Add0~3       ; out0             ;
+; |PWM|Add0~4       ; |PWM|Add0~4       ; out0             ;
+; |PWM|Add0~5       ; |PWM|Add0~5       ; out0             ;
+; |PWM|Add0~6       ; |PWM|Add0~6       ; out0             ;
++-------------------+-------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Sun Aug 05 19:13:53 2018
+Info: Command: quartus_sim --simulation_results_format=VWF pwm -c pwm
+Warning (136002): Ignored duplicate of assignment PARTITION_PRESERVE_HIGH_SPEED_TILES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IGNORE_SOURCE_FILE_CHANGES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ALWAYS_USE_QXP_NETLIST for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_NEW_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PIN_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PROMOTE_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_TYPE for node ""
+Warning (136002): Ignored duplicate of assignment ALLOW_MULTIPLE_PERSONAS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ASD_REGION_ID for node ""
+Warning (136002): Ignored duplicate of assignment CROSS_BOUNDARY_OPTIMIZATIONS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_CONSTANTS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_INVERSIONS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_BIDIRS for node ""
+Warning (136002): Ignored duplicate of assignment ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_EXTRACT_HARD_BLOCK_NODES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_SOURCE for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_BACK_ANNOTATION for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_COLOR for node ""
+Warning (136002): Ignored duplicate of assignment HIERARCHY_BLACKBOX_FILE for node "|"
+Warning (136002): Ignored duplicate of assignment PARTITION_PRESERVE_HIGH_SPEED_TILES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IGNORE_SOURCE_FILE_CHANGES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ALWAYS_USE_QXP_NETLIST for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_NEW_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PIN_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PROMOTE_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_TYPE for node ""
+Warning (136002): Ignored duplicate of assignment ALLOW_MULTIPLE_PERSONAS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ASD_REGION_ID for node ""
+Warning (136002): Ignored duplicate of assignment CROSS_BOUNDARY_OPTIMIZATIONS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_CONSTANTS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_INVERSIONS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_BIDIRS for node ""
+Warning (136002): Ignored duplicate of assignment ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_EXTRACT_HARD_BLOCK_NODES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_SOURCE for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_BACK_ANNOTATION for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_COLOR for node ""
+Warning (136002): Ignored duplicate of assignment HIERARCHY_BLACKBOX_FILE for node "|"
+Info (324025): Using vector source file "C:/Users/marco/Desktop/simulacao/calculadora/pwm/Waveform.vwf"
+Warning (136002): Ignored duplicate of assignment PARTITION_PRESERVE_HIGH_SPEED_TILES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IGNORE_SOURCE_FILE_CHANGES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ALWAYS_USE_QXP_NETLIST for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_NEW_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PIN_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PROMOTE_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_TYPE for node ""
+Warning (136002): Ignored duplicate of assignment ALLOW_MULTIPLE_PERSONAS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ASD_REGION_ID for node ""
+Warning (136002): Ignored duplicate of assignment CROSS_BOUNDARY_OPTIMIZATIONS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_CONSTANTS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_INVERSIONS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_BIDIRS for node ""
+Warning (136002): Ignored duplicate of assignment ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_EXTRACT_HARD_BLOCK_NODES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_SOURCE for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_BACK_ANNOTATION for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_COLOR for node ""
+Warning (136002): Ignored duplicate of assignment HIERARCHY_BLACKBOX_FILE for node "|"
+Warning (136002): Ignored duplicate of assignment PARTITION_PRESERVE_HIGH_SPEED_TILES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IGNORE_SOURCE_FILE_CHANGES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ALWAYS_USE_QXP_NETLIST for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_NEW_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PIN_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PROMOTE_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_TYPE for node ""
+Warning (136002): Ignored duplicate of assignment ALLOW_MULTIPLE_PERSONAS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ASD_REGION_ID for node ""
+Warning (136002): Ignored duplicate of assignment CROSS_BOUNDARY_OPTIMIZATIONS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_CONSTANTS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_INVERSIONS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_BIDIRS for node ""
+Warning (136002): Ignored duplicate of assignment ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_EXTRACT_HARD_BLOCK_NODES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_SOURCE for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_BACK_ANNOTATION for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_COLOR for node ""
+Warning (136002): Ignored duplicate of assignment HIERARCHY_BLACKBOX_FILE for node "|"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      77.03 %
+Info (328052): Number of transitions in simulation is 1345
+Info (324045): Vector file pwm.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 92 warnings
+    Info: Peak virtual memory: 4462 megabytes
+    Info: Processing ended: Sun Aug 05 19:13:54 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+

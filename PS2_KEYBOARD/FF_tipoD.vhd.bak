@@ -1,0 +1,21 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY FF_tipoD IS
+	PORT(D, CLK, RESET : IN STD_LOGIC;
+		  Q2 : BUFFER STD_LOGIC);
+END FF_tipoD;
+
+ARCHITECTURE a OF FF_tipoD IS
+BEGIN
+	PROCESS -- Sem lista de sensibilidade
+	BEGIN
+		-- Aguarda borda de subida do clk
+		WAIT UNTIL (CLK'EVENT AND CLK = '1');
+		IF RESET = '1' THEN
+			Q2 <= '0';
+		ELSE
+			Q2 <= D;
+		END IF;
+	END PROCESS;
+END a;

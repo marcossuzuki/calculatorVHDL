@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\marco\Desktop\simulacao\calculadora\bcd\simulation\qsim
+vbcd
+Z1 IVELDK9H?Od^Y[n8GfYETI0
+Z2 Vj97f_nb36SDTL4aGoEJ<]2
+Z3 dC:\Users\marco\Desktop\simulacao\calculadora\bcd\simulation\qsim
+Z4 w1533525128
+Z5 8bcd.vo
+Z6 Fbcd.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|bcd.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 Z[Q3e0KK^UB6<<<eTfIML1
+!s85 0
+Z11 !s108 1533525129.246000
+Z12 !s107 bcd.vo|
+!s101 -O0
+vbcd_vlg_check_tst
+!i10b 1
+!s100 _34G_>XXA8XYkV@hM8m8i2
+I8giGNo]Z<>`Az>DGZB58B0
+VKg8[8k`_Sndi0@[c<@GJh3
+R3
+R4
+Z13 8bcd.vt
+Z14 Fbcd.vt
+L0 57
+R7
+r1
+!s85 0
+31
+Z15 !s108 1533525129.312000
+Z16 !s107 bcd.vt|
+Z17 !s90 -work|work|bcd.vt|
+!s101 -O0
+R9
+vbcd_vlg_sample_tst
+!i10b 1
+!s100 17;m`n;L@_cAkUc2T5BR<1
+I33EZ>4>@Kc7A[JPVCc_Hl0
+VkjWO<L3UACnd<BzX1W01^1
+R3
+R4
+R13
+R14
+L0 29
+R7
+r1
+!s85 0
+31
+R15
+R16
+R17
+!s101 -O0
+R9
+vbcd_vlg_vec_tst
+!i10b 1
+!s100 9S4<1=[H;7D48J]3IDmRl3
+I6HSWHCRGi@mo^g_]@:hJ43
+Z18 V9AM^G6F8OH445>h^m6_b;3
+R3
+R4
+R13
+R14
+L0 437
+R7
+r1
+!s85 0
+31
+R15
+R16
+R17
+!s101 -O0
+R9

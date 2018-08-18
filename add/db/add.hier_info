@@ -1,0 +1,208 @@
+|add
+clk => ~NO_FANOUT~
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => clk_count.OUTPUTSELECT
+rst => output.IN1
+rst => output.IN1
+rst => done.OUTPUTSELECT
+in1[7] => one_bit_adder:add_first.x
+in1[6] => one_bit_adder:addgen:6:adder.x
+in1[5] => one_bit_adder:addgen:5:adder.x
+in1[4] => one_bit_adder:addgen:4:adder.x
+in1[3] => one_bit_adder:addgen:3:adder.x
+in1[2] => one_bit_adder:addgen:2:adder.x
+in1[1] => one_bit_adder:addgen:1:adder.x
+in1[0] => one_bit_adder:add_last.x
+in2[7] => one_bit_adder:add_first.y
+in2[6] => one_bit_adder:addgen:6:adder.y
+in2[5] => one_bit_adder:addgen:5:adder.y
+in2[4] => one_bit_adder:addgen:4:adder.y
+in2[3] => one_bit_adder:addgen:3:adder.y
+in2[2] => one_bit_adder:addgen:2:adder.y
+in2[1] => one_bit_adder:addgen:1:adder.y
+in2[0] => one_bit_adder:add_last.y
+output[7] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[6] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[5] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[4] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[0] <= output.DB_MAX_OUTPUT_PORT_TYPE
+start => clk_count[31].OUTPUTSELECT
+start => clk_count[30].OUTPUTSELECT
+start => clk_count[29].OUTPUTSELECT
+start => clk_count[28].OUTPUTSELECT
+start => clk_count[27].OUTPUTSELECT
+start => clk_count[26].OUTPUTSELECT
+start => clk_count[25].OUTPUTSELECT
+start => clk_count[24].OUTPUTSELECT
+start => clk_count[23].OUTPUTSELECT
+start => clk_count[22].OUTPUTSELECT
+start => clk_count[21].OUTPUTSELECT
+start => clk_count[20].OUTPUTSELECT
+start => clk_count[19].OUTPUTSELECT
+start => clk_count[18].OUTPUTSELECT
+start => clk_count[17].OUTPUTSELECT
+start => clk_count[16].OUTPUTSELECT
+start => clk_count[15].OUTPUTSELECT
+start => clk_count[14].OUTPUTSELECT
+start => clk_count[13].OUTPUTSELECT
+start => clk_count[12].OUTPUTSELECT
+start => clk_count[11].OUTPUTSELECT
+start => clk_count[10].OUTPUTSELECT
+start => clk_count[9].OUTPUTSELECT
+start => clk_count[8].OUTPUTSELECT
+start => clk_count[7].OUTPUTSELECT
+start => clk_count[6].OUTPUTSELECT
+start => clk_count[5].OUTPUTSELECT
+start => clk_count[4].OUTPUTSELECT
+start => clk_count[3].OUTPUTSELECT
+start => clk_count[2].OUTPUTSELECT
+start => clk_count[1].OUTPUTSELECT
+start => clk_count[0].OUTPUTSELECT
+done <= done.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|add|one_bit_adder:add_last
+x => o.IN1
+x => c_out.IN0
+x => c_out.IN0
+y => o.IN0
+y => c_out.IN0
+y => c_out.IN1
+c_in => o.IN1
+c_in => c_out.IN1
+c_in => c_out.IN1
+o <= o.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|add|one_bit_adder:add_first
+x => o.IN1
+x => c_out.IN0
+x => c_out.IN0
+y => o.IN0
+y => c_out.IN0
+y => c_out.IN1
+c_in => o.IN1
+c_in => c_out.IN1
+c_in => c_out.IN1
+o <= o.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|add|one_bit_adder:\addgen:1:adder
+x => o.IN1
+x => c_out.IN0
+x => c_out.IN0
+y => o.IN0
+y => c_out.IN0
+y => c_out.IN1
+c_in => o.IN1
+c_in => c_out.IN1
+c_in => c_out.IN1
+o <= o.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|add|one_bit_adder:\addgen:2:adder
+x => o.IN1
+x => c_out.IN0
+x => c_out.IN0
+y => o.IN0
+y => c_out.IN0
+y => c_out.IN1
+c_in => o.IN1
+c_in => c_out.IN1
+c_in => c_out.IN1
+o <= o.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|add|one_bit_adder:\addgen:3:adder
+x => o.IN1
+x => c_out.IN0
+x => c_out.IN0
+y => o.IN0
+y => c_out.IN0
+y => c_out.IN1
+c_in => o.IN1
+c_in => c_out.IN1
+c_in => c_out.IN1
+o <= o.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|add|one_bit_adder:\addgen:4:adder
+x => o.IN1
+x => c_out.IN0
+x => c_out.IN0
+y => o.IN0
+y => c_out.IN0
+y => c_out.IN1
+c_in => o.IN1
+c_in => c_out.IN1
+c_in => c_out.IN1
+o <= o.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|add|one_bit_adder:\addgen:5:adder
+x => o.IN1
+x => c_out.IN0
+x => c_out.IN0
+y => o.IN0
+y => c_out.IN0
+y => c_out.IN1
+c_in => o.IN1
+c_in => c_out.IN1
+c_in => c_out.IN1
+o <= o.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|add|one_bit_adder:\addgen:6:adder
+x => o.IN1
+x => c_out.IN0
+x => c_out.IN0
+y => o.IN0
+y => c_out.IN0
+y => c_out.IN1
+c_in => o.IN1
+c_in => c_out.IN1
+c_in => c_out.IN1
+o <= o.DB_MAX_OUTPUT_PORT_TYPE
+c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+
+

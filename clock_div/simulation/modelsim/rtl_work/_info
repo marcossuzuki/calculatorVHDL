@@ -1,0 +1,44 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\marco\Desktop\simulacao\calculadora\clock_div\simulation\modelsim
+Eclock_div
+Z1 w1533533565
+Z2 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z3 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z6 dC:\Users\marco\Desktop\simulacao\calculadora\clock_div\simulation\modelsim
+Z7 8C:/Users/marco/Desktop/simulacao/calculadora/clock_div/clock_div.vhd
+Z8 FC:/Users/marco/Desktop/simulacao/calculadora/clock_div/clock_div.vhd
+l0
+L6
+VIkIiW34z6XOo<NdSg6jNO3
+!s100 gMbXlNaehIV6a3d?kd]6Y2
+Z9 OV;C;10.1d;51
+31
+!i10b 1
+Z10 !s108 1533533598.025000
+Z11 !s90 -reportprogress|300|-93|-work|work|C:/Users/marco/Desktop/simulacao/calculadora/clock_div/clock_div.vhd|
+Z12 !s107 C:/Users/marco/Desktop/simulacao/calculadora/clock_div/clock_div.vhd|
+Z13 o-93 -work work -O0
+Z14 tExplicit 1
+Abehavior
+R2
+R3
+R4
+R5
+DEx4 work 9 clock_div 0 22 IkIiW34z6XOo<NdSg6jNO3
+l21
+L14
+VzAMA:S3F]mnVzX=>E8Q>C2
+!s100 kYJnGd7D54SB;7MAHMb=]3
+R9
+31
+!i10b 1
+R10
+R11
+R12
+R13
+R14

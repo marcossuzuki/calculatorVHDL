@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\marco\Desktop\simulacao\calculadora\clock_div\simulation\qsim
+vclock_div
+Z1 !s100 >=bZFSBA_9AdNa>J1Sa4f0
+Z2 IK8BUN7=?oonPmKo^XZnUX0
+Z3 Vz`hC>MAoZ>[0nbdh4Q]bT3
+Z4 dC:\Users\marco\Desktop\simulacao\calculadora\clock_div\simulation\qsim
+Z5 w1533530166
+Z6 8clock_div.vo
+Z7 Fclock_div.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|clock_div.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1533530167.171000
+Z12 !s107 clock_div.vo|
+!s101 -O0
+vclock_div_vlg_check_tst
+!i10b 1
+Z13 !s100 I>XJ;@S^6JNc55F9]l16E1
+Z14 I3aCQg=bH_[XFQiUIF;_MR0
+Z15 V4D0HVD_oFF;6nm<nIO^Eg3
+R4
+R5
+Z16 8clock_div.vt
+Z17 Fclock_div.vt
+L0 59
+R8
+r1
+!s85 0
+31
+Z18 !s108 1533530167.225000
+Z19 !s107 clock_div.vt|
+Z20 !s90 -work|work|clock_div.vt|
+!s101 -O0
+R10
+vclock_div_vlg_sample_tst
+!i10b 1
+Z21 !s100 8G=QMTZXiYZ?@K<]lLLSn2
+Z22 I?10]EDRAz]On^V<fV`<bW2
+Z23 VchMbEdmP[Sj3iPA<Q10eL1
+R4
+R5
+R16
+R17
+L0 29
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R10
+vclock_div_vlg_vec_tst
+!i10b 1
+Z24 !s100 gnN21ObMh2d9ikn:;dfm?0
+Z25 I?c1[_SIi7iKQiNl6UC9]?3
+Z26 V:;0==:]Hk2XUO@k:5[Fl80
+R4
+R5
+R16
+R17
+Z27 L0 154
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R10

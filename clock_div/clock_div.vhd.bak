@@ -1,0 +1,30 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE IEEE.std_logic_arith.all;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+ENTITY clock_div IS
+	PORT ( Clock, E : IN STD_LOGIC;
+			 Q4 		 : BUFFER STD_LOGIC );
+END clock_div;
+
+ARCHITECTURE Behavior OF clock_div IS
+	SIGNAL COUNT : STD_LOGIC_VECTOR(3 DOWNTO 0);
+						--STD_LOGIC_VECTOR(0 TO 24);
+	CONSTANT MAX : STD_LOGIC_VECTOR(3 DOWNTO 0):="1111";
+						--STD_LOGIC_VECTOR(0 TO 24):="1011111010111100001000000";
+	
+	BEGIN
+	PROCESS(Clock, E)
+		BEGIN
+			IF (Clock'EVENT AND Clock = '1' AND E='0') THEN
+				COUNT <= COUNT + 1;
+			END IF ;
+			
+			IF (COUNT = MAX)  THEN
+				COUNT <= (others=>'0');
+				Q4 <= NOT Q4;
+			END IF;
+	END PROCESS;
+	
+END Behavior;

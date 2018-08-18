@@ -1,0 +1,636 @@
+TimeQuest Timing Analyzer report for bcd
+Mon Aug 06 00:37:48 2018
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Propagation Delay
+ 12. Minimum Propagation Delay
+ 13. Fast Model Setup Summary
+ 14. Fast Model Hold Summary
+ 15. Fast Model Recovery Summary
+ 16. Fast Model Removal Summary
+ 17. Fast Model Minimum Pulse Width Summary
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Multicorner Timing Analysis Summary
+ 21. Progagation Delay
+ 22. Minimum Progagation Delay
+ 23. Clock Transfers
+ 24. Report TCCS
+ 25. Report RSKM
+ 26. Unconstrained Paths
+ 27. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name      ; bcd                                                ;
+; Device Family      ; Cyclone II                                         ;
+; Device Name        ; EP2C20F484C7                                       ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Combined                                           ;
+; Rise/Fall Delays   ; Unavailable                                        ;
++--------------------+----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
+----------
+; Clocks ;
+----------
+No clocks to report.
+
+
+---------------------------
+; Slow Model Fmax Summary ;
+---------------------------
+No paths to report.
+
+
+----------------------------
+; Slow Model Setup Summary ;
+----------------------------
+No paths to report.
+
+
+---------------------------
+; Slow Model Hold Summary ;
+---------------------------
+No paths to report.
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
+------------------------------------------
+; Slow Model Minimum Pulse Width Summary ;
+------------------------------------------
+No paths to report.
+
+
++--------------------------------------------------------------+
+; Propagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; binIN[0]   ; bcd_out[0]  ; 9.484  ;        ;        ; 9.484  ;
+; binIN[1]   ; bcd_out[1]  ; 11.318 ; 11.318 ; 11.318 ; 11.318 ;
+; binIN[1]   ; bcd_out[2]  ; 11.274 ; 11.274 ; 11.274 ; 11.274 ;
+; binIN[1]   ; bcd_out[3]  ; 11.688 ; 11.688 ; 11.688 ; 11.688 ;
+; binIN[1]   ; bcd_out[4]  ; 11.720 ; 11.720 ; 11.720 ; 11.720 ;
+; binIN[2]   ; bcd_out[1]  ; 12.308 ; 12.308 ; 12.308 ; 12.308 ;
+; binIN[2]   ; bcd_out[2]  ; 12.273 ; 12.273 ; 12.273 ; 12.273 ;
+; binIN[2]   ; bcd_out[3]  ; 12.687 ; 12.687 ; 12.687 ; 12.687 ;
+; binIN[2]   ; bcd_out[4]  ; 12.712 ; 12.712 ; 12.712 ; 12.712 ;
+; binIN[2]   ; bcd_out[5]  ; 15.839 ; 15.839 ; 15.839 ; 15.839 ;
+; binIN[2]   ; bcd_out[6]  ; 13.729 ; 13.729 ; 13.729 ; 13.729 ;
+; binIN[2]   ; bcd_out[7]  ; 13.941 ; 13.941 ; 13.941 ; 13.941 ;
+; binIN[2]   ; bcd_out[8]  ; 13.093 ; 13.093 ; 13.093 ; 13.093 ;
+; binIN[3]   ; bcd_out[1]  ; 14.155 ; 14.155 ; 14.155 ; 14.155 ;
+; binIN[3]   ; bcd_out[2]  ; 14.120 ; 14.120 ; 14.120 ; 14.120 ;
+; binIN[3]   ; bcd_out[3]  ; 14.534 ; 14.534 ; 14.534 ; 14.534 ;
+; binIN[3]   ; bcd_out[4]  ; 14.559 ; 14.559 ; 14.559 ; 14.559 ;
+; binIN[3]   ; bcd_out[5]  ; 17.857 ; 17.857 ; 17.857 ; 17.857 ;
+; binIN[3]   ; bcd_out[6]  ; 15.747 ; 15.747 ; 15.747 ; 15.747 ;
+; binIN[3]   ; bcd_out[7]  ; 15.959 ; 15.959 ; 15.959 ; 15.959 ;
+; binIN[3]   ; bcd_out[8]  ; 15.111 ; 15.111 ; 15.111 ; 15.111 ;
+; binIN[3]   ; bcd_out[9]  ; 11.327 ;        ;        ; 11.327 ;
+; binIN[4]   ; bcd_out[1]  ; 15.389 ; 15.389 ; 15.389 ; 15.389 ;
+; binIN[4]   ; bcd_out[2]  ; 15.354 ; 15.354 ; 15.354 ; 15.354 ;
+; binIN[4]   ; bcd_out[3]  ; 15.768 ; 15.768 ; 15.768 ; 15.768 ;
+; binIN[4]   ; bcd_out[4]  ; 15.793 ; 15.793 ; 15.793 ; 15.793 ;
+; binIN[4]   ; bcd_out[5]  ; 19.094 ; 19.094 ; 19.094 ; 19.094 ;
+; binIN[4]   ; bcd_out[6]  ; 16.984 ; 16.984 ; 16.984 ; 16.984 ;
+; binIN[4]   ; bcd_out[7]  ; 17.196 ; 17.196 ; 17.196 ; 17.196 ;
+; binIN[4]   ; bcd_out[8]  ; 16.348 ; 16.348 ; 16.348 ; 16.348 ;
+; binIN[4]   ; bcd_out[9]  ; 10.969 ;        ;        ; 10.969 ;
+; binIN[5]   ; bcd_out[1]  ; 15.892 ; 15.892 ; 15.892 ; 15.892 ;
+; binIN[5]   ; bcd_out[2]  ; 15.857 ; 15.857 ; 15.857 ; 15.857 ;
+; binIN[5]   ; bcd_out[3]  ; 16.271 ; 16.271 ; 16.271 ; 16.271 ;
+; binIN[5]   ; bcd_out[4]  ; 16.296 ; 16.296 ; 16.296 ; 16.296 ;
+; binIN[5]   ; bcd_out[5]  ; 19.597 ; 19.597 ; 19.597 ; 19.597 ;
+; binIN[5]   ; bcd_out[6]  ; 17.487 ; 17.487 ; 17.487 ; 17.487 ;
+; binIN[5]   ; bcd_out[7]  ; 17.699 ; 17.699 ; 17.699 ; 17.699 ;
+; binIN[5]   ; bcd_out[8]  ; 16.851 ; 16.851 ; 16.851 ; 16.851 ;
+; binIN[5]   ; bcd_out[9]  ; 11.150 ;        ;        ; 11.150 ;
+; binIN[6]   ; bcd_out[1]  ; 15.166 ; 15.166 ; 15.166 ; 15.166 ;
+; binIN[6]   ; bcd_out[2]  ; 15.131 ; 15.131 ; 15.131 ; 15.131 ;
+; binIN[6]   ; bcd_out[3]  ; 15.545 ; 15.545 ; 15.545 ; 15.545 ;
+; binIN[6]   ; bcd_out[4]  ; 15.570 ; 15.570 ; 15.570 ; 15.570 ;
+; binIN[6]   ; bcd_out[5]  ; 18.871 ; 18.871 ; 18.871 ; 18.871 ;
+; binIN[6]   ; bcd_out[6]  ; 16.761 ; 16.761 ; 16.761 ; 16.761 ;
+; binIN[6]   ; bcd_out[7]  ; 16.973 ; 16.973 ; 16.973 ; 16.973 ;
+; binIN[6]   ; bcd_out[8]  ; 16.125 ; 16.125 ; 16.125 ; 16.125 ;
+; binIN[6]   ; bcd_out[9]  ; 10.718 ;        ;        ; 10.718 ;
+; binIN[7]   ; bcd_out[1]  ; 16.016 ; 16.016 ; 16.016 ; 16.016 ;
+; binIN[7]   ; bcd_out[2]  ; 15.981 ; 15.981 ; 15.981 ; 15.981 ;
+; binIN[7]   ; bcd_out[3]  ; 16.395 ; 16.395 ; 16.395 ; 16.395 ;
+; binIN[7]   ; bcd_out[4]  ; 16.420 ; 16.420 ; 16.420 ; 16.420 ;
+; binIN[7]   ; bcd_out[5]  ; 19.721 ; 19.721 ; 19.721 ; 19.721 ;
+; binIN[7]   ; bcd_out[6]  ; 17.611 ; 17.611 ; 17.611 ; 17.611 ;
+; binIN[7]   ; bcd_out[7]  ; 17.823 ; 17.823 ; 17.823 ; 17.823 ;
+; binIN[7]   ; bcd_out[8]  ; 16.975 ; 16.975 ; 16.975 ; 16.975 ;
+; binIN[7]   ; bcd_out[9]  ; 11.765 ;        ;        ; 11.765 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++--------------------------------------------------------------+
+; Minimum Propagation Delay                                    ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; binIN[0]   ; bcd_out[0]  ; 9.484  ;        ;        ; 9.484  ;
+; binIN[1]   ; bcd_out[1]  ; 11.318 ; 11.318 ; 11.318 ; 11.318 ;
+; binIN[1]   ; bcd_out[2]  ; 11.274 ; 11.274 ; 11.274 ; 11.274 ;
+; binIN[1]   ; bcd_out[3]  ; 11.688 ; 11.688 ; 11.688 ; 11.688 ;
+; binIN[1]   ; bcd_out[4]  ; 11.720 ; 11.720 ; 11.720 ; 11.720 ;
+; binIN[2]   ; bcd_out[1]  ; 11.924 ; 11.924 ; 11.924 ; 11.924 ;
+; binIN[2]   ; bcd_out[2]  ; 11.887 ; 11.887 ; 11.887 ; 11.887 ;
+; binIN[2]   ; bcd_out[3]  ; 12.298 ; 12.298 ; 12.298 ; 12.298 ;
+; binIN[2]   ; bcd_out[4]  ; 12.326 ; 12.326 ; 12.326 ; 12.326 ;
+; binIN[2]   ; bcd_out[5]  ; 14.953 ; 14.953 ; 14.953 ; 14.953 ;
+; binIN[2]   ; bcd_out[6]  ; 12.842 ; 12.842 ; 12.842 ; 12.842 ;
+; binIN[2]   ; bcd_out[7]  ; 13.941 ; 13.941 ; 13.941 ; 13.941 ;
+; binIN[2]   ; bcd_out[8]  ; 13.093 ; 13.093 ; 13.093 ; 13.093 ;
+; binIN[3]   ; bcd_out[1]  ; 13.412 ; 13.412 ; 13.412 ; 13.412 ;
+; binIN[3]   ; bcd_out[2]  ; 13.375 ; 13.375 ; 13.375 ; 13.375 ;
+; binIN[3]   ; bcd_out[3]  ; 13.786 ; 13.786 ; 13.786 ; 13.786 ;
+; binIN[3]   ; bcd_out[4]  ; 13.814 ; 13.814 ; 13.814 ; 13.814 ;
+; binIN[3]   ; bcd_out[5]  ; 15.549 ; 15.549 ; 15.549 ; 15.549 ;
+; binIN[3]   ; bcd_out[6]  ; 13.438 ; 13.438 ; 13.438 ; 13.438 ;
+; binIN[3]   ; bcd_out[7]  ; 14.537 ; 14.537 ; 14.537 ; 14.537 ;
+; binIN[3]   ; bcd_out[8]  ; 13.689 ; 13.689 ; 13.689 ; 13.689 ;
+; binIN[3]   ; bcd_out[9]  ; 11.327 ;        ;        ; 11.327 ;
+; binIN[4]   ; bcd_out[1]  ; 14.332 ; 14.332 ; 14.332 ; 14.332 ;
+; binIN[4]   ; bcd_out[2]  ; 14.295 ; 14.295 ; 14.295 ; 14.295 ;
+; binIN[4]   ; bcd_out[3]  ; 14.706 ; 14.706 ; 14.706 ; 14.706 ;
+; binIN[4]   ; bcd_out[4]  ; 14.734 ; 14.734 ; 14.734 ; 14.734 ;
+; binIN[4]   ; bcd_out[5]  ; 14.172 ; 14.172 ; 14.172 ; 14.172 ;
+; binIN[4]   ; bcd_out[6]  ; 12.062 ; 12.062 ; 12.062 ; 12.062 ;
+; binIN[4]   ; bcd_out[7]  ; 12.315 ; 12.315 ; 12.315 ; 12.315 ;
+; binIN[4]   ; bcd_out[8]  ; 11.462 ; 11.462 ; 11.462 ; 11.462 ;
+; binIN[4]   ; bcd_out[9]  ; 10.969 ;        ;        ; 10.969 ;
+; binIN[5]   ; bcd_out[1]  ; 14.834 ; 14.834 ; 14.834 ; 14.834 ;
+; binIN[5]   ; bcd_out[2]  ; 14.797 ; 14.797 ; 14.797 ; 14.797 ;
+; binIN[5]   ; bcd_out[3]  ; 15.208 ; 15.208 ; 15.208 ; 15.208 ;
+; binIN[5]   ; bcd_out[4]  ; 15.236 ; 15.236 ; 15.236 ; 15.236 ;
+; binIN[5]   ; bcd_out[5]  ; 14.483 ; 14.483 ; 14.483 ; 14.483 ;
+; binIN[5]   ; bcd_out[6]  ; 12.373 ; 12.373 ; 12.373 ; 12.373 ;
+; binIN[5]   ; bcd_out[7]  ; 12.820 ; 12.585 ; 12.585 ; 12.820 ;
+; binIN[5]   ; bcd_out[8]  ; 11.967 ; 11.737 ; 11.737 ; 11.967 ;
+; binIN[5]   ; bcd_out[9]  ; 11.150 ;        ;        ; 11.150 ;
+; binIN[6]   ; bcd_out[1]  ; 14.113 ; 14.113 ; 14.113 ; 14.113 ;
+; binIN[6]   ; bcd_out[2]  ; 14.076 ; 14.076 ; 14.076 ; 14.076 ;
+; binIN[6]   ; bcd_out[3]  ; 14.487 ; 14.487 ; 14.487 ; 14.487 ;
+; binIN[6]   ; bcd_out[4]  ; 14.515 ; 14.515 ; 14.515 ; 14.515 ;
+; binIN[6]   ; bcd_out[5]  ; 13.803 ; 13.803 ; 13.803 ; 13.803 ;
+; binIN[6]   ; bcd_out[6]  ; 11.693 ; 11.693 ; 11.693 ; 11.693 ;
+; binIN[6]   ; bcd_out[7]  ; 12.096 ; 11.905 ; 11.905 ; 12.096 ;
+; binIN[6]   ; bcd_out[8]  ; 11.243 ; 11.057 ; 11.057 ; 11.243 ;
+; binIN[6]   ; bcd_out[9]  ; 10.718 ;        ;        ; 10.718 ;
+; binIN[7]   ; bcd_out[1]  ; 14.960 ; 14.960 ; 14.960 ; 14.960 ;
+; binIN[7]   ; bcd_out[2]  ; 14.923 ; 14.923 ; 14.923 ; 14.923 ;
+; binIN[7]   ; bcd_out[3]  ; 15.334 ; 15.334 ; 15.334 ; 15.334 ;
+; binIN[7]   ; bcd_out[4]  ; 15.362 ; 15.362 ; 15.362 ; 15.362 ;
+; binIN[7]   ; bcd_out[5]  ; 14.805 ; 14.805 ; 14.805 ; 14.805 ;
+; binIN[7]   ; bcd_out[6]  ; 12.107 ; 12.107 ; 12.107 ; 12.107 ;
+; binIN[7]   ; bcd_out[7]  ; 12.948 ; 12.948 ; 12.948 ; 12.948 ;
+; binIN[7]   ; bcd_out[8]  ; 12.095 ; 12.095 ; 12.095 ; 12.095 ;
+; binIN[7]   ; bcd_out[9]  ; 11.765 ;        ;        ; 11.765 ;
++------------+-------------+--------+--------+--------+--------+
+
+
+----------------------------
+; Fast Model Setup Summary ;
+----------------------------
+No paths to report.
+
+
+---------------------------
+; Fast Model Hold Summary ;
+---------------------------
+No paths to report.
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
+------------------------------------------
+; Fast Model Minimum Pulse Width Summary ;
+------------------------------------------
+No paths to report.
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; binIN[0]   ; bcd_out[0]  ; 4.961 ;       ;       ; 4.961 ;
+; binIN[1]   ; bcd_out[1]  ; 5.673 ; 5.673 ; 5.673 ; 5.673 ;
+; binIN[1]   ; bcd_out[2]  ; 5.643 ; 5.643 ; 5.643 ; 5.643 ;
+; binIN[1]   ; bcd_out[3]  ; 5.905 ; 5.905 ; 5.905 ; 5.905 ;
+; binIN[1]   ; bcd_out[4]  ; 5.937 ; 5.937 ; 5.937 ; 5.937 ;
+; binIN[2]   ; bcd_out[1]  ; 6.021 ; 6.021 ; 6.021 ; 6.021 ;
+; binIN[2]   ; bcd_out[2]  ; 5.996 ; 5.996 ; 5.996 ; 5.996 ;
+; binIN[2]   ; bcd_out[3]  ; 6.263 ; 6.263 ; 6.263 ; 6.263 ;
+; binIN[2]   ; bcd_out[4]  ; 6.285 ; 6.285 ; 6.285 ; 6.285 ;
+; binIN[2]   ; bcd_out[5]  ; 7.499 ; 7.499 ; 7.499 ; 7.499 ;
+; binIN[2]   ; bcd_out[6]  ; 6.619 ; 6.619 ; 6.619 ; 6.619 ;
+; binIN[2]   ; bcd_out[7]  ; 6.764 ; 6.764 ; 6.764 ; 6.764 ;
+; binIN[2]   ; bcd_out[8]  ; 6.391 ; 6.391 ; 6.391 ; 6.391 ;
+; binIN[3]   ; bcd_out[1]  ; 6.739 ; 6.739 ; 6.739 ; 6.739 ;
+; binIN[3]   ; bcd_out[2]  ; 6.718 ; 6.718 ; 6.718 ; 6.718 ;
+; binIN[3]   ; bcd_out[3]  ; 6.985 ; 6.985 ; 6.985 ; 6.985 ;
+; binIN[3]   ; bcd_out[4]  ; 7.003 ; 7.003 ; 7.003 ; 7.003 ;
+; binIN[3]   ; bcd_out[5]  ; 8.283 ; 8.283 ; 8.283 ; 8.283 ;
+; binIN[3]   ; bcd_out[6]  ; 7.403 ; 7.403 ; 7.403 ; 7.403 ;
+; binIN[3]   ; bcd_out[7]  ; 7.548 ; 7.548 ; 7.548 ; 7.548 ;
+; binIN[3]   ; bcd_out[8]  ; 7.175 ; 7.175 ; 7.175 ; 7.175 ;
+; binIN[3]   ; bcd_out[9]  ; 5.779 ;       ;       ; 5.779 ;
+; binIN[4]   ; bcd_out[1]  ; 7.094 ; 7.094 ; 7.094 ; 7.094 ;
+; binIN[4]   ; bcd_out[2]  ; 7.073 ; 7.073 ; 7.073 ; 7.073 ;
+; binIN[4]   ; bcd_out[3]  ; 7.340 ; 7.340 ; 7.340 ; 7.340 ;
+; binIN[4]   ; bcd_out[4]  ; 7.358 ; 7.358 ; 7.358 ; 7.358 ;
+; binIN[4]   ; bcd_out[5]  ; 8.640 ; 8.640 ; 8.640 ; 8.640 ;
+; binIN[4]   ; bcd_out[6]  ; 7.760 ; 7.760 ; 7.760 ; 7.760 ;
+; binIN[4]   ; bcd_out[7]  ; 7.905 ; 7.905 ; 7.905 ; 7.905 ;
+; binIN[4]   ; bcd_out[8]  ; 7.532 ; 7.532 ; 7.532 ; 7.532 ;
+; binIN[4]   ; bcd_out[9]  ; 5.544 ;       ;       ; 5.544 ;
+; binIN[5]   ; bcd_out[1]  ; 7.391 ; 7.391 ; 7.391 ; 7.391 ;
+; binIN[5]   ; bcd_out[2]  ; 7.370 ; 7.370 ; 7.370 ; 7.370 ;
+; binIN[5]   ; bcd_out[3]  ; 7.637 ; 7.637 ; 7.637 ; 7.637 ;
+; binIN[5]   ; bcd_out[4]  ; 7.655 ; 7.655 ; 7.655 ; 7.655 ;
+; binIN[5]   ; bcd_out[5]  ; 8.937 ; 8.937 ; 8.937 ; 8.937 ;
+; binIN[5]   ; bcd_out[6]  ; 8.057 ; 8.057 ; 8.057 ; 8.057 ;
+; binIN[5]   ; bcd_out[7]  ; 8.202 ; 8.202 ; 8.202 ; 8.202 ;
+; binIN[5]   ; bcd_out[8]  ; 7.829 ; 7.829 ; 7.829 ; 7.829 ;
+; binIN[5]   ; bcd_out[9]  ; 5.723 ;       ;       ; 5.723 ;
+; binIN[6]   ; bcd_out[1]  ; 6.995 ; 6.995 ; 6.995 ; 6.995 ;
+; binIN[6]   ; bcd_out[2]  ; 6.974 ; 6.974 ; 6.974 ; 6.974 ;
+; binIN[6]   ; bcd_out[3]  ; 7.241 ; 7.241 ; 7.241 ; 7.241 ;
+; binIN[6]   ; bcd_out[4]  ; 7.259 ; 7.259 ; 7.259 ; 7.259 ;
+; binIN[6]   ; bcd_out[5]  ; 8.541 ; 8.541 ; 8.541 ; 8.541 ;
+; binIN[6]   ; bcd_out[6]  ; 7.661 ; 7.661 ; 7.661 ; 7.661 ;
+; binIN[6]   ; bcd_out[7]  ; 7.806 ; 7.806 ; 7.806 ; 7.806 ;
+; binIN[6]   ; bcd_out[8]  ; 7.433 ; 7.433 ; 7.433 ; 7.433 ;
+; binIN[6]   ; bcd_out[9]  ; 5.455 ;       ;       ; 5.455 ;
+; binIN[7]   ; bcd_out[1]  ; 7.432 ; 7.432 ; 7.432 ; 7.432 ;
+; binIN[7]   ; bcd_out[2]  ; 7.411 ; 7.411 ; 7.411 ; 7.411 ;
+; binIN[7]   ; bcd_out[3]  ; 7.678 ; 7.678 ; 7.678 ; 7.678 ;
+; binIN[7]   ; bcd_out[4]  ; 7.696 ; 7.696 ; 7.696 ; 7.696 ;
+; binIN[7]   ; bcd_out[5]  ; 8.978 ; 8.978 ; 8.978 ; 8.978 ;
+; binIN[7]   ; bcd_out[6]  ; 8.098 ; 8.098 ; 8.098 ; 8.098 ;
+; binIN[7]   ; bcd_out[7]  ; 8.243 ; 8.243 ; 8.243 ; 8.243 ;
+; binIN[7]   ; bcd_out[8]  ; 7.870 ; 7.870 ; 7.870 ; 7.870 ;
+; binIN[7]   ; bcd_out[9]  ; 5.937 ;       ;       ; 5.937 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; binIN[0]   ; bcd_out[0]  ; 4.961 ;       ;       ; 4.961 ;
+; binIN[1]   ; bcd_out[1]  ; 5.673 ; 5.673 ; 5.673 ; 5.673 ;
+; binIN[1]   ; bcd_out[2]  ; 5.643 ; 5.643 ; 5.643 ; 5.643 ;
+; binIN[1]   ; bcd_out[3]  ; 5.905 ; 5.905 ; 5.905 ; 5.905 ;
+; binIN[1]   ; bcd_out[4]  ; 5.937 ; 5.937 ; 5.937 ; 5.937 ;
+; binIN[2]   ; bcd_out[1]  ; 5.890 ; 5.890 ; 5.890 ; 5.890 ;
+; binIN[2]   ; bcd_out[2]  ; 5.866 ; 5.866 ; 5.866 ; 5.866 ;
+; binIN[2]   ; bcd_out[3]  ; 6.126 ; 6.126 ; 6.126 ; 6.126 ;
+; binIN[2]   ; bcd_out[4]  ; 6.154 ; 6.154 ; 6.154 ; 6.154 ;
+; binIN[2]   ; bcd_out[5]  ; 7.177 ; 7.177 ; 7.177 ; 7.177 ;
+; binIN[2]   ; bcd_out[6]  ; 6.298 ; 6.298 ; 6.298 ; 6.298 ;
+; binIN[2]   ; bcd_out[7]  ; 6.764 ; 6.764 ; 6.764 ; 6.764 ;
+; binIN[2]   ; bcd_out[8]  ; 6.391 ; 6.391 ; 6.391 ; 6.391 ;
+; binIN[3]   ; bcd_out[1]  ; 6.495 ; 6.495 ; 6.495 ; 6.495 ;
+; binIN[3]   ; bcd_out[2]  ; 6.471 ; 6.471 ; 6.471 ; 6.471 ;
+; binIN[3]   ; bcd_out[3]  ; 6.731 ; 6.731 ; 6.731 ; 6.731 ;
+; binIN[3]   ; bcd_out[4]  ; 6.759 ; 6.759 ; 6.759 ; 6.759 ;
+; binIN[3]   ; bcd_out[5]  ; 7.470 ; 7.470 ; 7.470 ; 7.470 ;
+; binIN[3]   ; bcd_out[6]  ; 6.591 ; 6.591 ; 6.591 ; 6.591 ;
+; binIN[3]   ; bcd_out[7]  ; 7.057 ; 7.057 ; 7.057 ; 7.057 ;
+; binIN[3]   ; bcd_out[8]  ; 6.684 ; 6.684 ; 6.684 ; 6.684 ;
+; binIN[3]   ; bcd_out[9]  ; 5.779 ;       ;       ; 5.779 ;
+; binIN[4]   ; bcd_out[1]  ; 6.741 ; 6.741 ; 6.741 ; 6.741 ;
+; binIN[4]   ; bcd_out[2]  ; 6.717 ; 6.717 ; 6.717 ; 6.717 ;
+; binIN[4]   ; bcd_out[3]  ; 6.977 ; 6.977 ; 6.977 ; 6.977 ;
+; binIN[4]   ; bcd_out[4]  ; 7.005 ; 7.005 ; 7.005 ; 7.005 ;
+; binIN[4]   ; bcd_out[5]  ; 6.810 ; 6.810 ; 6.810 ; 6.810 ;
+; binIN[4]   ; bcd_out[6]  ; 5.930 ; 5.930 ; 5.930 ; 5.930 ;
+; binIN[4]   ; bcd_out[7]  ; 6.079 ; 6.079 ; 6.079 ; 6.079 ;
+; binIN[4]   ; bcd_out[8]  ; 5.699 ; 5.699 ; 5.699 ; 5.699 ;
+; binIN[4]   ; bcd_out[9]  ; 5.544 ;       ;       ; 5.544 ;
+; binIN[5]   ; bcd_out[1]  ; 7.037 ; 7.037 ; 7.037 ; 7.037 ;
+; binIN[5]   ; bcd_out[2]  ; 7.013 ; 7.013 ; 7.013 ; 7.013 ;
+; binIN[5]   ; bcd_out[3]  ; 7.273 ; 7.273 ; 7.273 ; 7.273 ;
+; binIN[5]   ; bcd_out[4]  ; 7.301 ; 7.301 ; 7.301 ; 7.301 ;
+; binIN[5]   ; bcd_out[5]  ; 7.048 ; 7.048 ; 7.048 ; 7.048 ;
+; binIN[5]   ; bcd_out[6]  ; 6.168 ; 6.168 ; 6.168 ; 6.168 ;
+; binIN[5]   ; bcd_out[7]  ; 6.378 ; 6.312 ; 6.312 ; 6.378 ;
+; binIN[5]   ; bcd_out[8]  ; 5.998 ; 5.940 ; 5.940 ; 5.998 ;
+; binIN[5]   ; bcd_out[9]  ; 5.723 ;       ;       ; 5.723 ;
+; binIN[6]   ; bcd_out[1]  ; 6.643 ; 6.643 ; 6.643 ; 6.643 ;
+; binIN[6]   ; bcd_out[2]  ; 6.619 ; 6.619 ; 6.619 ; 6.619 ;
+; binIN[6]   ; bcd_out[3]  ; 6.879 ; 6.879 ; 6.879 ; 6.879 ;
+; binIN[6]   ; bcd_out[4]  ; 6.907 ; 6.907 ; 6.907 ; 6.907 ;
+; binIN[6]   ; bcd_out[5]  ; 6.650 ; 6.650 ; 6.650 ; 6.650 ;
+; binIN[6]   ; bcd_out[6]  ; 5.770 ; 5.770 ; 5.770 ; 5.770 ;
+; binIN[6]   ; bcd_out[7]  ; 5.988 ; 5.914 ; 5.914 ; 5.988 ;
+; binIN[6]   ; bcd_out[8]  ; 5.608 ; 5.542 ; 5.542 ; 5.608 ;
+; binIN[6]   ; bcd_out[9]  ; 5.455 ;       ;       ; 5.455 ;
+; binIN[7]   ; bcd_out[1]  ; 7.076 ; 7.076 ; 7.076 ; 7.076 ;
+; binIN[7]   ; bcd_out[2]  ; 7.052 ; 7.052 ; 7.052 ; 7.052 ;
+; binIN[7]   ; bcd_out[3]  ; 7.312 ; 7.312 ; 7.312 ; 7.312 ;
+; binIN[7]   ; bcd_out[4]  ; 7.340 ; 7.340 ; 7.340 ; 7.340 ;
+; binIN[7]   ; bcd_out[5]  ; 7.149 ; 7.149 ; 7.149 ; 7.149 ;
+; binIN[7]   ; bcd_out[6]  ; 6.050 ; 6.050 ; 6.050 ; 6.050 ;
+; binIN[7]   ; bcd_out[7]  ; 6.418 ; 6.418 ; 6.418 ; 6.418 ;
+; binIN[7]   ; bcd_out[8]  ; 6.038 ; 6.038 ; 6.038 ; 6.038 ;
+; binIN[7]   ; bcd_out[9]  ; 5.937 ;       ;       ; 5.937 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                        ;
++------------------+-------+------+----------+---------+---------------------+
+; Clock            ; Setup ; Hold ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-------+------+----------+---------+---------------------+
+; Worst-case Slack ; N/A   ; N/A  ; N/A      ; N/A     ; N/A                 ;
+; Design-wide TNS  ; 0.0   ; 0.0  ; 0.0      ; 0.0     ; 0.0                 ;
++------------------+-------+------+----------+---------+---------------------+
+
+
++--------------------------------------------------------------+
+; Progagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; binIN[0]   ; bcd_out[0]  ; 9.484  ;        ;        ; 9.484  ;
+; binIN[1]   ; bcd_out[1]  ; 11.318 ; 11.318 ; 11.318 ; 11.318 ;
+; binIN[1]   ; bcd_out[2]  ; 11.274 ; 11.274 ; 11.274 ; 11.274 ;
+; binIN[1]   ; bcd_out[3]  ; 11.688 ; 11.688 ; 11.688 ; 11.688 ;
+; binIN[1]   ; bcd_out[4]  ; 11.720 ; 11.720 ; 11.720 ; 11.720 ;
+; binIN[2]   ; bcd_out[1]  ; 12.308 ; 12.308 ; 12.308 ; 12.308 ;
+; binIN[2]   ; bcd_out[2]  ; 12.273 ; 12.273 ; 12.273 ; 12.273 ;
+; binIN[2]   ; bcd_out[3]  ; 12.687 ; 12.687 ; 12.687 ; 12.687 ;
+; binIN[2]   ; bcd_out[4]  ; 12.712 ; 12.712 ; 12.712 ; 12.712 ;
+; binIN[2]   ; bcd_out[5]  ; 15.839 ; 15.839 ; 15.839 ; 15.839 ;
+; binIN[2]   ; bcd_out[6]  ; 13.729 ; 13.729 ; 13.729 ; 13.729 ;
+; binIN[2]   ; bcd_out[7]  ; 13.941 ; 13.941 ; 13.941 ; 13.941 ;
+; binIN[2]   ; bcd_out[8]  ; 13.093 ; 13.093 ; 13.093 ; 13.093 ;
+; binIN[3]   ; bcd_out[1]  ; 14.155 ; 14.155 ; 14.155 ; 14.155 ;
+; binIN[3]   ; bcd_out[2]  ; 14.120 ; 14.120 ; 14.120 ; 14.120 ;
+; binIN[3]   ; bcd_out[3]  ; 14.534 ; 14.534 ; 14.534 ; 14.534 ;
+; binIN[3]   ; bcd_out[4]  ; 14.559 ; 14.559 ; 14.559 ; 14.559 ;
+; binIN[3]   ; bcd_out[5]  ; 17.857 ; 17.857 ; 17.857 ; 17.857 ;
+; binIN[3]   ; bcd_out[6]  ; 15.747 ; 15.747 ; 15.747 ; 15.747 ;
+; binIN[3]   ; bcd_out[7]  ; 15.959 ; 15.959 ; 15.959 ; 15.959 ;
+; binIN[3]   ; bcd_out[8]  ; 15.111 ; 15.111 ; 15.111 ; 15.111 ;
+; binIN[3]   ; bcd_out[9]  ; 11.327 ;        ;        ; 11.327 ;
+; binIN[4]   ; bcd_out[1]  ; 15.389 ; 15.389 ; 15.389 ; 15.389 ;
+; binIN[4]   ; bcd_out[2]  ; 15.354 ; 15.354 ; 15.354 ; 15.354 ;
+; binIN[4]   ; bcd_out[3]  ; 15.768 ; 15.768 ; 15.768 ; 15.768 ;
+; binIN[4]   ; bcd_out[4]  ; 15.793 ; 15.793 ; 15.793 ; 15.793 ;
+; binIN[4]   ; bcd_out[5]  ; 19.094 ; 19.094 ; 19.094 ; 19.094 ;
+; binIN[4]   ; bcd_out[6]  ; 16.984 ; 16.984 ; 16.984 ; 16.984 ;
+; binIN[4]   ; bcd_out[7]  ; 17.196 ; 17.196 ; 17.196 ; 17.196 ;
+; binIN[4]   ; bcd_out[8]  ; 16.348 ; 16.348 ; 16.348 ; 16.348 ;
+; binIN[4]   ; bcd_out[9]  ; 10.969 ;        ;        ; 10.969 ;
+; binIN[5]   ; bcd_out[1]  ; 15.892 ; 15.892 ; 15.892 ; 15.892 ;
+; binIN[5]   ; bcd_out[2]  ; 15.857 ; 15.857 ; 15.857 ; 15.857 ;
+; binIN[5]   ; bcd_out[3]  ; 16.271 ; 16.271 ; 16.271 ; 16.271 ;
+; binIN[5]   ; bcd_out[4]  ; 16.296 ; 16.296 ; 16.296 ; 16.296 ;
+; binIN[5]   ; bcd_out[5]  ; 19.597 ; 19.597 ; 19.597 ; 19.597 ;
+; binIN[5]   ; bcd_out[6]  ; 17.487 ; 17.487 ; 17.487 ; 17.487 ;
+; binIN[5]   ; bcd_out[7]  ; 17.699 ; 17.699 ; 17.699 ; 17.699 ;
+; binIN[5]   ; bcd_out[8]  ; 16.851 ; 16.851 ; 16.851 ; 16.851 ;
+; binIN[5]   ; bcd_out[9]  ; 11.150 ;        ;        ; 11.150 ;
+; binIN[6]   ; bcd_out[1]  ; 15.166 ; 15.166 ; 15.166 ; 15.166 ;
+; binIN[6]   ; bcd_out[2]  ; 15.131 ; 15.131 ; 15.131 ; 15.131 ;
+; binIN[6]   ; bcd_out[3]  ; 15.545 ; 15.545 ; 15.545 ; 15.545 ;
+; binIN[6]   ; bcd_out[4]  ; 15.570 ; 15.570 ; 15.570 ; 15.570 ;
+; binIN[6]   ; bcd_out[5]  ; 18.871 ; 18.871 ; 18.871 ; 18.871 ;
+; binIN[6]   ; bcd_out[6]  ; 16.761 ; 16.761 ; 16.761 ; 16.761 ;
+; binIN[6]   ; bcd_out[7]  ; 16.973 ; 16.973 ; 16.973 ; 16.973 ;
+; binIN[6]   ; bcd_out[8]  ; 16.125 ; 16.125 ; 16.125 ; 16.125 ;
+; binIN[6]   ; bcd_out[9]  ; 10.718 ;        ;        ; 10.718 ;
+; binIN[7]   ; bcd_out[1]  ; 16.016 ; 16.016 ; 16.016 ; 16.016 ;
+; binIN[7]   ; bcd_out[2]  ; 15.981 ; 15.981 ; 15.981 ; 15.981 ;
+; binIN[7]   ; bcd_out[3]  ; 16.395 ; 16.395 ; 16.395 ; 16.395 ;
+; binIN[7]   ; bcd_out[4]  ; 16.420 ; 16.420 ; 16.420 ; 16.420 ;
+; binIN[7]   ; bcd_out[5]  ; 19.721 ; 19.721 ; 19.721 ; 19.721 ;
+; binIN[7]   ; bcd_out[6]  ; 17.611 ; 17.611 ; 17.611 ; 17.611 ;
+; binIN[7]   ; bcd_out[7]  ; 17.823 ; 17.823 ; 17.823 ; 17.823 ;
+; binIN[7]   ; bcd_out[8]  ; 16.975 ; 16.975 ; 16.975 ; 16.975 ;
+; binIN[7]   ; bcd_out[9]  ; 11.765 ;        ;        ; 11.765 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++----------------------------------------------------------+
+; Minimum Progagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; binIN[0]   ; bcd_out[0]  ; 4.961 ;       ;       ; 4.961 ;
+; binIN[1]   ; bcd_out[1]  ; 5.673 ; 5.673 ; 5.673 ; 5.673 ;
+; binIN[1]   ; bcd_out[2]  ; 5.643 ; 5.643 ; 5.643 ; 5.643 ;
+; binIN[1]   ; bcd_out[3]  ; 5.905 ; 5.905 ; 5.905 ; 5.905 ;
+; binIN[1]   ; bcd_out[4]  ; 5.937 ; 5.937 ; 5.937 ; 5.937 ;
+; binIN[2]   ; bcd_out[1]  ; 5.890 ; 5.890 ; 5.890 ; 5.890 ;
+; binIN[2]   ; bcd_out[2]  ; 5.866 ; 5.866 ; 5.866 ; 5.866 ;
+; binIN[2]   ; bcd_out[3]  ; 6.126 ; 6.126 ; 6.126 ; 6.126 ;
+; binIN[2]   ; bcd_out[4]  ; 6.154 ; 6.154 ; 6.154 ; 6.154 ;
+; binIN[2]   ; bcd_out[5]  ; 7.177 ; 7.177 ; 7.177 ; 7.177 ;
+; binIN[2]   ; bcd_out[6]  ; 6.298 ; 6.298 ; 6.298 ; 6.298 ;
+; binIN[2]   ; bcd_out[7]  ; 6.764 ; 6.764 ; 6.764 ; 6.764 ;
+; binIN[2]   ; bcd_out[8]  ; 6.391 ; 6.391 ; 6.391 ; 6.391 ;
+; binIN[3]   ; bcd_out[1]  ; 6.495 ; 6.495 ; 6.495 ; 6.495 ;
+; binIN[3]   ; bcd_out[2]  ; 6.471 ; 6.471 ; 6.471 ; 6.471 ;
+; binIN[3]   ; bcd_out[3]  ; 6.731 ; 6.731 ; 6.731 ; 6.731 ;
+; binIN[3]   ; bcd_out[4]  ; 6.759 ; 6.759 ; 6.759 ; 6.759 ;
+; binIN[3]   ; bcd_out[5]  ; 7.470 ; 7.470 ; 7.470 ; 7.470 ;
+; binIN[3]   ; bcd_out[6]  ; 6.591 ; 6.591 ; 6.591 ; 6.591 ;
+; binIN[3]   ; bcd_out[7]  ; 7.057 ; 7.057 ; 7.057 ; 7.057 ;
+; binIN[3]   ; bcd_out[8]  ; 6.684 ; 6.684 ; 6.684 ; 6.684 ;
+; binIN[3]   ; bcd_out[9]  ; 5.779 ;       ;       ; 5.779 ;
+; binIN[4]   ; bcd_out[1]  ; 6.741 ; 6.741 ; 6.741 ; 6.741 ;
+; binIN[4]   ; bcd_out[2]  ; 6.717 ; 6.717 ; 6.717 ; 6.717 ;
+; binIN[4]   ; bcd_out[3]  ; 6.977 ; 6.977 ; 6.977 ; 6.977 ;
+; binIN[4]   ; bcd_out[4]  ; 7.005 ; 7.005 ; 7.005 ; 7.005 ;
+; binIN[4]   ; bcd_out[5]  ; 6.810 ; 6.810 ; 6.810 ; 6.810 ;
+; binIN[4]   ; bcd_out[6]  ; 5.930 ; 5.930 ; 5.930 ; 5.930 ;
+; binIN[4]   ; bcd_out[7]  ; 6.079 ; 6.079 ; 6.079 ; 6.079 ;
+; binIN[4]   ; bcd_out[8]  ; 5.699 ; 5.699 ; 5.699 ; 5.699 ;
+; binIN[4]   ; bcd_out[9]  ; 5.544 ;       ;       ; 5.544 ;
+; binIN[5]   ; bcd_out[1]  ; 7.037 ; 7.037 ; 7.037 ; 7.037 ;
+; binIN[5]   ; bcd_out[2]  ; 7.013 ; 7.013 ; 7.013 ; 7.013 ;
+; binIN[5]   ; bcd_out[3]  ; 7.273 ; 7.273 ; 7.273 ; 7.273 ;
+; binIN[5]   ; bcd_out[4]  ; 7.301 ; 7.301 ; 7.301 ; 7.301 ;
+; binIN[5]   ; bcd_out[5]  ; 7.048 ; 7.048 ; 7.048 ; 7.048 ;
+; binIN[5]   ; bcd_out[6]  ; 6.168 ; 6.168 ; 6.168 ; 6.168 ;
+; binIN[5]   ; bcd_out[7]  ; 6.378 ; 6.312 ; 6.312 ; 6.378 ;
+; binIN[5]   ; bcd_out[8]  ; 5.998 ; 5.940 ; 5.940 ; 5.998 ;
+; binIN[5]   ; bcd_out[9]  ; 5.723 ;       ;       ; 5.723 ;
+; binIN[6]   ; bcd_out[1]  ; 6.643 ; 6.643 ; 6.643 ; 6.643 ;
+; binIN[6]   ; bcd_out[2]  ; 6.619 ; 6.619 ; 6.619 ; 6.619 ;
+; binIN[6]   ; bcd_out[3]  ; 6.879 ; 6.879 ; 6.879 ; 6.879 ;
+; binIN[6]   ; bcd_out[4]  ; 6.907 ; 6.907 ; 6.907 ; 6.907 ;
+; binIN[6]   ; bcd_out[5]  ; 6.650 ; 6.650 ; 6.650 ; 6.650 ;
+; binIN[6]   ; bcd_out[6]  ; 5.770 ; 5.770 ; 5.770 ; 5.770 ;
+; binIN[6]   ; bcd_out[7]  ; 5.988 ; 5.914 ; 5.914 ; 5.988 ;
+; binIN[6]   ; bcd_out[8]  ; 5.608 ; 5.542 ; 5.542 ; 5.608 ;
+; binIN[6]   ; bcd_out[9]  ; 5.455 ;       ;       ; 5.455 ;
+; binIN[7]   ; bcd_out[1]  ; 7.076 ; 7.076 ; 7.076 ; 7.076 ;
+; binIN[7]   ; bcd_out[2]  ; 7.052 ; 7.052 ; 7.052 ; 7.052 ;
+; binIN[7]   ; bcd_out[3]  ; 7.312 ; 7.312 ; 7.312 ; 7.312 ;
+; binIN[7]   ; bcd_out[4]  ; 7.340 ; 7.340 ; 7.340 ; 7.340 ;
+; binIN[7]   ; bcd_out[5]  ; 7.149 ; 7.149 ; 7.149 ; 7.149 ;
+; binIN[7]   ; bcd_out[6]  ; 6.050 ; 6.050 ; 6.050 ; 6.050 ;
+; binIN[7]   ; bcd_out[7]  ; 6.418 ; 6.418 ; 6.418 ; 6.418 ;
+; binIN[7]   ; bcd_out[8]  ; 6.038 ; 6.038 ; 6.038 ; 6.038 ;
+; binIN[7]   ; bcd_out[9]  ; 5.937 ;       ;       ; 5.937 ;
++------------+-------------+-------+-------+-------+-------+
+
+
+-------------------
+; Clock Transfers ;
+-------------------
+Nothing to report.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 8     ; 8    ;
+; Unconstrained Input Port Paths  ; 58    ; 58   ;
+; Unconstrained Output Ports      ; 10    ; 10   ;
+; Unconstrained Output Port Paths ; 58    ; 58   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Mon Aug 06 00:37:47 2018
+Info: Command: quartus_sta bcd -c bcd
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'bcd.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
+Warning (332068): No clocks defined in design.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info (332159): No clocks to report
+Info: Analyzing Slow Model
+Info (332140): No fmax paths to report
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332140): No Minimum Pulse Width paths to report
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
+Warning (332068): No clocks defined in design.
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332140): No Minimum Pulse Width paths to report
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4564 megabytes
+    Info: Processing ended: Mon Aug 06 00:37:48 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

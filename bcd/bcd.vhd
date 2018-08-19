@@ -1,4 +1,4 @@
--- by
+-- baseado no
 -- https://en.wikipedia.org/wiki/Double_dabble
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

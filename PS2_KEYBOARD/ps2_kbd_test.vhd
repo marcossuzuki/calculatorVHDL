@@ -76,39 +76,44 @@ architecture struct of ps2_kbd_test is
 				key_out	: out STD_LOGIC_VECTOR(15 downto 0));
 	end component;
 	
-	component FF_tipoD
-	generic(n: integer:=16);
-	PORT(D 	: IN STD_LOGIC_VECTOR(n-1 downto 0);
-		  set : IN STD_LOGIC;
-		  CLK, RESET : IN STD_LOGIC;
-		  Q2 	: BUFFER STD_LOGIC_VECTOR(n-1 downto 0));
+	component bcd is
+		generic (n : integer:= 16);
+		Port ( binIN 	 	: in   STD_LOGIC_VECTOR (n-1 downto 0);
+				 bcd_out		: out  STD_LOGIC_VECTOR (n+3 downto 0)
+				);
 	end component;
 	
 	signal CLOCKHZ, resetn 	: std_logic;
 	signal key0 				: std_logic_vector(47 downto 0);
 	signal key_conv			: std_logic_vector(15 downto 0);
 	signal key_seg				: std_logic_vector(15 downto 0);
+	signal toDisplay			: std_logic_vector(15 downto 0);
+	signal bcd_out				: std_logic_vector(19 downto 0);
+	signal tmp_stack			: std_logic_vector(15 downto 0):=x"0000";
 	signal stack0				: std_logic_vector(15 downto 0):=x"0000";
+	signal stack1				: std_logic_vector(15 downto 0):=x"0000";
+	signal stack2				: std_logic_vector(15 downto 0):=x"0000";
+	signal stack3				: std_logic_vector(15 downto 0):=x"0000";
 	signal lights, key_on	: std_logic_vector( 2 downto 0);
-	signal pwm_OUT			 	: STD_LOGIC;
-	type state_key	is (pressed, released);
-	signal statek, next_statek: state_key;
+	signal pwm_OUT				: STD_LOGIC;
+	signal statek, next_statek: STD_LOGIC;
+	signal clean_tmp			: STD_LOGIC:='0';
+	
 begin 
+	
 	resetn <= KEY(0);
 	
-	key_seg <= stack0;
-	
 	hexseg0: conv_7seg port map(
-		key_seg(3 downto 0), pwm_OUT, HEX0
+		toDisplay(3 downto 0), pwm_OUT, HEX0
 	);
 	hexseg1: conv_7seg port map(
-		key_seg(7 downto 4), pwm_OUT, HEX1
+		toDisplay(7 downto 4), pwm_OUT, HEX1
 	);
 	hexseg2: conv_7seg port map(
-		key_seg(11 downto 8), pwm_OUT, HEX2
+		toDisplay(11 downto 8), pwm_OUT, HEX2
 	);
 	hexseg3: conv_7seg port map(
-		key_seg(15 downto 12), pwm_OUT, HEX3
+		toDisplay(15 downto 12), pwm_OUT, HEX3
 	);
 
 	kbd_ctrl : kbdex_ctrl generic map(24000) port map(
@@ -120,9 +125,16 @@ begin
 	
 	map1: map_ps2 PORT MAP (key_in=>key0(15 downto 0), key_out=>key_conv);
 	
+	bcd1: bcd PORT MAP (key_seg, bcd_out=> bcd_out);
+	
 	LEDG(7 downto 5) <= key_on;
 	
-	LEDR(9) <= stack0(15); -- indicador de negativo
+	LEDR(9) <= tmp_stack(15); -- indicador de negativo
+	
+	with tmp_stack(15) select
+		key_seg <= not(tmp_stack)+1 when '1',
+					  tmp_stack when others;
+	
 	
 	-- lights <= SW(2 downto 0);
 	
@@ -148,42 +160,109 @@ begin
 		end if;
 	end process;	
 	
-	
-	key_fsm: process(CLOCK_50)
+	process(CLOCK_50)
 	begin
 		if(CLOCK_50'event and CLOCK_50='1') then
 			statek<=next_statek;
 		end if;
 	end process;
-	
-	next_statek_func: process(key0(15 downto 0), statek)
+
+	process(key_on(0))
 	begin
-		case statek is
-		when pressed =>
-			if key0(15 downto 0) /= x"0000" then
-				next_statek<= pressed;
-			else
-				next_statek<= released;
+		if(key_on(0) = '1') then
+			if (statek = '0') then
+				case clean_tmp is
+					when '1' =>
+						if (key0(15 downto 0) = x"0066") then
+							tmp_stack <= stack1;
+							stack3 <= (others=>'0');
+							stack2 <= stack3;
+							stack1 <= stack2;
+							stack0 <= stack1;
+						elsif(key_conv <= x"0009" and clean_tmp ='1') then
+							tmp_stack <= key_conv;
+							clean_tmp <= '0';
+						elsif(key_conv = x"E05A") then --apertando ENTER do numpad
+							stack3 <= stack2;
+							stack2 <= stack1;
+							stack1 <= stack0;
+							stack0 <= tmp_stack;
+							clean_tmp <= '0';
+						elsif(key_conv = x"0077") then --complemento de dois caso aperte NumLcok
+							stack0 <= tmp_stack;
+							tmp_stack <= (not tmp_stack)+1;
+							clean_tmp <= '0';
+						elsif(key_conv = x"0079") then --soma apertando '+' do numpad
+							stack3 <= (others=>'0');
+							stack2 <= stack3;
+							stack1 <= stack2;
+							stack0 <= stack1 + stack0;
+							tmp_stack <= stack1 + stack0;
+							clean_tmp <= '0';
+						elsif(key_conv = x"007B") then --subtraçao apertando '-' do numpad
+							stack3 <= (others=>'0');
+							stack2 <= stack3;
+							stack1 <= stack2;
+							stack0 <= stack0 +(not stack1)+1; 
+							tmp_stack <= stack0 +(not stack1)+1; 
+							clean_tmp <= '0';
+						elsif(key_conv = x"007C") then --multiplicaçao apertando '*' do numpad
+							stack3 <= (others=>'0');
+							stack2 <= stack3;
+							stack1 <= stack2;
+							stack0 <= stack0 +(not stack1)+1; 
+							tmp_stack <= stack0 +(not stack1)+1; 
+							clean_tmp <= '0';
+						end if;	
+						
+					when '0' =>
+						if (key0(15 downto 0) = x"0066") then
+							tmp_stack <= (others=>'0');
+						elsif(key_conv <= x"0009") then
+							if(tmp_stack<x"0CCC") then
+								tmp_stack <= (tmp_stack(14 downto 0) & '0') + (tmp_stack(12 downto 0) & "000") + key_conv; --multiplica por 10 stack0 e soma o valor
+							elsif(tmp_stack=x"0CCC" and key_conv <= x"0007") then --limitar para valores menores que 32767
+								tmp_stack <= (tmp_stack(14 downto 0) & '0') + (tmp_stack(12 downto 0) & "000") + key_conv; --multiplica por 10 stack0 e soma o valor
+							end if;
+						elsif(key_conv = x"E05A") then --apertando ENTER do numpad
+							stack3 <= stack2;
+							stack2 <= stack1;
+							stack1 <= stack0;
+							stack0 <= tmp_stack;
+							clean_tmp <='1';
+						elsif(key_conv = x"0077") then --complemento de dois caso aperte NumLcok
+							tmp_stack <= (not tmp_stack)+1;
+						elsif(key_conv = x"0079") then --soma apertando '+' do numpad
+							stack0 <= tmp_stack + stack0;
+							tmp_stack <= tmp_stack + stack0;
+							clean_tmp <='1';
+						elsif(key_conv = x"007B") then --subtraçao apertando '-' do numpad
+							stack0 <= tmp_stack +(not stack0)+1; 
+							tmp_stack <= tmp_stack +(not stack0)+1;
+							clean_tmp <='1';
+						elsif(key_conv = x"007C") then --multiplicaçao apertando '*' do numpad
+							stack0 <= tmp_stack +(not stack0)+1;
+							tmp_stack <= tmp_stack +(not stack0)+1;
+							clean_tmp <='1';
+						end if;
+						
+					when others =>
+						clean_tmp <= '0';
+				end case;
 			end if;
-		when released=>
-			if key0(15 downto 0) /= x"0000" then
-				next_statek<= pressed;
-			end if;
-		end case;
+		end if;
+		next_statek <= key_on(0);
 	end process;
 	
-	PROCESS (CLOCK_50)
-	BEGIN
-		if(CLOCK_50'EVENT AND CLOCK_50 = '1') then
-			if key0(15 downto 0) = x"0066" then
-				stack0 <= (others=>'0');
-			elsif key0(15 downto 0) /= x"0000" THEN
-				if(key_conv <= x"0009") then
-					stack0 <= (stack0(14 downto 0) & '0') + (stack0(12 downto 0) & "000") + key_conv;
-				end if;
-			else
-				stack0 <= stack0;
-			END IF;
+	process(CLOCK_50)
+	begin
+		if(key_conv = x"E06B" and bcd_out(19 downto 16)>"0000") then --aperta para esquerda
+			toDisplay <= bcd_out(19 downto 4);
+		elsif(key_conv = x"E074" and bcd_out(19 downto 16)>"0000") then --aperta para direita
+			toDisplay <= bcd_out(15 downto 0);
+		else
+			toDisplay <= bcd_out(15 downto 0);
 		end if;
-	END PROCESS;
+	end process;
+	
 end struct;

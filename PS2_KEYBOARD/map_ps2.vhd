@@ -21,7 +21,7 @@ BEGIN
 				when x"006C" => key_out <= x"0007"; ---7
 				when x"0075" => key_out <= x"0008"; ---8
 				when x"007D" => key_out <= x"0009"; ---9
-				when others => key_out <= key_in; ---null
+				when others => key_out <= key_in; ---outros
 			end case;
 	end process;
 END structural;

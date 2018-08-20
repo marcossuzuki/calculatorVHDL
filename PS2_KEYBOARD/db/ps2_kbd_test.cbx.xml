@@ -1,5 +1,7 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="ps2_kbd_test">
+		<CBX_INST_ENTRY INSTANCE_NAME="|calculator|mult:mult1|lpm_mult:Mult0" CBX_FILE_NAME="mult_l8t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|calculator|mult:mult2|lpm_mult:Mult0" CBX_FILE_NAME="mult_l8t.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

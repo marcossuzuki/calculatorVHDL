@@ -1,4 +1,4 @@
-|ps2_kbd_test
+|calculator
 CLOCK_24[0] => kbdex_ctrl:kbd_ctrl.clk
 CLOCK_24[1] => ~NO_FANOUT~
 CLOCK_27[0] => ~NO_FANOUT~
@@ -69,7 +69,7 @@ PS2_DAT <> kbdex_ctrl:kbd_ctrl.ps2_data
 PS2_CLK <> kbdex_ctrl:kbd_ctrl.ps2_clk
 
 
-|ps2_kbd_test|conv_7seg:hexseg0
+|calculator|conv_7seg:hexseg0
 digit[0] => Mux0.IN19
 digit[0] => Mux1.IN19
 digit[0] => Mux2.IN19
@@ -114,7 +114,7 @@ seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
 seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|conv_7seg:hexseg1
+|calculator|conv_7seg:hexseg1
 digit[0] => Mux0.IN19
 digit[0] => Mux1.IN19
 digit[0] => Mux2.IN19
@@ -159,7 +159,7 @@ seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
 seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|conv_7seg:hexseg2
+|calculator|conv_7seg:hexseg2
 digit[0] => Mux0.IN19
 digit[0] => Mux1.IN19
 digit[0] => Mux2.IN19
@@ -204,7 +204,7 @@ seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
 seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|conv_7seg:hexseg3
+|calculator|conv_7seg:hexseg3
 digit[0] => Mux0.IN19
 digit[0] => Mux1.IN19
 digit[0] => Mux2.IN19
@@ -249,7 +249,7 @@ seg[5] <= seg.DB_MAX_OUTPUT_PORT_TYPE
 seg[6] <= seg.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|kbdex_ctrl:kbd_ctrl
+|calculator|kbdex_ctrl:kbd_ctrl
 ps2_data <> ps2_iobase:ps2_ctrl.ps2_data
 ps2_clk <> ps2_iobase:ps2_ctrl.ps2_clk
 clk => ps2_iobase:ps2_ctrl.clk
@@ -419,7 +419,7 @@ key_code[46] <= key2code[14].DB_MAX_OUTPUT_PORT_TYPE
 key_code[47] <= key2code[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl
+|calculator|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl
 ps2_data <> ps2_data
 ps2_clk <> ps2_clk
 clk => sigclkheld.CLK
@@ -544,7 +544,7 @@ odata[6] <= sdata[6].DB_MAX_OUTPUT_PORT_TYPE
 odata[7] <= sdata[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|PWM:PWM1
+|calculator|PWM:PWM1
 CLK => CONT[0].CLK
 CLK => CONT[1].CLK
 CLK => CONT[2].CLK
@@ -583,7 +583,7 @@ DUTY[7] => Add0.IN9
 PWM_OUT <= s_PWM_OUT.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|map_ps2:map1
+|calculator|map_ps2:map1
 key_in[0] => Equal0.IN31
 key_in[0] => Equal1.IN31
 key_in[0] => Equal2.IN31
@@ -778,7 +778,7 @@ key_out[14] <= key_out.DB_MAX_OUTPUT_PORT_TYPE
 key_out[15] <= key_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|bcd:bcd1
+|calculator|bcd:bcd1
 binIN[0] => bcd_out[0].DATAIN
 binIN[1] => LessThan30.IN8
 binIN[1] => Add30.IN8
@@ -847,7 +847,7 @@ bcd_out[18] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
 bcd_out[19] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma1
+|calculator|somador_for:soma1
 x[0] => somador_completo:abc:0:centro.A
 x[1] => somador_completo:abc:1:centro.A
 x[2] => somador_completo:abc:2:centro.A
@@ -900,7 +900,7 @@ s[15] <= somador_completo:abc:15:centro.S
 zs <= somador_completo:abc:15:centro.Cout
 
 
-|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:0:centro
+|calculator|somador_for:soma1|somador_completo:\abc:0:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -921,7 +921,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:1:centro
+|calculator|somador_for:soma1|somador_completo:\abc:1:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -942,7 +942,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:2:centro
+|calculator|somador_for:soma1|somador_completo:\abc:2:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -963,7 +963,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:3:centro
+|calculator|somador_for:soma1|somador_completo:\abc:3:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -984,7 +984,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:4:centro
+|calculator|somador_for:soma1|somador_completo:\abc:4:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1005,7 +1005,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:5:centro
+|calculator|somador_for:soma1|somador_completo:\abc:5:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1026,7 +1026,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:6:centro
+|calculator|somador_for:soma1|somador_completo:\abc:6:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1047,7 +1047,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:7:centro
+|calculator|somador_for:soma1|somador_completo:\abc:7:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1068,7 +1068,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:8:centro
+|calculator|somador_for:soma1|somador_completo:\abc:8:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1089,7 +1089,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:9:centro
+|calculator|somador_for:soma1|somador_completo:\abc:9:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1110,7 +1110,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:10:centro
+|calculator|somador_for:soma1|somador_completo:\abc:10:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1131,7 +1131,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:11:centro
+|calculator|somador_for:soma1|somador_completo:\abc:11:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1152,7 +1152,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:12:centro
+|calculator|somador_for:soma1|somador_completo:\abc:12:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1173,7 +1173,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:13:centro
+|calculator|somador_for:soma1|somador_completo:\abc:13:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1194,7 +1194,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:14:centro
+|calculator|somador_for:soma1|somador_completo:\abc:14:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1215,7 +1215,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:15:centro
+|calculator|somador_for:soma1|somador_completo:\abc:15:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1236,7 +1236,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub1
+|calculator|somador_for:sub1
 x[0] => somador_completo:abc:0:centro.A
 x[1] => somador_completo:abc:1:centro.A
 x[2] => somador_completo:abc:2:centro.A
@@ -1289,7 +1289,7 @@ s[15] <= somador_completo:abc:15:centro.S
 zs <= somador_completo:abc:15:centro.Cout
 
 
-|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:0:centro
+|calculator|somador_for:sub1|somador_completo:\abc:0:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1310,7 +1310,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:1:centro
+|calculator|somador_for:sub1|somador_completo:\abc:1:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1331,7 +1331,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:2:centro
+|calculator|somador_for:sub1|somador_completo:\abc:2:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1352,7 +1352,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:3:centro
+|calculator|somador_for:sub1|somador_completo:\abc:3:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1373,7 +1373,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:4:centro
+|calculator|somador_for:sub1|somador_completo:\abc:4:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1394,7 +1394,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:5:centro
+|calculator|somador_for:sub1|somador_completo:\abc:5:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1415,7 +1415,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:6:centro
+|calculator|somador_for:sub1|somador_completo:\abc:6:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1436,7 +1436,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:7:centro
+|calculator|somador_for:sub1|somador_completo:\abc:7:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1457,7 +1457,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:8:centro
+|calculator|somador_for:sub1|somador_completo:\abc:8:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1478,7 +1478,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:9:centro
+|calculator|somador_for:sub1|somador_completo:\abc:9:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1499,7 +1499,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:10:centro
+|calculator|somador_for:sub1|somador_completo:\abc:10:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1520,7 +1520,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:11:centro
+|calculator|somador_for:sub1|somador_completo:\abc:11:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1541,7 +1541,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:12:centro
+|calculator|somador_for:sub1|somador_completo:\abc:12:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1562,7 +1562,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:13:centro
+|calculator|somador_for:sub1|somador_completo:\abc:13:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1583,7 +1583,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:14:centro
+|calculator|somador_for:sub1|somador_completo:\abc:14:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1604,7 +1604,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:15:centro
+|calculator|somador_for:sub1|somador_completo:\abc:15:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1625,7 +1625,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma2
+|calculator|somador_for:soma2
 x[0] => somador_completo:abc:0:centro.A
 x[1] => somador_completo:abc:1:centro.A
 x[2] => somador_completo:abc:2:centro.A
@@ -1678,7 +1678,7 @@ s[15] <= somador_completo:abc:15:centro.S
 zs <= somador_completo:abc:15:centro.Cout
 
 
-|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:0:centro
+|calculator|somador_for:soma2|somador_completo:\abc:0:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1699,7 +1699,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:1:centro
+|calculator|somador_for:soma2|somador_completo:\abc:1:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1720,7 +1720,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:2:centro
+|calculator|somador_for:soma2|somador_completo:\abc:2:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1741,7 +1741,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:3:centro
+|calculator|somador_for:soma2|somador_completo:\abc:3:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1762,7 +1762,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:4:centro
+|calculator|somador_for:soma2|somador_completo:\abc:4:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1783,7 +1783,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:5:centro
+|calculator|somador_for:soma2|somador_completo:\abc:5:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1804,7 +1804,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:6:centro
+|calculator|somador_for:soma2|somador_completo:\abc:6:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1825,7 +1825,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:7:centro
+|calculator|somador_for:soma2|somador_completo:\abc:7:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1846,7 +1846,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:8:centro
+|calculator|somador_for:soma2|somador_completo:\abc:8:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1867,7 +1867,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:9:centro
+|calculator|somador_for:soma2|somador_completo:\abc:9:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1888,7 +1888,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:10:centro
+|calculator|somador_for:soma2|somador_completo:\abc:10:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1909,7 +1909,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:11:centro
+|calculator|somador_for:soma2|somador_completo:\abc:11:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1930,7 +1930,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:12:centro
+|calculator|somador_for:soma2|somador_completo:\abc:12:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1951,7 +1951,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:13:centro
+|calculator|somador_for:soma2|somador_completo:\abc:13:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1972,7 +1972,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:14:centro
+|calculator|somador_for:soma2|somador_completo:\abc:14:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -1993,7 +1993,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:15:centro
+|calculator|somador_for:soma2|somador_completo:\abc:15:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -2014,7 +2014,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub2
+|calculator|somador_for:sub2
 x[0] => somador_completo:abc:0:centro.A
 x[1] => somador_completo:abc:1:centro.A
 x[2] => somador_completo:abc:2:centro.A
@@ -2067,7 +2067,7 @@ s[15] <= somador_completo:abc:15:centro.S
 zs <= somador_completo:abc:15:centro.Cout
 
 
-|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:0:centro
+|calculator|somador_for:sub2|somador_completo:\abc:0:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -2088,7 +2088,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:1:centro
+|calculator|somador_for:sub2|somador_completo:\abc:1:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -2109,7 +2109,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:2:centro
+|calculator|somador_for:sub2|somador_completo:\abc:2:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -2130,7 +2130,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:3:centro
+|calculator|somador_for:sub2|somador_completo:\abc:3:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -2151,7 +2151,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:4:centro
+|calculator|somador_for:sub2|somador_completo:\abc:4:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -2172,7 +2172,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:5:centro
+|calculator|somador_for:sub2|somador_completo:\abc:5:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -2193,7 +2193,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:6:centro
+|calculator|somador_for:sub2|somador_completo:\abc:6:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -2214,7 +2214,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:7:centro
+|calculator|somador_for:sub2|somador_completo:\abc:7:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -2235,7 +2235,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:8:centro
+|calculator|somador_for:sub2|somador_completo:\abc:8:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -2256,7 +2256,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:9:centro
+|calculator|somador_for:sub2|somador_completo:\abc:9:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -2277,7 +2277,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:10:centro
+|calculator|somador_for:sub2|somador_completo:\abc:10:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -2298,7 +2298,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:11:centro
+|calculator|somador_for:sub2|somador_completo:\abc:11:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -2319,7 +2319,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:12:centro
+|calculator|somador_for:sub2|somador_completo:\abc:12:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -2340,7 +2340,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:13:centro
+|calculator|somador_for:sub2|somador_completo:\abc:13:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -2361,7 +2361,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:14:centro
+|calculator|somador_for:sub2|somador_completo:\abc:14:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -2382,7 +2382,7 @@ S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:15:centro
+|calculator|somador_for:sub2|somador_completo:\abc:15:centro
 A => S.IN0
 A => S.IN0
 A => Cout.IN0
@@ -2401,5 +2401,107 @@ Cin => S.IN1
 Cin => S.IN1
 S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|calculator|mult:mult1
+A[0] => Mult0.IN15
+A[1] => Mult0.IN14
+A[2] => Mult0.IN13
+A[3] => Mult0.IN12
+A[4] => Mult0.IN11
+A[5] => Mult0.IN10
+A[6] => Mult0.IN9
+A[7] => Mult0.IN8
+A[8] => Mult0.IN7
+A[9] => Mult0.IN6
+A[10] => Mult0.IN5
+A[11] => Mult0.IN4
+A[12] => Mult0.IN3
+A[13] => Mult0.IN2
+A[14] => Mult0.IN1
+A[15] => Mult0.IN0
+B[0] => Mult0.IN31
+B[1] => Mult0.IN30
+B[2] => Mult0.IN29
+B[3] => Mult0.IN28
+B[4] => Mult0.IN27
+B[5] => Mult0.IN26
+B[6] => Mult0.IN25
+B[7] => Mult0.IN24
+B[8] => Mult0.IN23
+B[9] => Mult0.IN22
+B[10] => Mult0.IN21
+B[11] => Mult0.IN20
+B[12] => Mult0.IN19
+B[13] => Mult0.IN18
+B[14] => Mult0.IN17
+B[15] => Mult0.IN16
+result[0] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[4] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[5] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[6] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[7] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[8] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[9] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[10] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[11] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[12] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[13] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[14] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[15] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|calculator|mult:mult2
+A[0] => Mult0.IN15
+A[1] => Mult0.IN14
+A[2] => Mult0.IN13
+A[3] => Mult0.IN12
+A[4] => Mult0.IN11
+A[5] => Mult0.IN10
+A[6] => Mult0.IN9
+A[7] => Mult0.IN8
+A[8] => Mult0.IN7
+A[9] => Mult0.IN6
+A[10] => Mult0.IN5
+A[11] => Mult0.IN4
+A[12] => Mult0.IN3
+A[13] => Mult0.IN2
+A[14] => Mult0.IN1
+A[15] => Mult0.IN0
+B[0] => Mult0.IN31
+B[1] => Mult0.IN30
+B[2] => Mult0.IN29
+B[3] => Mult0.IN28
+B[4] => Mult0.IN27
+B[5] => Mult0.IN26
+B[6] => Mult0.IN25
+B[7] => Mult0.IN24
+B[8] => Mult0.IN23
+B[9] => Mult0.IN22
+B[10] => Mult0.IN21
+B[11] => Mult0.IN20
+B[12] => Mult0.IN19
+B[13] => Mult0.IN18
+B[14] => Mult0.IN17
+B[15] => Mult0.IN16
+result[0] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[4] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[5] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[6] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[7] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[8] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[9] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[10] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[11] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[12] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[13] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[14] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+result[15] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
 
 

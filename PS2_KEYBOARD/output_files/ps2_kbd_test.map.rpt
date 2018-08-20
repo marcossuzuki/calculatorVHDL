@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ps2_kbd_test
-Sun Aug 19 20:40:56 2018
+Mon Aug 20 02:03:30 2018
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -13,30 +13,36 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|cmdstate
-  9. State Machine - |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|state
- 10. User-Specified and Inferred Latches
- 11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
- 13. General Register Statistics
- 14. Inverted Register Statistics
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Parameter Settings for User Entity Instance: kbdex_ctrl:kbd_ctrl
- 17. Parameter Settings for User Entity Instance: kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl
- 18. Parameter Settings for User Entity Instance: PWM:PWM1
- 19. Parameter Settings for User Entity Instance: bcd:bcd1
- 20. Parameter Settings for User Entity Instance: somador_for:soma1
- 21. Parameter Settings for User Entity Instance: somador_for:sub1
- 22. Parameter Settings for User Entity Instance: somador_for:soma2
- 23. Parameter Settings for User Entity Instance: somador_for:sub2
- 24. Port Connectivity Checks: "somador_for:sub2"
- 25. Port Connectivity Checks: "somador_for:soma2"
- 26. Port Connectivity Checks: "somador_for:sub1"
- 27. Port Connectivity Checks: "somador_for:soma1"
- 28. Port Connectivity Checks: "PWM:PWM1"
- 29. Port Connectivity Checks: "kbdex_ctrl:kbd_ctrl"
- 30. Elapsed Time Per Partition
- 31. Analysis & Synthesis Messages
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |calculator|kbdex_ctrl:kbd_ctrl|cmdstate
+ 10. State Machine - |calculator|kbdex_ctrl:kbd_ctrl|state
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Parameter Settings for User Entity Instance: kbdex_ctrl:kbd_ctrl
+ 18. Parameter Settings for User Entity Instance: kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl
+ 19. Parameter Settings for User Entity Instance: PWM:PWM1
+ 20. Parameter Settings for User Entity Instance: bcd:bcd1
+ 21. Parameter Settings for User Entity Instance: somador_for:soma1
+ 22. Parameter Settings for User Entity Instance: somador_for:sub1
+ 23. Parameter Settings for User Entity Instance: somador_for:soma2
+ 24. Parameter Settings for User Entity Instance: somador_for:sub2
+ 25. Parameter Settings for User Entity Instance: mult:mult1
+ 26. Parameter Settings for User Entity Instance: mult:mult2
+ 27. Parameter Settings for Inferred Entity Instance: mult:mult2|lpm_mult:Mult0
+ 28. Parameter Settings for Inferred Entity Instance: mult:mult1|lpm_mult:Mult0
+ 29. lpm_mult Parameter Settings by Entity Instance
+ 30. Port Connectivity Checks: "somador_for:sub2"
+ 31. Port Connectivity Checks: "somador_for:soma2"
+ 32. Port Connectivity Checks: "somador_for:sub1"
+ 33. Port Connectivity Checks: "somador_for:soma1"
+ 34. Port Connectivity Checks: "PWM:PWM1"
+ 35. Port Connectivity Checks: "kbdex_ctrl:kbd_ctrl"
+ 36. Elapsed Time Per Partition
+ 37. Analysis & Synthesis Messages
 
 
 
@@ -62,19 +68,19 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Aug 19 20:40:56 2018      ;
+; Analysis & Synthesis Status        ; Successful - Mon Aug 20 02:03:30 2018      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; ps2_kbd_test                               ;
-; Top-level Entity Name              ; ps2_kbd_test                               ;
+; Top-level Entity Name              ; calculator                                 ;
 ; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; 1,016                                      ;
-;     Total combinational functions  ; 975                                        ;
+; Total logic elements               ; 1,018                                      ;
+;     Total combinational functions  ; 977                                        ;
 ;     Dedicated logic registers      ; 141                                        ;
 ; Total registers                    ; 141                                        ;
 ; Total pins                         ; 67                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
-; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 4                                          ;
 ; Total PLLs                         ; 0                                          ;
 +------------------------------------+--------------------------------------------+
 
@@ -85,7 +91,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C20F484C7       ;                    ;
-; Top-level entity name                                                      ; ps2_kbd_test       ; ps2_kbd_test       ;
+; Top-level entity name                                                      ; calculator         ; ps2_kbd_test       ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -175,21 +181,29 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                     ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                              ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
-; ../bcd/bcd.vhd                   ; yes             ; User VHDL File  ; C:/Users/marco/Downloads/calculatorVHDL/bcd/bcd.vhd                       ;         ;
-; ps2_iobase.vhd                   ; yes             ; User VHDL File  ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/ps2_iobase.vhd       ;         ;
-; conv_7seg.vhd                    ; yes             ; User VHDL File  ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/conv_7seg.vhd        ;         ;
-; ps2_kbd_test.vhd                 ; yes             ; User VHDL File  ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/ps2_kbd_test.vhd     ;         ;
-; kbdex_ctrl.vhd                   ; yes             ; User VHDL File  ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/kbdex_ctrl.vhd       ;         ;
-; ../pwm/pwm.vhd                   ; yes             ; User VHDL File  ; C:/Users/marco/Downloads/calculatorVHDL/pwm/pwm.vhd                       ;         ;
-; map_ps2.vhd                      ; yes             ; User VHDL File  ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/map_ps2.vhd          ;         ;
-; somador_completo.vhd             ; yes             ; User VHDL File  ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/somador_completo.vhd ;         ;
-; somador_for.vhd                  ; yes             ; User VHDL File  ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/somador_for.vhd      ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                  ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                              ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
+; ps2_iobase.vhd                   ; yes             ; User VHDL File               ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/ps2_iobase.vhd       ;         ;
+; conv_7seg.vhd                    ; yes             ; User VHDL File               ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/conv_7seg.vhd        ;         ;
+; kbdex_ctrl.vhd                   ; yes             ; User VHDL File               ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/kbdex_ctrl.vhd       ;         ;
+; map_ps2.vhd                      ; yes             ; User VHDL File               ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/map_ps2.vhd          ;         ;
+; somador_completo.vhd             ; yes             ; User VHDL File               ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/somador_completo.vhd ;         ;
+; somador_for.vhd                  ; yes             ; User VHDL File               ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/somador_for.vhd      ;         ;
+; mult.vhd                         ; yes             ; User VHDL File               ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/mult.vhd             ;         ;
+; pwm.vhd                          ; yes             ; User VHDL File               ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/pwm.vhd              ;         ;
+; bcd.vhd                          ; yes             ; User VHDL File               ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/bcd.vhd              ;         ;
+; calculator.vhd                   ; yes             ; User VHDL File               ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/calculator.vhd       ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_mult.tdf               ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc             ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_add_sub.inc            ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/multcore.inc               ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/bypassff.inc               ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/altshift.inc               ;         ;
+; db/mult_l8t.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/marco/Downloads/calculatorVHDL/PS2_KEYBOARD/db/mult_l8t.tdf      ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -197,59 +211,81 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 1,016       ;
+; Estimated Total logic elements              ; 1,018       ;
 ;                                             ;             ;
-; Total combinational functions               ; 975         ;
+; Total combinational functions               ; 977         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 497         ;
-;     -- 3 input functions                    ; 299         ;
-;     -- <=2 input functions                  ; 179         ;
+;     -- 4 input functions                    ; 525         ;
+;     -- 3 input functions                    ; 289         ;
+;     -- <=2 input functions                  ; 163         ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 780         ;
-;     -- arithmetic mode                      ; 195         ;
+;     -- normal mode                          ; 813         ;
+;     -- arithmetic mode                      ; 164         ;
 ;                                             ;             ;
 ; Total registers                             ; 141         ;
 ;     -- Dedicated logic registers            ; 141         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 67          ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
+; Embedded Multiplier 9-bit elements          ; 4           ;
 ; Maximum fan-out node                        ; CLOCK_24[0] ;
 ; Maximum fan-out                             ; 108         ;
-; Total fan-out                               ; 3787        ;
-; Average fan-out                             ; 3.20        ;
+; Total fan-out                               ; 3906        ;
+; Average fan-out                             ; 3.29        ;
 +---------------------------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
-+----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                            ; Library Name ;
-+----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
-; |ps2_kbd_test                          ; 975 (460)         ; 141 (1)      ; 0           ; 0            ; 0       ; 0         ; 67   ; 0            ; |ps2_kbd_test                                                  ;              ;
-;    |PWM:PWM1|                          ; 25 (25)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|PWM:PWM1                                         ;              ;
-;    |bcd:bcd1|                          ; 123 (123)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|bcd:bcd1                                         ;              ;
-;    |conv_7seg:hexseg0|                 ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|conv_7seg:hexseg0                                ;              ;
-;    |conv_7seg:hexseg1|                 ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|conv_7seg:hexseg1                                ;              ;
-;    |conv_7seg:hexseg2|                 ; 21 (21)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|conv_7seg:hexseg2                                ;              ;
-;    |conv_7seg:hexseg3|                 ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|conv_7seg:hexseg3                                ;              ;
-;    |kbdex_ctrl:kbd_ctrl|               ; 229 (90)          ; 131 (57)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl                              ;              ;
-;       |ps2_iobase:ps2_ctrl|            ; 139 (139)         ; 74 (74)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl          ;              ;
-;    |map_ps2:map1|                      ; 26 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|map_ps2:map1                                     ;              ;
-;    |somador_for:soma1|                 ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|somador_for:soma1                                ;              ;
-;       |somador_completo:\abc:1:centro| ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|somador_for:soma1|somador_completo:\abc:1:centro ;              ;
-;    |somador_for:soma2|                 ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|somador_for:soma2                                ;              ;
-;       |somador_completo:\abc:1:centro| ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|somador_for:soma2|somador_completo:\abc:1:centro ;              ;
-;    |somador_for:sub2|                  ; 17 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|somador_for:sub2                                 ;              ;
-;       |somador_completo:\abc:1:centro| ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ps2_kbd_test|somador_for:sub2|somador_completo:\abc:1:centro  ;              ;
-+----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                               ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                           ; Library Name ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+--------------+
+; |calculator                            ; 977 (481)         ; 141 (1)      ; 0           ; 4            ; 0       ; 2         ; 67   ; 0            ; |calculator                                                   ;              ;
+;    |PWM:PWM1|                          ; 25 (25)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator|PWM:PWM1                                          ;              ;
+;    |bcd:bcd1|                          ; 123 (123)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator|bcd:bcd1                                          ;              ;
+;    |conv_7seg:hexseg0|                 ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator|conv_7seg:hexseg0                                 ;              ;
+;    |conv_7seg:hexseg1|                 ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator|conv_7seg:hexseg1                                 ;              ;
+;    |conv_7seg:hexseg2|                 ; 21 (21)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator|conv_7seg:hexseg2                                 ;              ;
+;    |conv_7seg:hexseg3|                 ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator|conv_7seg:hexseg3                                 ;              ;
+;    |kbdex_ctrl:kbd_ctrl|               ; 228 (89)          ; 131 (57)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator|kbdex_ctrl:kbd_ctrl                               ;              ;
+;       |ps2_iobase:ps2_ctrl|            ; 139 (139)         ; 74 (74)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl           ;              ;
+;    |map_ps2:map1|                      ; 25 (25)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator|map_ps2:map1                                      ;              ;
+;    |mult:mult1|                        ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |calculator|mult:mult1                                        ;              ;
+;       |lpm_mult:Mult0|                 ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |calculator|mult:mult1|lpm_mult:Mult0                         ;              ;
+;          |mult_l8t:auto_generated|     ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |calculator|mult:mult1|lpm_mult:Mult0|mult_l8t:auto_generated ;              ;
+;    |mult:mult2|                        ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |calculator|mult:mult2                                        ;              ;
+;       |lpm_mult:Mult0|                 ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |calculator|mult:mult2|lpm_mult:Mult0                         ;              ;
+;          |mult_l8t:auto_generated|     ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |calculator|mult:mult2|lpm_mult:Mult0|mult_l8t:auto_generated ;              ;
+;    |somador_for:soma1|                 ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator|somador_for:soma1                                 ;              ;
+;       |somador_completo:\abc:1:centro| ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator|somador_for:soma1|somador_completo:\abc:1:centro  ;              ;
+;    |somador_for:soma2|                 ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator|somador_for:soma2                                 ;              ;
+;       |somador_completo:\abc:1:centro| ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator|somador_for:soma2|somador_completo:\abc:1:centro  ;              ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 2           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 4           ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 2           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
 
 
 Encoding Type:  One-Hot
 +------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|cmdstate                                                                                           ;
+; State Machine - |calculator|kbdex_ctrl:kbd_ctrl|cmdstate                                                                                             ;
 +--------------------+----------------+-------------------+------------------+--------------------+------------------+---------------+-----------------+
 ; Name               ; cmdstate.CLEAR ; cmdstate.WAITACK1 ; cmdstate.SENDVAL ; cmdstate.SETLIGHTS ; cmdstate.WAITACK ; cmdstate.SEND ; cmdstate.SETCMD ;
 +--------------------+----------------+-------------------+------------------+--------------------+------------------+---------------+-----------------+
@@ -265,7 +301,7 @@ Encoding Type:  One-Hot
 
 Encoding Type:  One-Hot
 +------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|state                                                                      ;
+; State Machine - |calculator|kbdex_ctrl:kbd_ctrl|state                                                                        ;
 +---------------+-------------+------------+------------+---------------+------------+--------------+-------------+------------+
 ; Name          ; state.CLRDP ; state.EXT1 ; state.EXT0 ; state.RELEASE ; state.CODE ; state.DECODE ; state.FETCH ; state.IDLE ;
 +---------------+-------------+------------+------------+---------------+------------+--------------+-------------+------------+
@@ -302,47 +338,42 @@ Encoding Type:  One-Hot
 ; tmp_stack[14]                                       ; tmp_stack[0]        ; yes                    ;
 ; tmp_stack[13]                                       ; tmp_stack[0]        ; yes                    ;
 ; overflow                                            ; overflow            ; yes                    ;
-; stack0[4]                                           ; stack0[3]           ; yes                    ;
-; stack1[4]                                           ; stack1[0]           ; yes                    ;
-; stack1[3]                                           ; stack1[0]           ; yes                    ;
-; stack0[3]                                           ; stack0[3]           ; yes                    ;
-; stack1[2]                                           ; stack1[0]           ; yes                    ;
-; stack0[2]                                           ; stack0[3]           ; yes                    ;
-; stack1[1]                                           ; stack1[0]           ; yes                    ;
-; stack0[1]                                           ; stack0[3]           ; yes                    ;
-; stack1[0]                                           ; stack1[0]           ; yes                    ;
-; stack0[0]                                           ; stack0[3]           ; yes                    ;
-; stack0[15]                                          ; stack0[3]           ; yes                    ;
+; stack0[15]                                          ; stack0[0]           ; yes                    ;
 ; stack1[15]                                          ; stack1[0]           ; yes                    ;
 ; stack1[14]                                          ; stack1[0]           ; yes                    ;
-; stack0[14]                                          ; stack0[3]           ; yes                    ;
+; stack0[14]                                          ; stack0[0]           ; yes                    ;
 ; stack1[13]                                          ; stack1[0]           ; yes                    ;
-; stack0[13]                                          ; stack0[3]           ; yes                    ;
+; stack0[13]                                          ; stack0[0]           ; yes                    ;
 ; stack1[12]                                          ; stack1[0]           ; yes                    ;
-; stack0[12]                                          ; stack0[3]           ; yes                    ;
+; stack0[12]                                          ; stack0[0]           ; yes                    ;
 ; stack1[11]                                          ; stack1[0]           ; yes                    ;
-; stack0[11]                                          ; stack0[3]           ; yes                    ;
+; stack0[11]                                          ; stack0[0]           ; yes                    ;
 ; stack1[10]                                          ; stack1[0]           ; yes                    ;
-; stack0[10]                                          ; stack0[3]           ; yes                    ;
+; stack0[10]                                          ; stack0[0]           ; yes                    ;
 ; stack1[9]                                           ; stack1[0]           ; yes                    ;
-; stack0[9]                                           ; stack0[3]           ; yes                    ;
+; stack0[9]                                           ; stack0[0]           ; yes                    ;
 ; stack1[8]                                           ; stack1[0]           ; yes                    ;
-; stack0[8]                                           ; stack0[3]           ; yes                    ;
+; stack0[8]                                           ; stack0[0]           ; yes                    ;
 ; stack1[7]                                           ; stack1[0]           ; yes                    ;
-; stack0[7]                                           ; stack0[3]           ; yes                    ;
+; stack0[7]                                           ; stack0[0]           ; yes                    ;
 ; stack1[6]                                           ; stack1[0]           ; yes                    ;
-; stack0[6]                                           ; stack0[3]           ; yes                    ;
+; stack0[6]                                           ; stack0[0]           ; yes                    ;
 ; stack1[5]                                           ; stack1[0]           ; yes                    ;
-; stack0[5]                                           ; stack0[3]           ; yes                    ;
+; stack0[5]                                           ; stack0[0]           ; yes                    ;
+; stack1[4]                                           ; stack1[0]           ; yes                    ;
+; stack0[4]                                           ; stack0[0]           ; yes                    ;
+; stack1[3]                                           ; stack1[0]           ; yes                    ;
+; stack0[3]                                           ; stack0[0]           ; yes                    ;
+; stack1[2]                                           ; stack1[0]           ; yes                    ;
+; stack0[2]                                           ; stack0[0]           ; yes                    ;
+; stack0[1]                                           ; stack0[0]           ; yes                    ;
+; stack1[1]                                           ; stack1[0]           ; yes                    ;
+; stack1[0]                                           ; stack1[0]           ; yes                    ;
+; stack0[0]                                           ; stack0[0]           ; yes                    ;
 ; clean_tmp                                           ; clean_tmp           ; yes                    ;
 ; kbdex_ctrl:kbd_ctrl|selbt                           ; GND                 ; yes                    ;
 ; kbdex_ctrl:kbd_ctrl|relbt                           ; GND                 ; yes                    ;
 ; kbdex_ctrl:kbd_ctrl|selE0                           ; GND                 ; yes                    ;
-; stack2[4]                                           ; stack1[0]           ; yes                    ;
-; stack2[3]                                           ; stack1[0]           ; yes                    ;
-; stack2[2]                                           ; stack1[0]           ; yes                    ;
-; stack2[1]                                           ; stack1[0]           ; yes                    ;
-; stack2[0]                                           ; stack1[0]           ; yes                    ;
 ; stack2[15]                                          ; stack1[0]           ; yes                    ;
 ; stack2[14]                                          ; stack1[0]           ; yes                    ;
 ; stack2[13]                                          ; stack1[0]           ; yes                    ;
@@ -354,11 +385,11 @@ Encoding Type:  One-Hot
 ; stack2[7]                                           ; stack1[0]           ; yes                    ;
 ; stack2[6]                                           ; stack1[0]           ; yes                    ;
 ; stack2[5]                                           ; stack1[0]           ; yes                    ;
-; stack3[4]                                           ; stack1[0]           ; yes                    ;
-; stack3[3]                                           ; stack1[0]           ; yes                    ;
-; stack3[2]                                           ; stack1[0]           ; yes                    ;
-; stack3[1]                                           ; stack1[0]           ; yes                    ;
-; stack3[0]                                           ; stack1[0]           ; yes                    ;
+; stack2[4]                                           ; stack1[0]           ; yes                    ;
+; stack2[3]                                           ; stack1[0]           ; yes                    ;
+; stack2[2]                                           ; stack1[0]           ; yes                    ;
+; stack2[1]                                           ; stack1[0]           ; yes                    ;
+; stack2[0]                                           ; stack1[0]           ; yes                    ;
 ; stack3[15]                                          ; stack1[0]           ; yes                    ;
 ; stack3[14]                                          ; stack1[0]           ; yes                    ;
 ; stack3[13]                                          ; stack1[0]           ; yes                    ;
@@ -370,6 +401,11 @@ Encoding Type:  One-Hot
 ; stack3[7]                                           ; stack1[0]           ; yes                    ;
 ; stack3[6]                                           ; stack1[0]           ; yes                    ;
 ; stack3[5]                                           ; stack1[0]           ; yes                    ;
+; stack3[4]                                           ; stack1[0]           ; yes                    ;
+; stack3[3]                                           ; stack1[0]           ; yes                    ;
+; stack3[2]                                           ; stack1[0]           ; yes                    ;
+; stack3[1]                                           ; stack1[0]           ; yes                    ;
+; stack3[0]                                           ; stack1[0]           ; yes                    ;
 ; Number of user-specified and inferred latches = 85  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -403,18 +439,16 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +------------------------------------------------------+----------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                      ;
-+---------------------------------+---------------------------+--------------------------------------------------------------------+
-; Register name                   ; Reason for Removal        ; Registers Removed due to This Register                             ;
-+---------------------------------+---------------------------+--------------------------------------------------------------------+
-; kbdex_ctrl:kbd_ctrl|key0code[8] ; Stuck at GND              ; kbdex_ctrl:kbd_ctrl|key0code[9], kbdex_ctrl:kbd_ctrl|key0code[10], ;
-;                                 ; due to stuck port data_in ; kbdex_ctrl:kbd_ctrl|key0code[11], kbdex_ctrl:kbd_ctrl|key0code[12] ;
-; kbdex_ctrl:kbd_ctrl|hdata[4]    ; Stuck at GND              ; kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|hdata[4]                   ;
-;                                 ; due to stuck port data_in ;                                                                    ;
-; kbdex_ctrl:kbd_ctrl|hdata[1]    ; Stuck at GND              ; kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|hdata[1]                   ;
-;                                 ; due to stuck port data_in ;                                                                    ;
-+---------------------------------+---------------------------+--------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                    ;
++---------------------------------+---------------------------+--------------------------------------------------+
+; Register name                   ; Reason for Removal        ; Registers Removed due to This Register           ;
++---------------------------------+---------------------------+--------------------------------------------------+
+; kbdex_ctrl:kbd_ctrl|hdata[4]    ; Stuck at GND              ; kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|hdata[4] ;
+;                                 ; due to stuck port data_in ;                                                  ;
+; kbdex_ctrl:kbd_ctrl|key0code[8] ; Stuck at GND              ; kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|hdata[1] ;
+;                                 ; due to stuck port data_in ;                                                  ;
++---------------------------------+---------------------------+--------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -443,30 +477,30 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
-; 3:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|count[3]  ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|rcount[0] ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|fcount[6] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|rcount[5] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|fcount[5] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |ps2_kbd_test|overflow                                          ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |ps2_kbd_test|toDisplay[1]                                      ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |ps2_kbd_test|tmp_stack[15]                                     ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |ps2_kbd_test|tmp_stack[4]                                      ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |ps2_kbd_test|stack3[3]                                         ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |ps2_kbd_test|stack2[10]                                        ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|state.EXT1                    ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |ps2_kbd_test|tmp_stack[15]                                     ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |ps2_kbd_test|stack0[13]                                        ;
-; 8:1                ; 5 bits    ; 25 LEs        ; 20 LEs               ; 5 LEs                  ; No         ; |ps2_kbd_test|tmp_stack[10]                                     ;
-; 8:1                ; 10 bits   ; 50 LEs        ; 40 LEs               ; 10 LEs                 ; No         ; |ps2_kbd_test|tmp_stack[15]                                     ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|Selector13                    ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |ps2_kbd_test|kbdex_ctrl:kbd_ctrl|Selector9                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; 3:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |calculator|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|count[4]  ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |calculator|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|rcount[1] ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |calculator|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|fcount[1] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |calculator|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|rcount[5] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |calculator|kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|fcount[7] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |calculator|overflow                                          ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |calculator|toDisplay[2]                                      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |calculator|tmp_stack[15]                                     ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |calculator|stack3[12]                                        ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |calculator|stack2[9]                                         ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |calculator|kbdex_ctrl:kbd_ctrl|state.EXT1                    ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |calculator|stack0[7]                                         ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |calculator|stack0[11]                                        ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |calculator|stack0[2]                                         ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 20 LEs               ; 5 LEs                  ; No         ; |calculator|tmp_stack[8]                                      ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 40 LEs               ; 10 LEs                 ; No         ; |calculator|tmp_stack[13]                                     ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |calculator|kbdex_ctrl:kbd_ctrl|Selector10                    ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |calculator|kbdex_ctrl:kbd_ctrl|Selector9                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 
 
 +------------------------------------------------------------------+
@@ -549,13 +583,135 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------+
-; Port Connectivity Checks: "somador_for:sub2" ;
-+------+-------+----------+--------------------+
-; Port ; Type  ; Severity ; Details            ;
-+------+-------+----------+--------------------+
-; ze   ; Input ; Info     ; Stuck at GND       ;
-+------+-------+----------+--------------------+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mult:mult1 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; n              ; 16    ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mult:mult2 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; n              ; 16    ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: mult:mult2|lpm_mult:Mult0        ;
++------------------------------------------------+------------+---------------------+
+; Parameter Name                                 ; Value      ; Type                ;
++------------------------------------------------+------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 16         ; Untyped             ;
+; LPM_WIDTHB                                     ; 16         ; Untyped             ;
+; LPM_WIDTHP                                     ; 32         ; Untyped             ;
+; LPM_WIDTHR                                     ; 32         ; Untyped             ;
+; LPM_WIDTHS                                     ; 1          ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED   ; Untyped             ;
+; LPM_PIPELINE                                   ; 0          ; Untyped             ;
+; LATENCY                                        ; 0          ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO         ; Untyped             ;
+; USE_EAB                                        ; OFF        ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 6          ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone II ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL     ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_l8t   ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped             ;
++------------------------------------------------+------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: mult:mult1|lpm_mult:Mult0        ;
++------------------------------------------------+------------+---------------------+
+; Parameter Name                                 ; Value      ; Type                ;
++------------------------------------------------+------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 16         ; Untyped             ;
+; LPM_WIDTHB                                     ; 16         ; Untyped             ;
+; LPM_WIDTHP                                     ; 32         ; Untyped             ;
+; LPM_WIDTHR                                     ; 32         ; Untyped             ;
+; LPM_WIDTHS                                     ; 1          ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED   ; Untyped             ;
+; LPM_PIPELINE                                   ; 0          ; Untyped             ;
+; LATENCY                                        ; 0          ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO         ; Untyped             ;
+; USE_EAB                                        ; OFF        ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 6          ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone II ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL     ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_l8t   ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped             ;
++------------------------------------------------+------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                    ;
++---------------------------------------+---------------------------+
+; Name                                  ; Value                     ;
++---------------------------------------+---------------------------+
+; Number of entity instances            ; 2                         ;
+; Entity Instance                       ; mult:mult2|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 16                        ;
+;     -- LPM_WIDTHB                     ; 16                        ;
+;     -- LPM_WIDTHP                     ; 32                        ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                  ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                        ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                        ;
+;     -- USE_EAB                        ; OFF                       ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                      ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                        ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                        ;
+; Entity Instance                       ; mult:mult1|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 16                        ;
+;     -- LPM_WIDTHB                     ; 16                        ;
+;     -- LPM_WIDTHP                     ; 32                        ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                  ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                        ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                        ;
+;     -- USE_EAB                        ; OFF                       ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                      ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                        ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                        ;
++---------------------------------------+---------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "somador_for:sub2"                                                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; ze   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; zs   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
@@ -621,27 +777,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Sun Aug 19 20:40:52 2018
+    Info: Processing started: Mon Aug 20 02:03:27 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ps2_kbd_test -c ps2_kbd_test
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 2 design units, including 1 entities, in source file /users/marco/downloads/calculatorvhdl/bcd/bcd.vhd
-    Info (12022): Found design unit 1: bcd-Behavioral
-    Info (12023): Found entity 1: bcd
 Info (12021): Found 2 design units, including 1 entities, in source file ps2_iobase.vhd
     Info (12022): Found design unit 1: ps2_iobase-rtl
     Info (12023): Found entity 1: ps2_iobase
 Info (12021): Found 2 design units, including 1 entities, in source file conv_7seg.vhd
     Info (12022): Found design unit 1: conv_7seg-structural
     Info (12023): Found entity 1: conv_7seg
-Info (12021): Found 2 design units, including 1 entities, in source file ps2_kbd_test.vhd
-    Info (12022): Found design unit 1: ps2_kbd_test-struct
-    Info (12023): Found entity 1: ps2_kbd_test
 Info (12021): Found 2 design units, including 1 entities, in source file kbdex_ctrl.vhd
     Info (12022): Found design unit 1: kbdex_ctrl-rtl
     Info (12023): Found entity 1: kbdex_ctrl
-Info (12021): Found 2 design units, including 1 entities, in source file /users/marco/downloads/calculatorvhdl/pwm/pwm.vhd
-    Info (12022): Found design unit 1: PWM-impl
-    Info (12023): Found entity 1: PWM
 Info (12021): Found 2 design units, including 1 entities, in source file map_ps2.vhd
     Info (12022): Found design unit 1: map_ps2-structural
     Info (12023): Found entity 1: map_ps2
@@ -651,196 +798,206 @@ Info (12021): Found 2 design units, including 1 entities, in source file somador
 Info (12021): Found 2 design units, including 1 entities, in source file somador_for.vhd
     Info (12022): Found design unit 1: somador_for-estrutural
     Info (12023): Found entity 1: somador_for
-Info (12127): Elaborating entity "ps2_kbd_test" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at ps2_kbd_test.vhd(94): object "CLOCKHZ" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at ps2_kbd_test.vhd(111): used implicit default value for signal "lights" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at ps2_kbd_test.vhd(116): object "soma_overflow1" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at ps2_kbd_test.vhd(117): object "sub_overflow1" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at ps2_kbd_test.vhd(118): object "soma_overflow2" assigned a value but never read
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(201): signal "statek" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(202): signal "clean_tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(204): signal "key0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(205): signal "stack1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(207): signal "stack3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(208): signal "stack2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(209): signal "stack1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(211): signal "overflow" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(212): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(212): signal "clean_tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(213): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(215): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(216): signal "stack2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(217): signal "stack1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(218): signal "stack0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(219): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(221): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(222): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(223): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(225): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(226): signal "stack0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(226): signal "stack1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(226): signal "soma_result2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(229): signal "stack3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(230): signal "stack2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(235): signal "stack3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(236): signal "stack2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(237): signal "soma_result2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(238): signal "soma_result2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(241): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(242): signal "stack0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(242): signal "stack1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(242): signal "sub_result2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(245): signal "stack3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(246): signal "stack2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(251): signal "stack3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(252): signal "stack2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(253): signal "sub_result2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(254): signal "sub_result2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(257): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(258): signal "sub_overflow2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(261): signal "stack3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(262): signal "stack2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(267): signal "stack3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(268): signal "stack2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(269): signal "stack0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(269): signal "stack1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(270): signal "stack0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(270): signal "stack1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(277): signal "key0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(280): signal "overflow" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(281): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(282): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(283): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(283): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(284): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(284): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(285): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(285): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(287): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(288): signal "stack2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(289): signal "stack1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(290): signal "stack0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(291): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(293): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(294): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(295): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(296): signal "stack0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(296): signal "stack1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(296): signal "soma_result1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(301): signal "soma_result1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(302): signal "soma_result1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(305): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(306): signal "stack0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(306): signal "stack1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(306): signal "sub_result1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(311): signal "sub_result1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(312): signal "sub_result1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(315): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(316): signal "stack0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(316): signal "stack1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(316): signal "sub_result1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(321): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(321): signal "stack0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(322): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(322): signal "stack0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at ps2_kbd_test.vhd(198): inferring latch(es) for signal or variable "tmp_stack", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at ps2_kbd_test.vhd(198): inferring latch(es) for signal or variable "stack3", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at ps2_kbd_test.vhd(198): inferring latch(es) for signal or variable "stack2", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at ps2_kbd_test.vhd(198): inferring latch(es) for signal or variable "stack1", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at ps2_kbd_test.vhd(198): inferring latch(es) for signal or variable "stack0", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at ps2_kbd_test.vhd(198): inferring latch(es) for signal or variable "overflow", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at ps2_kbd_test.vhd(198): inferring latch(es) for signal or variable "clean_tmp", which holds its previous value in one or more paths through the process
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(338): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(338): signal "bcd_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(339): signal "bcd_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(340): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(340): signal "bcd_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(341): signal "bcd_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ps2_kbd_test.vhd(343): signal "bcd_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10873): Using initial value X (don't care) for net "LEDG[4..0]" at ps2_kbd_test.vhd(29)
-Warning (10873): Using initial value X (don't care) for net "LEDR[7..0]" at ps2_kbd_test.vhd(30)
-Info (10041): Inferred latch for "clean_tmp" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "overflow" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack0[0]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack0[1]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack0[2]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack0[3]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack0[4]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack0[5]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack0[6]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack0[7]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack0[8]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack0[9]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack0[10]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack0[11]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack0[12]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack0[13]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack0[14]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack0[15]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack1[0]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack1[1]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack1[2]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack1[3]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack1[4]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack1[5]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack1[6]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack1[7]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack1[8]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack1[9]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack1[10]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack1[11]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack1[12]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack1[13]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack1[14]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack1[15]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack2[0]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack2[1]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack2[2]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack2[3]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack2[4]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack2[5]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack2[6]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack2[7]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack2[8]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack2[9]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack2[10]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack2[11]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack2[12]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack2[13]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack2[14]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack2[15]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack3[0]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack3[1]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack3[2]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack3[3]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack3[4]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack3[5]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack3[6]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack3[7]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack3[8]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack3[9]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack3[10]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack3[11]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack3[12]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack3[13]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack3[14]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "stack3[15]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "tmp_stack[0]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "tmp_stack[1]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "tmp_stack[2]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "tmp_stack[3]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "tmp_stack[4]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "tmp_stack[5]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "tmp_stack[6]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "tmp_stack[7]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "tmp_stack[8]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "tmp_stack[9]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "tmp_stack[10]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "tmp_stack[11]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "tmp_stack[12]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "tmp_stack[13]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "tmp_stack[14]" at ps2_kbd_test.vhd(198)
-Info (10041): Inferred latch for "tmp_stack[15]" at ps2_kbd_test.vhd(198)
+Info (12021): Found 2 design units, including 1 entities, in source file mult.vhd
+    Info (12022): Found design unit 1: mult-Behavioral
+    Info (12023): Found entity 1: mult
+Info (12021): Found 2 design units, including 1 entities, in source file pwm.vhd
+    Info (12022): Found design unit 1: PWM-impl
+    Info (12023): Found entity 1: PWM
+Info (12021): Found 2 design units, including 1 entities, in source file bcd.vhd
+    Info (12022): Found design unit 1: bcd-Behavioral
+    Info (12023): Found entity 1: bcd
+Info (12021): Found 2 design units, including 1 entities, in source file calculator.vhd
+    Info (12022): Found design unit 1: calculator-struct
+    Info (12023): Found entity 1: calculator
+Info (12127): Elaborating entity "calculator" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at calculator.vhd(120): used implicit default value for signal "lights" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at calculator.vhd(125): object "soma_overflow1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at calculator.vhd(126): object "sub_overflow1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at calculator.vhd(127): object "soma_overflow2" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at calculator.vhd(128): object "sub_overflow2" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at calculator.vhd(189): signal "statek" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(190): signal "clean_tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(192): signal "key0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(193): signal "stack1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(195): signal "stack3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(196): signal "stack2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(197): signal "stack1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(199): signal "overflow" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(200): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(200): signal "clean_tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(201): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(203): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(204): signal "stack2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(205): signal "stack1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(206): signal "stack0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(207): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(209): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(210): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(211): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(213): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(214): signal "stack0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(214): signal "stack1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(214): signal "soma_result2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(217): signal "stack3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(218): signal "stack2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(223): signal "stack3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(224): signal "stack2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(225): signal "soma_result2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(226): signal "soma_result2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(229): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(230): signal "stack0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(230): signal "stack1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(230): signal "sub_result2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(233): signal "stack3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(234): signal "stack2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(239): signal "stack3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(240): signal "stack2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(241): signal "sub_result2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(242): signal "sub_result2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(245): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(246): signal "stack0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(246): signal "stack1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(246): signal "mult_result2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(249): signal "stack3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(250): signal "stack2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(255): signal "stack3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(256): signal "stack2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(257): signal "mult_result2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(258): signal "mult_result2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(265): signal "key0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(268): signal "overflow" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(269): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(270): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(271): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(271): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(272): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(272): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(273): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(273): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(275): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(276): signal "stack2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(277): signal "stack1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(278): signal "stack0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(279): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(281): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(282): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(283): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(284): signal "stack0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(284): signal "stack1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(284): signal "soma_result1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(289): signal "soma_result1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(290): signal "soma_result1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(293): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(294): signal "stack0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(294): signal "stack1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(294): signal "sub_result1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(299): signal "sub_result1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(300): signal "sub_result1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(303): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(304): signal "tmp_stack" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(304): signal "stack0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(304): signal "mult_result1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(309): signal "mult_result1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(310): signal "mult_result1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at calculator.vhd(186): inferring latch(es) for signal or variable "tmp_stack", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at calculator.vhd(186): inferring latch(es) for signal or variable "stack3", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at calculator.vhd(186): inferring latch(es) for signal or variable "stack2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at calculator.vhd(186): inferring latch(es) for signal or variable "stack1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at calculator.vhd(186): inferring latch(es) for signal or variable "stack0", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at calculator.vhd(186): inferring latch(es) for signal or variable "overflow", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at calculator.vhd(186): inferring latch(es) for signal or variable "clean_tmp", which holds its previous value in one or more paths through the process
+Warning (10492): VHDL Process Statement warning at calculator.vhd(326): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(326): signal "bcd_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(327): signal "bcd_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(328): signal "key_conv" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(328): signal "bcd_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(329): signal "bcd_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at calculator.vhd(331): signal "bcd_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10873): Using initial value X (don't care) for net "LEDG[4..0]" at calculator.vhd(29)
+Warning (10873): Using initial value X (don't care) for net "LEDR[7..0]" at calculator.vhd(30)
+Info (10041): Inferred latch for "clean_tmp" at calculator.vhd(186)
+Info (10041): Inferred latch for "overflow" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack0[0]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack0[1]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack0[2]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack0[3]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack0[4]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack0[5]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack0[6]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack0[7]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack0[8]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack0[9]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack0[10]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack0[11]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack0[12]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack0[13]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack0[14]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack0[15]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack1[0]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack1[1]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack1[2]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack1[3]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack1[4]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack1[5]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack1[6]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack1[7]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack1[8]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack1[9]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack1[10]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack1[11]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack1[12]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack1[13]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack1[14]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack1[15]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack2[0]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack2[1]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack2[2]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack2[3]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack2[4]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack2[5]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack2[6]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack2[7]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack2[8]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack2[9]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack2[10]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack2[11]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack2[12]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack2[13]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack2[14]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack2[15]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack3[0]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack3[1]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack3[2]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack3[3]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack3[4]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack3[5]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack3[6]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack3[7]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack3[8]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack3[9]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack3[10]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack3[11]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack3[12]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack3[13]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack3[14]" at calculator.vhd(186)
+Info (10041): Inferred latch for "stack3[15]" at calculator.vhd(186)
+Info (10041): Inferred latch for "tmp_stack[0]" at calculator.vhd(186)
+Info (10041): Inferred latch for "tmp_stack[1]" at calculator.vhd(186)
+Info (10041): Inferred latch for "tmp_stack[2]" at calculator.vhd(186)
+Info (10041): Inferred latch for "tmp_stack[3]" at calculator.vhd(186)
+Info (10041): Inferred latch for "tmp_stack[4]" at calculator.vhd(186)
+Info (10041): Inferred latch for "tmp_stack[5]" at calculator.vhd(186)
+Info (10041): Inferred latch for "tmp_stack[6]" at calculator.vhd(186)
+Info (10041): Inferred latch for "tmp_stack[7]" at calculator.vhd(186)
+Info (10041): Inferred latch for "tmp_stack[8]" at calculator.vhd(186)
+Info (10041): Inferred latch for "tmp_stack[9]" at calculator.vhd(186)
+Info (10041): Inferred latch for "tmp_stack[10]" at calculator.vhd(186)
+Info (10041): Inferred latch for "tmp_stack[11]" at calculator.vhd(186)
+Info (10041): Inferred latch for "tmp_stack[12]" at calculator.vhd(186)
+Info (10041): Inferred latch for "tmp_stack[13]" at calculator.vhd(186)
+Info (10041): Inferred latch for "tmp_stack[14]" at calculator.vhd(186)
+Info (10041): Inferred latch for "tmp_stack[15]" at calculator.vhd(186)
 Info (12128): Elaborating entity "conv_7seg" for hierarchy "conv_7seg:hexseg0"
 Warning (10631): VHDL Process Statement warning at conv_7seg.vhd(12): inferring latch(es) for signal or variable "seg", which holds its previous value in one or more paths through the process
 Info (12128): Elaborating entity "kbdex_ctrl" for hierarchy "kbdex_ctrl:kbd_ctrl"
@@ -887,6 +1044,23 @@ Info (12128): Elaborating entity "map_ps2" for hierarchy "map_ps2:map1"
 Info (12128): Elaborating entity "bcd" for hierarchy "bcd:bcd1"
 Info (12128): Elaborating entity "somador_for" for hierarchy "somador_for:soma1"
 Info (12128): Elaborating entity "somador_completo" for hierarchy "somador_for:soma1|somador_completo:\abc:0:centro"
+Info (12128): Elaborating entity "mult" for hierarchy "mult:mult1"
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "mult:mult2|Mult0"
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "mult:mult1|Mult0"
+Info (12130): Elaborated megafunction instantiation "mult:mult2|lpm_mult:Mult0"
+Info (12133): Instantiated megafunction "mult:mult2|lpm_mult:Mult0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHA" = "16"
+    Info (12134): Parameter "LPM_WIDTHB" = "16"
+    Info (12134): Parameter "LPM_WIDTHP" = "32"
+    Info (12134): Parameter "LPM_WIDTHR" = "32"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_l8t.tdf
+    Info (12023): Found entity 1: mult_l8t
 Warning (13012): Latch tmp_stack[4] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
 Warning (13012): Latch tmp_stack[3] has unsafe behavior
@@ -920,26 +1094,6 @@ Warning (13012): Latch tmp_stack[14] has unsafe behavior
 Warning (13012): Latch tmp_stack[13] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal kbdex_ctrl:kbd_ctrl|key0code[13]
 Warning (13012): Latch overflow has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal kbdex_ctrl:kbd_ctrl|key0code[0]
-Warning (13012): Latch stack0[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
-Warning (13012): Latch stack1[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
-Warning (13012): Latch stack1[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
-Warning (13012): Latch stack0[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal kbdex_ctrl:kbd_ctrl|key0code[0]
-Warning (13012): Latch stack1[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
-Warning (13012): Latch stack0[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
-Warning (13012): Latch stack1[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
-Warning (13012): Latch stack0[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal kbdex_ctrl:kbd_ctrl|key0code[0]
-Warning (13012): Latch stack1[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
-Warning (13012): Latch stack0[0] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal kbdex_ctrl:kbd_ctrl|key0code[0]
 Warning (13012): Latch stack0[15] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
@@ -985,16 +1139,26 @@ Warning (13012): Latch stack1[5] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
 Warning (13012): Latch stack0[5] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal kbdex_ctrl:kbd_ctrl|key0code[0]
-Warning (13012): Latch stack2[4] has unsafe behavior
+Warning (13012): Latch stack1[4] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
-Warning (13012): Latch stack2[3] has unsafe behavior
+Warning (13012): Latch stack0[4] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
-Warning (13012): Latch stack2[2] has unsafe behavior
+Warning (13012): Latch stack1[3] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
-Warning (13012): Latch stack2[1] has unsafe behavior
+Warning (13012): Latch stack0[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal kbdex_ctrl:kbd_ctrl|key0code[0]
+Warning (13012): Latch stack1[2] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
-Warning (13012): Latch stack2[0] has unsafe behavior
+Warning (13012): Latch stack0[2] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
+Warning (13012): Latch stack0[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal kbdex_ctrl:kbd_ctrl|key0code[0]
+Warning (13012): Latch stack1[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
+Warning (13012): Latch stack1[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
+Warning (13012): Latch stack0[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal kbdex_ctrl:kbd_ctrl|key0code[0]
 Warning (13012): Latch stack2[15] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
 Warning (13012): Latch stack2[14] has unsafe behavior
@@ -1017,15 +1181,15 @@ Warning (13012): Latch stack2[6] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
 Warning (13012): Latch stack2[5] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
-Warning (13012): Latch stack3[4] has unsafe behavior
+Warning (13012): Latch stack2[4] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
-Warning (13012): Latch stack3[3] has unsafe behavior
+Warning (13012): Latch stack2[3] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
-Warning (13012): Latch stack3[2] has unsafe behavior
+Warning (13012): Latch stack2[2] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
-Warning (13012): Latch stack3[1] has unsafe behavior
+Warning (13012): Latch stack2[1] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
-Warning (13012): Latch stack3[0] has unsafe behavior
+Warning (13012): Latch stack2[0] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
 Warning (13012): Latch stack3[15] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
@@ -1048,6 +1212,16 @@ Warning (13012): Latch stack3[7] has unsafe behavior
 Warning (13012): Latch stack3[6] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
 Warning (13012): Latch stack3[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
+Warning (13012): Latch stack3[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
+Warning (13012): Latch stack3[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
+Warning (13012): Latch stack3[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
+Warning (13012): Latch stack3[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
+Warning (13012): Latch stack3[0] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal clean_tmp
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
@@ -1082,15 +1256,16 @@ Warning (21074): Design contains 6 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[2]"
     Warning (15610): No output dependent on input pin "KEY[3]"
     Warning (15610): No output dependent on input pin "SW[9]"
-Info (21057): Implemented 1088 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1094 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 19 input pins
     Info (21059): Implemented 46 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 1021 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 334 warnings
-    Info: Peak virtual memory: 4662 megabytes
-    Info: Processing ended: Sun Aug 19 20:40:56 2018
-    Info: Elapsed time: 00:00:04
+    Info (21061): Implemented 1023 logic cells
+    Info (21062): Implemented 4 DSP elements
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 332 warnings
+    Info: Peak virtual memory: 4676 megabytes
+    Info: Processing ended: Mon Aug 20 02:03:30 2018
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
 

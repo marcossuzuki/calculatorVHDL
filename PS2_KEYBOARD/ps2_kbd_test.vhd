@@ -4,7 +4,7 @@ use IEEE.NUMERIC_STD.ALL;
 use ieee.std_logic_arith.all;
 use IEEE.std_logic_unsigned.all;
 
-entity ps2_kbd_test is
+entity calculator is
 	port
 	(
 		------------------------	Clock Input	 	------------------------
@@ -35,7 +35,7 @@ entity ps2_kbd_test is
 	);
 end;
 
-architecture struct of ps2_kbd_test is
+architecture struct of calculator is
 	component conv_7seg
 		port(
 			digit		:		in STD_LOGIC_VECTOR (3 downto 0);
@@ -91,7 +91,14 @@ architecture struct of ps2_kbd_test is
 				zs 	: OUT STD_LOGIC);
 	END component;
 	
-	signal CLOCKHZ, resetn 	: std_logic;
+	component mult IS
+		generic (n : integer:= 16);
+		Port ( A, B 	 	: in   STD_LOGIC_VECTOR (n-1 downto 0);
+				result		: out  STD_LOGIC_VECTOR (n-1 downto 0)
+				);
+	END component;
+	
+	signal resetn 				: std_logic;
 	signal key0 				: std_logic_vector(47 downto 0);
 	signal key_conv			: std_logic_vector(15 downto 0);
 	signal key_seg				: std_logic_vector(15 downto 0);
@@ -108,6 +115,8 @@ architecture struct of ps2_kbd_test is
 	signal sub_result1		: std_logic_vector(15 downto 0):=x"0000";
 	signal soma_result2		: std_logic_vector(15 downto 0):=x"0000";
 	signal sub_result2		: std_logic_vector(15 downto 0):=x"0000";
+	signal mult_result1		: std_logic_vector(15 downto 0):=x"0000";
+	signal mult_result2		: std_logic_vector(15 downto 0):=x"0000";
 	signal lights, key_on	: std_logic_vector( 2 downto 0);
 	signal pwm_OUT				: STD_LOGIC;
 	signal statek, next_statek: STD_LOGIC;
@@ -154,6 +163,9 @@ begin
 	soma2: somador_for PORT MAP (stack0, stack1, ze=>'0', s=>soma_result2, zs=>soma_overflow2);
 	sub2:  somador_for PORT MAP (stack0, comp2_stack1, ze=>'0', s=>sub_result2,  zs=>sub_overflow2);
 	
+	mult1: mult PORT MAP (tmp_stack, stack0, mult_result1);
+	mult2: mult PORT MAP (stack0, stack1, mult_result2);
+	
 	LEDG(7 downto 5) <= key_on;
 	
 	LEDR(9) <= tmp_stack(15); -- indicador de negativo
@@ -163,30 +175,6 @@ begin
 		key_seg <= not(tmp_stack)+1 when '1',
 					  tmp_stack when others;
 	
-	
-	-- lights <= SW(2 downto 0);
-	
-	-- CLOCKTAP <= CLOCKHZ;
-	
-	-- Hz clock	
-	process(CLOCK_24(0))
-		constant F_HZ : integer := 5;
-		
-		constant DIVIDER : integer := 24000000/F_HZ;
-		variable count : integer range 0 to DIVIDER := 0;		
-	begin
-		if(rising_edge(CLOCK_24(0))) then
-			if count < DIVIDER / 2 then
-				CLOCKHZ <= '1';
-			else 
-				CLOCKHZ <= '0';
-			end if;
-			if count = DIVIDER then
-				count := 0;
-			end if;
-			count := count + 1;			
-		end if;
-	end process;	
 	
 	process(CLOCK_50)
 	begin
@@ -255,7 +243,7 @@ begin
 								end if;
 								clean_tmp <= '0';
 							elsif(key_conv = x"007C") then --multiplicacao apertando '*' do numpad
-								if(sub_overflow2 = '1') then
+								if((stack0(15) xor stack1(15)) /= mult_result2(15)) then
 									overflow <= '1';
 									stack3 <= (others=>'0');
 									stack2 <= stack3;
@@ -266,8 +254,8 @@ begin
 									stack3 <= (others=>'0');
 									stack2 <= stack3;
 									stack1 <= stack2;
-									stack0 <= stack0 +(not stack1)+1; 
-									tmp_stack <= stack0 +(not stack1)+1; 
+									stack0 <= mult_result2; 
+									tmp_stack <= mult_result2; 
 								end if;
 								clean_tmp <= '0';
 							end if;
@@ -313,13 +301,13 @@ begin
 								end if;
 								clean_tmp <='1';
 							elsif(key_conv = x"007C") then --multiplicacao apertando '*' do numpad
-								if((stack0(15) and not stack1(15)) /= sub_result1(15)) then
+								if((tmp_stack(15) xor stack0(15)) /= mult_result1(15)) then
 									overflow <= '1';
 									stack0 <=(others=>'0');
 									tmp_stack <=(others=>'0');
 								else 
-									stack0 <= tmp_stack +(not stack0)+1;
-									tmp_stack <= tmp_stack +(not stack0)+1;
+									stack0 <= mult_result1;
+									tmp_stack <= mult_result1;
 								end if;
 								clean_tmp <='1';
 							end if;

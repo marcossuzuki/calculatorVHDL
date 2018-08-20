@@ -3,80 +3,80 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'kbdex_ctrl:kbd_ctrl|key0code[0]'
-Slack : -16.520
-TNS   : -893.930
+Slack : -20.175
+TNS   : -1107.940
 
 Type  : Slow Model Setup 'CLOCK_24[0]'
-Slack : -5.640
-TNS   : -363.828
+Slack : -6.698
+TNS   : -386.563
 
 Type  : Slow Model Setup 'kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -3.859
-TNS   : -33.765
+Slack : -2.789
+TNS   : -35.583
 
 Type  : Slow Model Setup 'CLOCK_50'
-Slack : -1.774
-TNS   : -8.190
+Slack : -1.773
+TNS   : -8.189
 
 Type  : Slow Model Setup 'kbdex_ctrl:kbd_ctrl|sigsend'
-Slack : 0.365
-TNS   : 0.000
+Slack : -0.120
+TNS   : -0.120
 
 Type  : Slow Model Hold 'kbdex_ctrl:kbd_ctrl|key0code[0]'
-Slack : -10.511
-TNS   : -661.960
+Slack : -11.875
+TNS   : -752.220
 
 Type  : Slow Model Hold 'CLOCK_24[0]'
-Slack : -2.666
-TNS   : -2.666
-
-Type  : Slow Model Hold 'kbdex_ctrl:kbd_ctrl|sigsend'
-Slack : 0.387
-TNS   : 0.000
+Slack : -2.691
+TNS   : -4.035
 
 Type  : Slow Model Hold 'kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|sigtrigger'
 Slack : 0.445
 TNS   : 0.000
 
 Type  : Slow Model Hold 'CLOCK_50'
-Slack : 0.524
+Slack : 0.610
+TNS   : 0.000
+
+Type  : Slow Model Hold 'kbdex_ctrl:kbd_ctrl|sigsend'
+Slack : 0.872
 TNS   : 0.000
 
 Type  : Slow Model Recovery 'CLOCK_24[0]'
-Slack : -5.832
-TNS   : -254.507
+Slack : -6.333
+TNS   : -242.736
 
 Type  : Slow Model Recovery 'kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -3.834
-TNS   : -38.353
+Slack : -2.938
+TNS   : -36.783
 
 Type  : Slow Model Recovery 'kbdex_ctrl:kbd_ctrl|sigsend'
-Slack : -1.113
-TNS   : -2.226
+Slack : -0.940
+TNS   : -1.880
 
 Type  : Slow Model Recovery 'KEY[1]'
-Slack : -0.638
-TNS   : -0.638
-
-Type  : Slow Model Removal 'CLOCK_24[0]'
-Slack : 0.741
-TNS   : 0.000
-
-Type  : Slow Model Removal 'kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : 0.857
+Slack : 0.368
 TNS   : 0.000
 
 Type  : Slow Model Removal 'KEY[1]'
-Slack : 1.056
+Slack : 0.198
+TNS   : 0.000
+
+Type  : Slow Model Removal 'CLOCK_24[0]'
+Slack : 1.050
+TNS   : 0.000
+
+Type  : Slow Model Removal 'kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|sigtrigger'
+Slack : 1.477
 TNS   : 0.000
 
 Type  : Slow Model Removal 'kbdex_ctrl:kbd_ctrl|sigsend'
-Slack : 1.865
+Slack : 1.692
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'kbdex_ctrl:kbd_ctrl|key0code[0]'
-Slack : -8.260
-TNS   : -5371.632
+Slack : -7.739
+TNS   : -5766.860
 
 Type  : Slow Model Minimum Pulse Width 'CLOCK_24[0]'
 Slack : -1.631
@@ -99,80 +99,80 @@ Slack : -0.611
 TNS   : -2.444
 
 Type  : Fast Model Setup 'kbdex_ctrl:kbd_ctrl|key0code[0]'
-Slack : -6.011
-TNS   : -293.866
+Slack : -7.156
+TNS   : -386.062
 
 Type  : Fast Model Setup 'CLOCK_24[0]'
-Slack : -1.944
-TNS   : -79.331
+Slack : -2.315
+TNS   : -90.409
 
 Type  : Fast Model Setup 'kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -1.326
-TNS   : -3.544
+Slack : -0.922
+TNS   : -3.290
 
 Type  : Fast Model Setup 'CLOCK_50'
-Slack : -0.067
-TNS   : -0.067
+Slack : -0.066
+TNS   : -0.066
 
 Type  : Fast Model Setup 'kbdex_ctrl:kbd_ctrl|sigsend'
-Slack : 0.666
+Slack : 0.452
 TNS   : 0.000
 
 Type  : Fast Model Hold 'kbdex_ctrl:kbd_ctrl|key0code[0]'
-Slack : -3.920
-TNS   : -275.571
+Slack : -4.930
+TNS   : -300.045
 
 Type  : Fast Model Hold 'CLOCK_24[0]'
-Slack : -1.701
-TNS   : -6.651
-
-Type  : Fast Model Hold 'kbdex_ctrl:kbd_ctrl|sigsend'
-Slack : 0.214
-TNS   : 0.000
+Slack : -1.721
+TNS   : -9.879
 
 Type  : Fast Model Hold 'kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|sigtrigger'
 Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast Model Hold 'CLOCK_50'
-Slack : 0.268
+Slack : 0.240
+TNS   : 0.000
+
+Type  : Fast Model Hold 'kbdex_ctrl:kbd_ctrl|sigsend'
+Slack : 0.428
 TNS   : 0.000
 
 Type  : Fast Model Recovery 'CLOCK_24[0]'
-Slack : -1.809
-TNS   : -58.378
+Slack : -2.047
+TNS   : -51.702
 
 Type  : Fast Model Recovery 'kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : -1.491
-TNS   : -6.025
-
-Type  : Fast Model Recovery 'KEY[1]'
-Slack : -0.153
-TNS   : -0.153
+Slack : -1.159
+TNS   : -5.181
 
 Type  : Fast Model Recovery 'kbdex_ctrl:kbd_ctrl|sigsend'
-Slack : 0.047
+Slack : 0.117
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'KEY[1]'
+Slack : 0.259
 TNS   : 0.000
 
 Type  : Fast Model Removal 'CLOCK_24[0]'
-Slack : -0.248
-TNS   : -4.292
+Slack : -0.243
+TNS   : -2.602
+
+Type  : Fast Model Removal 'KEY[1]'
+Slack : 0.569
+TNS   : 0.000
 
 Type  : Fast Model Removal 'kbdex_ctrl:kbd_ctrl|ps2_iobase:ps2_ctrl|sigtrigger'
-Slack : 0.533
+Slack : 0.763
 TNS   : 0.000
 
 Type  : Fast Model Removal 'kbdex_ctrl:kbd_ctrl|sigsend'
-Slack : 0.833
-TNS   : 0.000
-
-Type  : Fast Model Removal 'KEY[1]'
-Slack : 0.919
+Slack : 0.763
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'kbdex_ctrl:kbd_ctrl|key0code[0]'
-Slack : -2.789
-TNS   : -1545.852
+Slack : -2.471
+TNS   : -1702.390
 
 Type  : Fast Model Minimum Pulse Width 'CLOCK_24[0]'
 Slack : -1.380

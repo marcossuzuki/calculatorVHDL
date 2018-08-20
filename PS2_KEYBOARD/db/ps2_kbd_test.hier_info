@@ -63,7 +63,7 @@ LEDR[4] <= <GND>
 LEDR[5] <= <GND>
 LEDR[6] <= <GND>
 LEDR[7] <= <GND>
-LEDR[8] <= <GND>
+LEDR[8] <= overflow.DB_MAX_OUTPUT_PORT_TYPE
 LEDR[9] <= tmp_stack[15].DB_MAX_OUTPUT_PORT_TYPE
 PS2_DAT <> kbdex_ctrl:kbd_ctrl.ps2_data
 PS2_CLK <> kbdex_ctrl:kbd_ctrl.ps2_clk
@@ -845,5 +845,1561 @@ bcd_out[16] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
 bcd_out[17] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
 bcd_out[18] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
 bcd_out[19] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma1
+x[0] => somador_completo:abc:0:centro.A
+x[1] => somador_completo:abc:1:centro.A
+x[2] => somador_completo:abc:2:centro.A
+x[3] => somador_completo:abc:3:centro.A
+x[4] => somador_completo:abc:4:centro.A
+x[5] => somador_completo:abc:5:centro.A
+x[6] => somador_completo:abc:6:centro.A
+x[7] => somador_completo:abc:7:centro.A
+x[8] => somador_completo:abc:8:centro.A
+x[9] => somador_completo:abc:9:centro.A
+x[10] => somador_completo:abc:10:centro.A
+x[11] => somador_completo:abc:11:centro.A
+x[12] => somador_completo:abc:12:centro.A
+x[13] => somador_completo:abc:13:centro.A
+x[14] => somador_completo:abc:14:centro.A
+x[15] => somador_completo:abc:15:centro.A
+y[0] => somador_completo:abc:0:centro.B
+y[1] => somador_completo:abc:1:centro.B
+y[2] => somador_completo:abc:2:centro.B
+y[3] => somador_completo:abc:3:centro.B
+y[4] => somador_completo:abc:4:centro.B
+y[5] => somador_completo:abc:5:centro.B
+y[6] => somador_completo:abc:6:centro.B
+y[7] => somador_completo:abc:7:centro.B
+y[8] => somador_completo:abc:8:centro.B
+y[9] => somador_completo:abc:9:centro.B
+y[10] => somador_completo:abc:10:centro.B
+y[11] => somador_completo:abc:11:centro.B
+y[12] => somador_completo:abc:12:centro.B
+y[13] => somador_completo:abc:13:centro.B
+y[14] => somador_completo:abc:14:centro.B
+y[15] => somador_completo:abc:15:centro.B
+ze => somador_completo:abc:0:centro.Cin
+s[0] <= somador_completo:abc:0:centro.S
+s[1] <= somador_completo:abc:1:centro.S
+s[2] <= somador_completo:abc:2:centro.S
+s[3] <= somador_completo:abc:3:centro.S
+s[4] <= somador_completo:abc:4:centro.S
+s[5] <= somador_completo:abc:5:centro.S
+s[6] <= somador_completo:abc:6:centro.S
+s[7] <= somador_completo:abc:7:centro.S
+s[8] <= somador_completo:abc:8:centro.S
+s[9] <= somador_completo:abc:9:centro.S
+s[10] <= somador_completo:abc:10:centro.S
+s[11] <= somador_completo:abc:11:centro.S
+s[12] <= somador_completo:abc:12:centro.S
+s[13] <= somador_completo:abc:13:centro.S
+s[14] <= somador_completo:abc:14:centro.S
+s[15] <= somador_completo:abc:15:centro.S
+zs <= somador_completo:abc:15:centro.Cout
+
+
+|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:0:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:1:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:2:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:3:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:4:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:5:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:6:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:7:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:8:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:9:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:10:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:11:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:12:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:13:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:14:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma1|somador_completo:\abc:15:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub1
+x[0] => somador_completo:abc:0:centro.A
+x[1] => somador_completo:abc:1:centro.A
+x[2] => somador_completo:abc:2:centro.A
+x[3] => somador_completo:abc:3:centro.A
+x[4] => somador_completo:abc:4:centro.A
+x[5] => somador_completo:abc:5:centro.A
+x[6] => somador_completo:abc:6:centro.A
+x[7] => somador_completo:abc:7:centro.A
+x[8] => somador_completo:abc:8:centro.A
+x[9] => somador_completo:abc:9:centro.A
+x[10] => somador_completo:abc:10:centro.A
+x[11] => somador_completo:abc:11:centro.A
+x[12] => somador_completo:abc:12:centro.A
+x[13] => somador_completo:abc:13:centro.A
+x[14] => somador_completo:abc:14:centro.A
+x[15] => somador_completo:abc:15:centro.A
+y[0] => somador_completo:abc:0:centro.B
+y[1] => somador_completo:abc:1:centro.B
+y[2] => somador_completo:abc:2:centro.B
+y[3] => somador_completo:abc:3:centro.B
+y[4] => somador_completo:abc:4:centro.B
+y[5] => somador_completo:abc:5:centro.B
+y[6] => somador_completo:abc:6:centro.B
+y[7] => somador_completo:abc:7:centro.B
+y[8] => somador_completo:abc:8:centro.B
+y[9] => somador_completo:abc:9:centro.B
+y[10] => somador_completo:abc:10:centro.B
+y[11] => somador_completo:abc:11:centro.B
+y[12] => somador_completo:abc:12:centro.B
+y[13] => somador_completo:abc:13:centro.B
+y[14] => somador_completo:abc:14:centro.B
+y[15] => somador_completo:abc:15:centro.B
+ze => somador_completo:abc:0:centro.Cin
+s[0] <= somador_completo:abc:0:centro.S
+s[1] <= somador_completo:abc:1:centro.S
+s[2] <= somador_completo:abc:2:centro.S
+s[3] <= somador_completo:abc:3:centro.S
+s[4] <= somador_completo:abc:4:centro.S
+s[5] <= somador_completo:abc:5:centro.S
+s[6] <= somador_completo:abc:6:centro.S
+s[7] <= somador_completo:abc:7:centro.S
+s[8] <= somador_completo:abc:8:centro.S
+s[9] <= somador_completo:abc:9:centro.S
+s[10] <= somador_completo:abc:10:centro.S
+s[11] <= somador_completo:abc:11:centro.S
+s[12] <= somador_completo:abc:12:centro.S
+s[13] <= somador_completo:abc:13:centro.S
+s[14] <= somador_completo:abc:14:centro.S
+s[15] <= somador_completo:abc:15:centro.S
+zs <= somador_completo:abc:15:centro.Cout
+
+
+|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:0:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:1:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:2:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:3:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:4:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:5:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:6:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:7:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:8:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:9:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:10:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:11:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:12:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:13:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:14:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub1|somador_completo:\abc:15:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma2
+x[0] => somador_completo:abc:0:centro.A
+x[1] => somador_completo:abc:1:centro.A
+x[2] => somador_completo:abc:2:centro.A
+x[3] => somador_completo:abc:3:centro.A
+x[4] => somador_completo:abc:4:centro.A
+x[5] => somador_completo:abc:5:centro.A
+x[6] => somador_completo:abc:6:centro.A
+x[7] => somador_completo:abc:7:centro.A
+x[8] => somador_completo:abc:8:centro.A
+x[9] => somador_completo:abc:9:centro.A
+x[10] => somador_completo:abc:10:centro.A
+x[11] => somador_completo:abc:11:centro.A
+x[12] => somador_completo:abc:12:centro.A
+x[13] => somador_completo:abc:13:centro.A
+x[14] => somador_completo:abc:14:centro.A
+x[15] => somador_completo:abc:15:centro.A
+y[0] => somador_completo:abc:0:centro.B
+y[1] => somador_completo:abc:1:centro.B
+y[2] => somador_completo:abc:2:centro.B
+y[3] => somador_completo:abc:3:centro.B
+y[4] => somador_completo:abc:4:centro.B
+y[5] => somador_completo:abc:5:centro.B
+y[6] => somador_completo:abc:6:centro.B
+y[7] => somador_completo:abc:7:centro.B
+y[8] => somador_completo:abc:8:centro.B
+y[9] => somador_completo:abc:9:centro.B
+y[10] => somador_completo:abc:10:centro.B
+y[11] => somador_completo:abc:11:centro.B
+y[12] => somador_completo:abc:12:centro.B
+y[13] => somador_completo:abc:13:centro.B
+y[14] => somador_completo:abc:14:centro.B
+y[15] => somador_completo:abc:15:centro.B
+ze => somador_completo:abc:0:centro.Cin
+s[0] <= somador_completo:abc:0:centro.S
+s[1] <= somador_completo:abc:1:centro.S
+s[2] <= somador_completo:abc:2:centro.S
+s[3] <= somador_completo:abc:3:centro.S
+s[4] <= somador_completo:abc:4:centro.S
+s[5] <= somador_completo:abc:5:centro.S
+s[6] <= somador_completo:abc:6:centro.S
+s[7] <= somador_completo:abc:7:centro.S
+s[8] <= somador_completo:abc:8:centro.S
+s[9] <= somador_completo:abc:9:centro.S
+s[10] <= somador_completo:abc:10:centro.S
+s[11] <= somador_completo:abc:11:centro.S
+s[12] <= somador_completo:abc:12:centro.S
+s[13] <= somador_completo:abc:13:centro.S
+s[14] <= somador_completo:abc:14:centro.S
+s[15] <= somador_completo:abc:15:centro.S
+zs <= somador_completo:abc:15:centro.Cout
+
+
+|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:0:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:1:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:2:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:3:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:4:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:5:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:6:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:7:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:8:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:9:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:10:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:11:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:12:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:13:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:14:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:soma2|somador_completo:\abc:15:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub2
+x[0] => somador_completo:abc:0:centro.A
+x[1] => somador_completo:abc:1:centro.A
+x[2] => somador_completo:abc:2:centro.A
+x[3] => somador_completo:abc:3:centro.A
+x[4] => somador_completo:abc:4:centro.A
+x[5] => somador_completo:abc:5:centro.A
+x[6] => somador_completo:abc:6:centro.A
+x[7] => somador_completo:abc:7:centro.A
+x[8] => somador_completo:abc:8:centro.A
+x[9] => somador_completo:abc:9:centro.A
+x[10] => somador_completo:abc:10:centro.A
+x[11] => somador_completo:abc:11:centro.A
+x[12] => somador_completo:abc:12:centro.A
+x[13] => somador_completo:abc:13:centro.A
+x[14] => somador_completo:abc:14:centro.A
+x[15] => somador_completo:abc:15:centro.A
+y[0] => somador_completo:abc:0:centro.B
+y[1] => somador_completo:abc:1:centro.B
+y[2] => somador_completo:abc:2:centro.B
+y[3] => somador_completo:abc:3:centro.B
+y[4] => somador_completo:abc:4:centro.B
+y[5] => somador_completo:abc:5:centro.B
+y[6] => somador_completo:abc:6:centro.B
+y[7] => somador_completo:abc:7:centro.B
+y[8] => somador_completo:abc:8:centro.B
+y[9] => somador_completo:abc:9:centro.B
+y[10] => somador_completo:abc:10:centro.B
+y[11] => somador_completo:abc:11:centro.B
+y[12] => somador_completo:abc:12:centro.B
+y[13] => somador_completo:abc:13:centro.B
+y[14] => somador_completo:abc:14:centro.B
+y[15] => somador_completo:abc:15:centro.B
+ze => somador_completo:abc:0:centro.Cin
+s[0] <= somador_completo:abc:0:centro.S
+s[1] <= somador_completo:abc:1:centro.S
+s[2] <= somador_completo:abc:2:centro.S
+s[3] <= somador_completo:abc:3:centro.S
+s[4] <= somador_completo:abc:4:centro.S
+s[5] <= somador_completo:abc:5:centro.S
+s[6] <= somador_completo:abc:6:centro.S
+s[7] <= somador_completo:abc:7:centro.S
+s[8] <= somador_completo:abc:8:centro.S
+s[9] <= somador_completo:abc:9:centro.S
+s[10] <= somador_completo:abc:10:centro.S
+s[11] <= somador_completo:abc:11:centro.S
+s[12] <= somador_completo:abc:12:centro.S
+s[13] <= somador_completo:abc:13:centro.S
+s[14] <= somador_completo:abc:14:centro.S
+s[15] <= somador_completo:abc:15:centro.S
+zs <= somador_completo:abc:15:centro.Cout
+
+
+|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:0:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:1:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:2:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:3:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:4:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:5:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:6:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:7:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:8:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:9:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:10:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:11:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:12:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:13:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:14:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ps2_kbd_test|somador_for:sub2|somador_completo:\abc:15:centro
+A => S.IN0
+A => S.IN0
+A => Cout.IN0
+A => S.IN0
+A => S.IN0
+B => S.IN1
+B => S.IN1
+B => Cout.IN0
+B => S.IN1
+B => S.IN1
+Cin => S.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+Cin => Cout.IN1
+Cin => S.IN1
+Cin => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 

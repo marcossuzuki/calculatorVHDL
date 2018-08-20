@@ -83,6 +83,14 @@ architecture struct of ps2_kbd_test is
 				);
 	end component;
 	
+	component somador_for IS
+		GENERIC(n 	: INTEGER := 16 );
+		PORT (x, y 	: IN STD_LOGIC_VECTOR (n-1 DOWNTO 0);
+				ze		: IN STD_LOGIC;
+				s 		: OUT STD_LOGIC_VECTOR (n-1 DOWNTO 0);
+				zs 	: OUT STD_LOGIC);
+	END component;
+	
 	signal CLOCKHZ, resetn 	: std_logic;
 	signal key0 				: std_logic_vector(47 downto 0);
 	signal key_conv			: std_logic_vector(15 downto 0);
@@ -91,13 +99,24 @@ architecture struct of ps2_kbd_test is
 	signal bcd_out				: std_logic_vector(19 downto 0);
 	signal tmp_stack			: std_logic_vector(15 downto 0):=x"0000";
 	signal stack0				: std_logic_vector(15 downto 0):=x"0000";
+	signal comp2_stack0		: std_logic_vector(15 downto 0):=x"0000";
 	signal stack1				: std_logic_vector(15 downto 0):=x"0000";
+	signal comp2_stack1		: std_logic_vector(15 downto 0):=x"0000";
 	signal stack2				: std_logic_vector(15 downto 0):=x"0000";
 	signal stack3				: std_logic_vector(15 downto 0):=x"0000";
+	signal soma_result1		: std_logic_vector(15 downto 0):=x"0000";
+	signal sub_result1		: std_logic_vector(15 downto 0):=x"0000";
+	signal soma_result2		: std_logic_vector(15 downto 0):=x"0000";
+	signal sub_result2		: std_logic_vector(15 downto 0):=x"0000";
 	signal lights, key_on	: std_logic_vector( 2 downto 0);
 	signal pwm_OUT				: STD_LOGIC;
 	signal statek, next_statek: STD_LOGIC;
 	signal clean_tmp			: STD_LOGIC:='0';
+	signal overflow			: STD_LOGIC:='0';
+	signal soma_overflow1	: STD_LOGIC:='0';
+	signal sub_overflow1		: STD_LOGIC:='0';
+	signal soma_overflow2	: STD_LOGIC:='0';
+	signal sub_overflow2		: STD_LOGIC:='0';
 	
 begin 
 	
@@ -127,9 +146,18 @@ begin
 	
 	bcd1: bcd PORT MAP (key_seg, bcd_out=> bcd_out);
 	
+	comp2_stack0 <= not stack0 +1;
+	comp2_stack1 <= not stack1 +1;
+	
+	soma1: somador_for PORT MAP (tmp_stack, stack0, ze=>'0', s=>soma_result1, zs=>soma_overflow1);
+	sub1:  somador_for PORT MAP (tmp_stack, comp2_stack0, ze=>'0', s=>sub_result1,  zs=>sub_overflow1);
+	soma2: somador_for PORT MAP (stack0, stack1, ze=>'0', s=>soma_result2, zs=>soma_overflow2);
+	sub2:  somador_for PORT MAP (stack0, comp2_stack1, ze=>'0', s=>sub_result2,  zs=>sub_overflow2);
+	
 	LEDG(7 downto 5) <= key_on;
 	
 	LEDR(9) <= tmp_stack(15); -- indicador de negativo
+	LEDR(8) <= overflow; --led indicador de overflow
 	
 	with tmp_stack(15) select
 		key_seg <= not(tmp_stack)+1 when '1',
@@ -179,71 +207,122 @@ begin
 							stack2 <= stack3;
 							stack1 <= stack2;
 							stack0 <= stack1;
-						elsif(key_conv <= x"0009" and clean_tmp ='1') then
-							tmp_stack <= key_conv;
-							clean_tmp <= '0';
-						elsif(key_conv = x"E05A") then --apertando ENTER do numpad
-							stack3 <= stack2;
-							stack2 <= stack1;
-							stack1 <= stack0;
-							stack0 <= tmp_stack;
-							clean_tmp <= '0';
-						elsif(key_conv = x"0077") then --complemento de dois caso aperte NumLcok
-							stack0 <= tmp_stack;
-							tmp_stack <= (not tmp_stack)+1;
-							clean_tmp <= '0';
-						elsif(key_conv = x"0079") then --soma apertando '+' do numpad
-							stack3 <= (others=>'0');
-							stack2 <= stack3;
-							stack1 <= stack2;
-							stack0 <= stack1 + stack0;
-							tmp_stack <= stack1 + stack0;
-							clean_tmp <= '0';
-						elsif(key_conv = x"007B") then --subtraçao apertando '-' do numpad
-							stack3 <= (others=>'0');
-							stack2 <= stack3;
-							stack1 <= stack2;
-							stack0 <= stack0 +(not stack1)+1; 
-							tmp_stack <= stack0 +(not stack1)+1; 
-							clean_tmp <= '0';
-						elsif(key_conv = x"007C") then --multiplicaçao apertando '*' do numpad
-							stack3 <= (others=>'0');
-							stack2 <= stack3;
-							stack1 <= stack2;
-							stack0 <= stack0 +(not stack1)+1; 
-							tmp_stack <= stack0 +(not stack1)+1; 
-							clean_tmp <= '0';
+							overflow <= '0'; --led de overflow
+						elsif (overflow = '0') then
+							if(key_conv <= x"0009" and clean_tmp ='1') then
+								tmp_stack <= key_conv;
+								clean_tmp <= '0';
+							elsif(key_conv = x"E05A") then --apertando ENTER do numpad
+								stack3 <= stack2;
+								stack2 <= stack1;
+								stack1 <= stack0;
+								stack0 <= tmp_stack;
+								clean_tmp <= '0';
+							elsif(key_conv = x"0077") then --complemento de dois caso aperte NumLcok
+								stack0 <= tmp_stack;
+								tmp_stack <= (not tmp_stack)+1;
+								clean_tmp <= '0';
+							elsif(key_conv = x"0079") then --soma apertando '+' do numpad
+								if((stack0(15) and stack1(15)) /= soma_result2(15)) then --verifica overflow
+									overflow <= '1';
+									stack3 <= (others=>'0');
+									stack2 <= stack3;
+									stack1 <= stack2;
+									stack0 <= (others=>'0');
+									tmp_stack <= (others=>'0');
+								else 
+									stack3 <= (others=>'0');
+									stack2 <= stack3;
+									stack1 <= stack2;
+									stack0 <= soma_result2;
+									tmp_stack <= soma_result2;
+								end if;
+								clean_tmp <= '0';
+							elsif(key_conv = x"007B") then --subtracao apertando '-' do numpad
+								if((stack0(15) and not stack1(15)) /= sub_result2(15)) then --verifica overflow
+									overflow <= '1';
+									stack3 <= (others=>'0');
+									stack2 <= stack3;
+									stack1 <= stack2;
+									stack0 <= (others=>'0');
+									tmp_stack <= (others=>'0');
+								else 
+									stack3 <= (others=>'0');
+									stack2 <= stack3;
+									stack1 <= stack2;
+									stack0 <= sub_result2; 
+									tmp_stack <= sub_result2; 
+								end if;
+								clean_tmp <= '0';
+							elsif(key_conv = x"007C") then --multiplicacao apertando '*' do numpad
+								if(sub_overflow2 = '1') then
+									overflow <= '1';
+									stack3 <= (others=>'0');
+									stack2 <= stack3;
+									stack1 <= stack2;
+									stack0 <= (others=>'0');
+									tmp_stack <= (others=>'0');
+								else
+									stack3 <= (others=>'0');
+									stack2 <= stack3;
+									stack1 <= stack2;
+									stack0 <= stack0 +(not stack1)+1; 
+									tmp_stack <= stack0 +(not stack1)+1; 
+								end if;
+								clean_tmp <= '0';
+							end if;
 						end if;	
 						
 					when '0' =>
 						if (key0(15 downto 0) = x"0066") then
 							tmp_stack <= (others=>'0');
-						elsif(key_conv <= x"0009") then
-							if(tmp_stack<x"0CCC") then
-								tmp_stack <= (tmp_stack(14 downto 0) & '0') + (tmp_stack(12 downto 0) & "000") + key_conv; --multiplica por 10 stack0 e soma o valor
-							elsif(tmp_stack=x"0CCC" and key_conv <= x"0007") then --limitar para valores menores que 32767
-								tmp_stack <= (tmp_stack(14 downto 0) & '0') + (tmp_stack(12 downto 0) & "000") + key_conv; --multiplica por 10 stack0 e soma o valor
+							overflow <= '0'; --led de overflow
+						elsif (overflow = '0') then
+							if(key_conv <= x"0009") then
+								if(tmp_stack<x"0CCC") then
+									tmp_stack <= (tmp_stack(14 downto 0) & '0') + (tmp_stack(12 downto 0) & "000") + key_conv; --multiplica por 10 stack0 e soma o valor
+								elsif(tmp_stack=x"0CCC" and key_conv <= x"0007") then --limitar para valores menores que 32767
+									tmp_stack <= (tmp_stack(14 downto 0) & '0') + (tmp_stack(12 downto 0) & "000") + key_conv; --multiplica por 10 stack0 e soma o valor
+								end if;
+							elsif(key_conv = x"E05A") then --apertando ENTER do numpad
+								stack3 <= stack2;
+								stack2 <= stack1;
+								stack1 <= stack0;
+								stack0 <= tmp_stack;
+								clean_tmp <='1';
+							elsif(key_conv = x"0077") then --complemento de dois caso aperte NumLcok
+								tmp_stack <= (not tmp_stack)+1;
+							elsif(key_conv = x"0079") then --soma apertando '+' do numpad
+								if((stack0(15) and stack1(15)) /= soma_result1(15)) then
+									overflow <= '1';
+									stack0 <= (others=>'0');
+									tmp_stack <=(others=>'0');
+								else 
+									stack0 <= soma_result1;
+									tmp_stack <= soma_result1;
+								end if;
+								clean_tmp <='1';
+							elsif(key_conv = x"007B") then --subtracao apertando '-' do numpad
+								if((stack0(15) and not stack1(15)) /= sub_result1(15)) then
+									overflow <= '1';
+									stack0 <=(others=>'0');
+									tmp_stack <=(others=>'0');
+								else 
+									stack0 <= sub_result1; 
+									tmp_stack <= sub_result1;
+								end if;
+								clean_tmp <='1';
+							elsif(key_conv = x"007C") then --multiplicacao apertando '*' do numpad
+								if((stack0(15) and not stack1(15)) /= sub_result1(15)) then
+									overflow <= '1';
+									stack0 <=(others=>'0');
+									tmp_stack <=(others=>'0');
+								else 
+									stack0 <= tmp_stack +(not stack0)+1;
+									tmp_stack <= tmp_stack +(not stack0)+1;
+								end if;
+								clean_tmp <='1';
 							end if;
-						elsif(key_conv = x"E05A") then --apertando ENTER do numpad
-							stack3 <= stack2;
-							stack2 <= stack1;
-							stack1 <= stack0;
-							stack0 <= tmp_stack;
-							clean_tmp <='1';
-						elsif(key_conv = x"0077") then --complemento de dois caso aperte NumLcok
-							tmp_stack <= (not tmp_stack)+1;
-						elsif(key_conv = x"0079") then --soma apertando '+' do numpad
-							stack0 <= tmp_stack + stack0;
-							tmp_stack <= tmp_stack + stack0;
-							clean_tmp <='1';
-						elsif(key_conv = x"007B") then --subtraçao apertando '-' do numpad
-							stack0 <= tmp_stack +(not stack0)+1; 
-							tmp_stack <= tmp_stack +(not stack0)+1;
-							clean_tmp <='1';
-						elsif(key_conv = x"007C") then --multiplicaçao apertando '*' do numpad
-							stack0 <= tmp_stack +(not stack0)+1;
-							tmp_stack <= tmp_stack +(not stack0)+1;
-							clean_tmp <='1';
 						end if;
 						
 					when others =>
